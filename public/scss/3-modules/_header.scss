@@ -1,0 +1,59 @@
+.main-header {
+    width: 100%;
+    height: 10vh;
+    background-color: #181A24;
+    @include center;
+
+    .header-options{
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 30px 0 30px;
+        padding: 0;
+        @include center;
+        justify-content: space-between;
+    }
+
+    .header-options li {
+        display: inline-block;
+    }
+
+    .nav-left{
+        width: 330px;
+        @include center;
+        justify-content: space-between;
+    }
+
+    .nav-center{
+        width: 350px;
+        @include center;
+
+        .form-outline{
+            width: 100%;
+            margin-right: 15px;
+        }
+    }
+        
+    .nav-right li{
+        margin-right: 25px;
+    }
+        
+    .title {
+        font-size: 18px;
+        color: #fff;
+        font-family: Arial;
+        cursor: pointer;
+    }
+    
+    .option {
+        font-size: 16px;
+        color: #6D6F79;
+        font-family: Arial;
+        cursor: pointer;
+
+        .option:hover {
+            font-size: 16px;
+            color: #9598a7;
+        }
+    }  
+}
+

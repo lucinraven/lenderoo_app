@@ -1,0 +1,90 @@
+// Page Layout
+.browser-page-ctn {
+  height: auto;
+  overflow: hidden;
+  padding: 15px 15px 100px 15px;
+  background: $secondary-bg-color;
+
+  .container {
+    padding: 0;
+    box-shadow: 2px 2px 15px 1px #d1d1d1;
+  }
+
+  .row {
+    height: auto;
+    margin: 0 auto;
+  }
+
+  // Side Navigation
+  .col-md-2 {
+    padding: 10px 25px 25px 25px;
+    background: $main-bg-color;
+    border-right: solid;
+    border-width: thin;
+    border-color: #d1d1d1;
+
+    h1 {
+      font-size: 16px;
+      font-family: $font-family;
+    }
+
+    ul {
+      margin: 0;
+      padding-left: 15px;
+      text-decoration: none;
+    }
+
+    li {
+      margin-top: 5px;
+      list-style-type: none;
+    }
+    a {
+      font-family: $font-family;
+      color: #000000;
+    }
+    a:hover {
+      color: $primary;
+    }
+  }
+
+  .col-md-10 {
+    padding: 0;
+    background: $main-bg-color;
+
+    .item-showcase{
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    h1 {
+      margin: 15px;
+      font-size: 24px;
+      font-family: $font-family;
+    }
+
+    .item-widget {
+      height: auto;
+      margin: 10px;
+      padding: 5px 10px;
+      width: 200px;
+      background-color: $primary;
+
+      img {
+        height: 150px;
+        width: 100%;
+        margin: 10px 0;
+      }
+
+      .item-heading {
+        font-size: 18px;
+        font-family: $font-family;
+      }
+      .price-heading {
+        font-size: 16px;
+        font-family: $font-family;
+      }
+    }
+  }
+}

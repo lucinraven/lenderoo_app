@@ -1,0 +1,27 @@
+@mixin center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+// DEFAULT FONT COLOR
+$font-color: #FFFFFF;
+
+// MAIN HEADING COLOR
+$heading-color: #FFFFFF;
+
+// SUB HEADING COLOR
+$sub-heading-color: #292929;
+
+// PRIMARY COLORS
+$primary: #DD9857 ;
+$primaryVariants: #EFA45D;
+
+// SECONDARY COLOR
+$secondary: #3C3C3C;
+$secondaryVariant: #292929;
+
+$main-bg-color: #292929;
+$secondary-bg-color: #FFFFFF;

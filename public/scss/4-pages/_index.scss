@@ -1,0 +1,59 @@
+.index-pg-body {
+    padding: 15px 15px 100px 15px;
+
+    .container-lg {
+        height: auto;
+        width: auto;
+        padding: 5px 0 5px 0;
+        background-color: red;
+
+        .items-showcase{
+            width: auto;
+            margin: 0 auto;
+        }
+
+        .row {
+            margin: 0;
+            padding: 0;
+            background-color: salmon;
+            @include center;
+
+            h1 {
+                margin: 0;
+                font-size: 20px;
+                font-size: $font-family;
+            }
+
+            a{
+                margin: 0px;
+                padding: 0;
+            }
+
+            .item-widget {
+                height: auto;
+                width: 190px;
+                margin: 10px;
+                background-color: seagreen;
+
+                img {
+                    display: block;
+                    height: 120px;
+                    width: 100%;
+                    margin: 10px auto;
+                    background-color: skyblue;
+                }
+
+                h2 {
+                    margin-top: 10px;
+                    font-size: 20px;
+                    font-size: $font-family;
+                }
+
+                p {
+                    font-size: 14px;
+                    font-size: $font-family;
+                }
+            }
+        }
+    }
+}

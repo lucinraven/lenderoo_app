@@ -1,0 +1,40 @@
+/* Footer */
+.content {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 0 auto;
+            flex: 1 0 auto;
+  }
+  
+  .bg-custom {
+    background-color: #DD9857 !important;
+  }
+  
+  .soc_med_loc {
+    margin: 50px 0;
+  }
+  
+  .box_form {
+    height: auto;
+    width: 40%;
+    padding: 10px;
+    margin-top: -10px;
+    margin-left: 30%;
+    position: relative;
+    border-radius: 20px;
+    background-color: #494949;
+    bottom: 30px;
+
+    .subscribe-input{
+      label{
+        color: $font-color;
+        text-align: left;
+      }
+    }
+
+    .col-auto{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+  /* END Footer */

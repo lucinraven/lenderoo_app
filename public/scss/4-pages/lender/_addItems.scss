@@ -1,0 +1,129 @@
+
+// Adding Item Modal 
+.addItem {
+    .modal-body {
+        height: auto;
+        margin: 30px 0;
+    }
+
+    h1 {
+        font-size: 24px;
+        text-align: center;
+        font-family: $font-family;
+    }
+
+    .row {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 10px 0 10px 0;
+
+        .col-md-3 {
+            height: auto;
+            margin: 10px;
+        }
+
+        input[type="button"] {
+            width: 100%;
+            font-size: 16px;
+            padding: 50px 5px;
+            border: none;
+            text-align: center;
+            box-shadow: 2px 2px 15px 1px #d1d1d1;
+        }
+        input[type="button"]:hover {
+            border: solid;
+            border-width: thin;
+        }
+    }
+}
+
+.addTitle {
+    .modal-body {
+        padding: 25px 35px;
+    }
+    h1 {
+        margin: 20px 0;
+        text-align: center;
+        font-family: $font-family;
+    }
+    p {
+        text-align: center;
+        font-family: $font-family;
+    }
+    input {
+        width: 100%;
+    }
+    input::placeholder {
+        text-align: center;
+    }
+}
+
+.addDscrpt {
+    h1 {
+        margin: 5px;
+        text-align: center;
+        font-family: $font-family;
+    }
+    p {
+        text-align: center;
+        font-family: $font-family;
+    }
+
+    .row {
+        margin: 10px;
+        width: auto;
+    }
+
+    label {
+        margin: 5px 0 10px 0;
+        padding: 0;
+    }
+    input {
+        padding: 0;
+    }
+    textarea {
+        resize: none;
+    }
+}
+
+.addSpec {
+    .modal-body {
+        margin: 0 auto;
+    }
+
+    h1 {
+        text-align: center;
+        font-family: $font-family;
+        margin: 15px;
+    }
+
+    .row {
+        margin: 10px 0;
+    }
+
+    .col-md-2 {
+        width: 30%;
+    }
+    .col-md-6 {
+        width: 70%;
+    }
+    input {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+.addConfirm {
+    .modal-body {
+        h1 {
+            margin: 10px;
+            text-align: center;
+            font-family: $font-family;
+        }
+
+        p {
+            font-family: $font-family;
+        }
+    }
+}

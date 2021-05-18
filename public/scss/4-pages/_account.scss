@@ -1,0 +1,201 @@
+.account-pg-ctn {
+    height: 100%;
+    width: 100%;
+    padding: 15px 15px 100px 15px;
+    background: $secondary-bg-color;
+
+    .container-lg {
+        padding: 0;
+        box-shadow: 2px 2px 15px 1px #d1d1d1;
+    }
+
+    .row {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+
+        .row-1{
+            border-bottom: solid;
+            border-width: thin;
+            border-color: #d1d1d1;
+        }
+
+        .col-md-3 {
+            padding: 0;
+            height: 1000px;
+            border-top: solid;
+            border-left: solid;
+            border-bottom: solid;
+            border-width: thin;
+            border-color: #d1d1d1;
+            background: $main-bg-color;
+
+            h1 {
+                font-size: 18px;
+                margin: 15px;
+            }
+            li {
+                list-style: none;
+            }
+
+            a {
+                padding: 10px 16px 10px 16px;
+                color: #000000;
+                font-family: $font-family;
+                font-weight: 600;
+            }
+
+            .tab-btn {
+                margin: 0;
+                background: none;
+                border: none;
+                outline: none;
+                text-decoration: none;
+                color: #000000;
+                box-shadow: none;
+                font-weight: 400;
+                font-family: $font-family;
+            }
+            button:hover {
+                color: #5f5f5f;
+            }
+            a:hover {
+                color: #5f5f5f;
+            }
+        }
+
+        .col-md-9 {
+            height: auto;
+            padding: 0;
+            border: solid;
+            border-width: thin;
+            border-color: #d1d1d1;
+            background: $main-bg-color;
+
+            .accInfo {
+                height: auto;
+                width: 100%;
+                padding: 15px;
+
+                h1 {
+                    margin: 0;
+                    padding: 10px;
+                    font-size: 24px;
+                    font-family: $font-family;
+                }
+
+                .col-md-5 {
+                    margin: 5px 25px 5px 25px;
+
+                    .row{
+                        margin: 15px 0;
+                    }
+
+                    label {
+                        padding: 0;
+                        font-family: $font-family;
+                    }
+
+                    input {
+                        width: 300px;
+                        border: solid;
+                        border-width: thin;
+                        font-family: $font-family;
+                        color: #000000;
+                    }
+                }
+            }
+
+            .accOrdrs {
+                @extend .accInfo;
+
+                .orders-table {
+                    height: auto;
+                    width: 100%;
+                    margin: 20px 0 20px 0;
+                }
+                th,
+                td {
+                    text-align: center;
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                    font-family: $font-family;
+                }
+                tr:nth-child(even) {
+                    background-color: #f2f2f2;
+                }
+                tr:hover {
+                    cursor: pointer;
+                    background-color: #ddd;
+                }
+            }
+            .accStngs {
+                @extend .accInfo;
+            }
+            .accLend {
+                @extend .accInfo;
+            }
+
+            // Lender Central for Lenders and is hidden from regular user account.
+            .lendInventory {
+                @extend .accInfo;
+
+                .inventory-table {
+                    height: auto;
+                    width: 100%;
+                    margin: 20px 0 20px 0;
+                }
+                th,
+                td {
+                    text-align: center;
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                    font-family: $font-family;
+                }
+                tr:nth-child(even) {
+                    background-color: #f2f2f2;
+                }
+                tr:hover {
+                    cursor: pointer;
+                    background-color: #ddd;
+                }
+            }
+
+            .lendOutgoing {
+                @extend .accInfo;
+
+                .outgoing-table {
+                    height: auto;
+                    width: 100%;
+                    margin: 20px 0 20px 0;
+                }
+                th,
+                td {
+                    text-align: center;
+                    border: 1px solid #ddd;
+                    padding: 8px;
+                    font-family: $font-family;
+                }
+                tr:nth-child(even) {
+                    background-color: #f2f2f2;
+                }
+                tr:hover {
+                    cursor: pointer;
+                    background-color: #ddd;
+                }
+            }
+
+            .lendAd {
+                @extend .accInfo;
+            }
+
+            .lendRequest {
+                @extend .accInfo;
+            }
+
+            .lendTerm {
+                @extend .accInfo;
+            }
+        }
+    }
+}

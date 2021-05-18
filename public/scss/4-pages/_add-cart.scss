@@ -1,0 +1,107 @@
+.add-cart-page{
+    height: auto;
+    width: 100%;
+    padding: 20px 0 100px 0;
+
+    .row{
+        margin: 0;
+        height: auto;
+        width: 100%;
+
+        .col-md-9{
+            padding: 0;
+            border: solid;
+            border-width: thin;
+            border-color: #d1d1d1;
+            background-color: $main-bg-color;
+        
+            .cart-list-header{
+                border-bottom: solid;
+                border-width: thin;
+                border-color: #d1d1d1;
+
+                h1{
+                    font-size: 24px;
+                    padding-left: 15px;
+                    $font-family: $font-family;
+                }
+            }
+         
+            .cart-list{
+                height: auto;
+                width: 100%;
+            }
+
+            .cart-item{
+                margin-top: 10px;
+                padding: 5px;
+                height: 150px;
+                width: 100%;
+                border-bottom: solid;
+                border-width: thin;
+                border-color: #d1d1d1;
+
+                .left-content{
+                    padding: 10px;  
+                    @include center;
+
+                    img{
+                        height: 100%;
+                        width: 100%;
+                        background-color: darkgray  ;
+                    }
+    
+                }
+          
+                .middle-content{
+                    display: flex;
+                    justify-content: center;
+                    align-items: flex-start;
+                    flex-direction: column;
+                }
+
+                .right-content{
+                   @include center;
+                }
+            }
+        }
+    
+        .col-md-3{
+
+            .summary-content{
+                border: solid;
+                border-width: thin;
+                border-color: #d1d1d1;
+                background-color: $main-bg-color;
+
+                h1{
+                    font-size: 24px;
+                    padding-left: 15px;
+                    $font-family: $font-family;
+                }
+
+                p{
+                    font-size: 16px;
+                    padding-left: 15px;
+                    $font-family: $font-family;
+                }
+            }
+            .summary-footer{
+
+                button{
+                    margin-top: 10px;
+                    display: block;
+                    float: right;
+                    background-color: $primary;
+                    font-size: 14px;
+                    font-weight: 300;
+                    font-family: $font-family;
+                }
+                button:hover{
+                    background-color: #ecaf75;
+                }
+            }
+        }
+    
+    }
+}
