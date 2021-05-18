@@ -27,7 +27,7 @@ body {
 .main-header {
   width: 100%;
   height: 10vh;
-  background-color: #181A24;
+  background-color: #181a24;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -109,7 +109,7 @@ body {
 
 .main-header .option {
   font-size: 16px;
-  color: #6D6F79;
+  color: #6d6f79;
   font-family: Arial;
   cursor: pointer;
 }
@@ -985,7 +985,13 @@ body {
 }
 
 /* Start Login-Register */
-.backRight {
+.authentication-page {
+  height: auto;
+  width: 100%;
+  padding: 0;
+}
+
+.authentication-page .backRight {
   position: absolute;
   right: 0;
   width: 50%;
@@ -995,7 +1001,7 @@ body {
   background-position: 50% 50%;
 }
 
-.backLeft {
+.authentication-page .backLeft {
   position: absolute;
   left: 0;
   width: 50%;
@@ -1005,14 +1011,14 @@ body {
   background-position: 50% 50%;
 }
 
-#back {
+.authentication-page #back {
   width: 100%;
   height: 90%;
   position: absolute;
   z-index: -999;
 }
 
-#slideBox {
+.authentication-page #slideBox {
   width: 50%;
   height: 90%;
   overflow: hidden;
@@ -1022,7 +1028,7 @@ body {
           box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
 }
 
-.topLayer {
+.authentication-page .topLayer {
   width: 200%;
   height: 100%;
   position: relative;
@@ -1030,7 +1036,7 @@ body {
   left: -100%;
 }
 
-.left {
+.authentication-page .left {
   width: 50%;
   height: 100%;
   background: #2c3034;
@@ -1038,11 +1044,11 @@ body {
   position: absolute;
 }
 
-.left .h2 {
+.authentication-page .left .h2 {
   color: #FFFFFF;
 }
 
-.right {
+.authentication-page .right {
   width: 50%;
   height: 100%;
   background: #f9f9f9;
@@ -1050,7 +1056,7 @@ body {
   position: absolute;
 }
 
-.content {
+.authentication-page .content {
   width: 100%;
   height: 100%;
   margin: 0 auto;
@@ -1069,7 +1075,7 @@ body {
           align-items: center;
 }
 
-.content h2 {
+.authentication-page .content h2 {
   color: #292929;
   font-weight: 300;
   font-size: 35px;
@@ -1077,16 +1083,16 @@ body {
   margin-bottom: 15px;
 }
 
-.content form {
+.authentication-page .content form {
   width: 60%;
 }
 
-.content .btn-div {
+.authentication-page .content .btn-div {
   width: 60%;
   margin-top: 15px;
 }
 
-button {
+.authentication-page button {
   background: #DD9857;
   padding: 10px 16px;
   width: auto;
@@ -1106,27 +1112,27 @@ button {
   transition: all 0.25s;
 }
 
-button:hover {
+.authentication-page button:hover {
   background: #EFA45D;
   -webkit-box-shadow: 0 4px 7px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
           box-shadow: 0 4px 7px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
 }
 
-.off {
+.authentication-page .off {
   background: none;
   color: #03a9f4;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
-.right .off:hover {
+.authentication-page .right .off:hover {
   background: #eee;
   color: #03a9f4;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
-.left .off:hover {
+.authentication-page .left .off:hover {
   -webkit-box-shadow: none;
           box-shadow: none;
   color: #03a9f4;

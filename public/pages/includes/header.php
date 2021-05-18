@@ -6,9 +6,6 @@
  * Time: 11:07 PM
  */
 
-use app\core\Application;
-use app\models\User;
-
 ?>
 
 <!DOCTYPE html>
@@ -20,7 +17,7 @@ use app\models\User;
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="/css/mainStylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="../../css/mainStylesheet.css" />
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" />
     <!-- Font Awesome -->
@@ -39,8 +36,6 @@ use app\models\User;
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-
-    <title><?php echo $this->title ?></title>
 </head>
 
 <body>
@@ -49,11 +44,11 @@ use app\models\User;
         <ul class="header-options">
             <div class="nav-left">
                 <li class="title">
-                    <a class="navbar-brand" href="/">
+                    <a class="navbar-brand" href="../pages/index.php">
                         <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="30" alt="" loading="lazy" />
                     </a>
                 </li>
-                <li class="option"> <a href="/browser">Browse by Product</a></li>
+                <li class="option"> <a href="../pages/browser.php">Browse by Product</a></li>
                 <li class="option"> Lorem </li>
             </div>
 
@@ -69,14 +64,12 @@ use app\models\User;
             </div>
 
             <div class="nav-right">
-                <li class="option"><a href="/account-tabs"><i class="fas fa-bell"></i></a></li>
-                <li class="option"><a href="/account-tabs"><i class="fas fa-bookmark"></i></a></li>
-                <li class="option"><a href="/inbox-messenger"><i class="fas fa-inbox"></i></a></li>
-                <li class="option"><a href="/add-cart"><i class="fas fa-shopping-cart"></i></a></li>
-                <li class="option"><a href="/entry">Sign In</a></li>
-
-                <li class="option"><a href="/user-account">User Account</a></li>
-                <li class="option"><a href="/logout">Logout</li>
+                <li class="option"><a href="../pages/account-tabs.php"><i class="fas fa-bell"></i></a></li>
+                <li class="option"><a href="../pages/account-tabs.php"><i class="fas fa-bookmark"></i></a></li>
+                <li class="option"><a href="../pages/inbox-messenger.php"><i class="fas fa-inbox"></i></a></li>
+                <li class="option"><a href="../pages/add-cart.php"><i class="fas fa-shopping-cart"></i></a></li>
+                <li class="option"><a href="../pages/authentication.php">Login</a></li>
+                <li class="option"><a href="../pages/user-account.php">User Account</a></li>
 
             </div>
         </ul>

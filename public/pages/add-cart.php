@@ -5,6 +5,9 @@
  * Date: 5/18/2021
  * Time: 12:19 PM
  */
+
+include 'includes/header.php';
+
 ?>
 
 <!-- Cart page -->
@@ -134,3 +137,9 @@
         </div>
     </div>
 </div>
+
+<?php
+
+include 'includes/footer.php';
+
+?>

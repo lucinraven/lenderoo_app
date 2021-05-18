@@ -5,6 +5,8 @@
  * Date: 5/15/2021
  * Time: 12:05 PM
  */
+
+include 'includes/header.php';
 ?>
 
 <div class="account-tabs">
@@ -115,3 +117,9 @@
         </div>
     </div>
 </div>
+
+<?php
+
+include 'includes/footer.php';
+
+?>

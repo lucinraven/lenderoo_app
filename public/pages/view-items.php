@@ -7,8 +7,7 @@
  * Time: 12:54 AM
  */
 
- /** @var $this \app\core\View */
-$this->title = '| Lenderoo';
+include 'includes/header.php';
 
 ?>
 <div class="view-item-page">
@@ -187,3 +186,9 @@ $this->title = '| Lenderoo';
         </div>
     </div>
 </div>
+
+<?php
+
+include 'includes/footer.php';
+
+?>

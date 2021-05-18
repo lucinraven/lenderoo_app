@@ -6,8 +6,7 @@
  * Time: 11:36 PM
  */
 
-  /** @var $this \app\core\View */
-$this->title = 'Browser | Lenderoo';
+include 'includes/header.php';
 
 ?>
 
@@ -186,3 +185,9 @@ $this->title = 'Browser | Lenderoo';
    End Pagination-->
     </div>
 </div>
+
+<?php
+
+include 'includes/footer.php';
+
+?>

@@ -7,8 +7,8 @@
  * Time: 11:36 PM
  */
 
- /** @var $this \app\core\View */
-$this->title = 'My Account | Lenderoo';
+include 'includes/header.php';
+
 ?>
 
 <div class="account-pg-ctn">
@@ -526,3 +526,9 @@ $this->title = 'My Account | Lenderoo';
 
 <!-- External Javascript Code -->
 <script type="text/javascript" src="/js/main.js"></script>
+
+<?php
+
+include 'includes/footer.php';
+
+?>
