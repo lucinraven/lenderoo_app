@@ -4,9 +4,6 @@ include 'includes/header.php';
 
 ?>
 
-?>
-
-
 <!-- Inbox messenger page -->
 <div class="inbox-messenger-page">
     <div class="container-lg">

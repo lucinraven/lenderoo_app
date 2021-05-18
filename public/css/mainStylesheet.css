@@ -171,7 +171,7 @@ body {
 }
 
 .account-tabs .tab-view-pages {
-  height: auto;
+  height: 100vh;
   width: 100%;
   padding: 20px 0;
 }
@@ -717,7 +717,7 @@ body {
 }
 
 .inbox-messenger-page .row {
-  height: 100%;
+  height: auto;
   width: 100%;
   background: #FFFFFF;
 }
@@ -731,23 +731,36 @@ body {
 }
 
 .inbox-messenger-page .col-md-3 .left-header {
-  height: 12%;
+  padding-left: 15px;
+  height: 80px;
   border-bottom: solid;
   border-width: thin;
   border-color: #d1d1d1;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
 }
 
 .inbox-messenger-page .col-md-3 .left-header h1 {
   margin: 0;
-  padding: 30px 0 15px 15px;
   font-size: 24px;
   font-family: "Poppins", sans-serif;
 }
 
 .inbox-messenger-page .col-md-3 .left-body {
-  height: 88%;
+  height: 550px;
   width: 100%;
-  overflow-y: auto;
+  overflow-y: scroll;
+  background-color: cadetblue;
 }
 
 .inbox-messenger-page .col-md-3 .left-body .row {
@@ -811,14 +824,13 @@ body {
 }
 
 .inbox-messenger-page .col-md-9 .right-header {
-  height: 12%;
+  height: 80px;
   border-bottom: solid;
   border-width: thin;
   border-color: #d1d1d1;
 }
 
 .inbox-messenger-page .col-md-9 .right-header .profile-icon {
-  height: 100%;
   width: 10%;
   float: left;
   display: -webkit-box;
@@ -840,7 +852,6 @@ body {
 }
 
 .inbox-messenger-page .col-md-9 .right-header .user-info {
-  height: 100%;
   width: 90%;
   float: right;
 }
@@ -858,22 +869,23 @@ body {
 }
 
 .inbox-messenger-page .col-md-9 .right-body {
-  height: 88%;
+  height: auto;
   width: 100%;
 }
 
 .inbox-messenger-page .col-md-9 .right-body .conversation-body {
-  height: 90%;
+  height: 480px;
   width: 100%;
   overflow-y: auto;
+  background-color: rebeccapurple;
 }
 
 .inbox-messenger-page .col-md-9 .right-body .conversation-message-input {
-  height: 10%;
   width: 100%;
   border-top: solid;
   border-width: thin;
   border-color: #d1d1d1;
+  background-color: bisque;
 }
 
 .inbox-messenger-page .col-md-9 .right-body .conversation-message-input form {
@@ -891,6 +903,7 @@ body {
 }
 
 .inbox-messenger-page .col-md-9 .right-body .conversation-message-input input {
+  margin: 15px;
   height: 40px;
   width: 600px;
   padding-left: 15px;

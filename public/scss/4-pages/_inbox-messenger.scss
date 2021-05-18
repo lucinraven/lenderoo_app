@@ -4,7 +4,7 @@
     padding: 40px 0 80px 0;
 
     .row {
-        height: 100%;
+        height: auto;
         width: 100%;
         background: $main-bg-color;
     }
@@ -17,25 +17,28 @@
         border-color: #d1d1d1;
 
         .left-header {
-            height: 12%;
+            padding-left: 15px;
+            height: 80px;
             border-bottom: solid;
             border-width: thin;
             border-color: #d1d1d1;
+            @include center;
+            justify-content: flex-start;
 
             h1 {
                 margin: 0;
-                padding: 30px 0 15px 15px;
                 font-size: 24px;
                 font-family: $font-family;
             }
         }
 
         .left-body {
-            height: 88%;
+            height: 550px;
             width: 100%;
-            overflow-y: auto;
+            overflow-y: scroll;
+            background-color: cadetblue;
 
-            .row{
+            .row {
                 height: auto;
                 margin: 0;
                 padding: 10px 0;
@@ -44,11 +47,11 @@
                 border-color: #d1d1d1;
             }
 
-            .row:hover{
+            .row:hover {
                 opacity: 0.9;
                 cursor: pointer;
             }
-            
+
             .chat-list-profile {
                 height: auto;
                 margin: 0;
@@ -89,13 +92,12 @@
         border-color: #d1d1d1;
 
         .right-header {
-            height: 12%;
+            height: 80px;
             border-bottom: solid;
             border-width: thin;
             border-color: #d1d1d1;
 
             .profile-icon {
-                height: 100%;
                 width: 10%;
                 float: left;
                 @include center;
@@ -109,7 +111,6 @@
             }
 
             .user-info {
-                height: 100%;
                 width: 90%;
                 float: right;
 
@@ -127,30 +128,32 @@
             }
         }
 
-        .right-body{
-            height: 88%;
+        .right-body {
+            height: auto;
             width: 100%;
-            
-            .conversation-body{
-                height: 90%;
+
+            .conversation-body {
+                height: 480px;
                 width: 100%;
                 overflow-y: auto;
+                background-color: rebeccapurple;
             }
 
-            .conversation-message-input{
-                height: 10%;
+            .conversation-message-input {
                 width: 100%;
                 border-top: solid;
                 border-width: thin;
                 border-color: #d1d1d1;
-                
-                form{
+                background-color: bisque;
+
+                form {
                     height: 100%;
                     width: 100%;
                     @include center;
                 }
-       
-                input{
+
+                input {
+                    margin: 15px;
                     height: 40px;
                     width: 600px;
                     padding-left: 15px;
@@ -163,15 +166,14 @@
                     color: #000000;
                 }
 
-                .send-btn{
-                    margin-left: 15px; 
+                .send-btn {
+                    margin-left: 15px;
                     font-size: 24px;
                     color: #22b4ee;
                     background: none;
                     box-shadow: none;
-
                 }
-                .send-btn:hover{
+                .send-btn:hover {
                     color: #29c2ff;
                 }
             }

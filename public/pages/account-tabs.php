@@ -9,7 +9,9 @@
 include 'includes/header.php';
 ?>
 
+<!-- start of account tabs page -->
 <div class="account-tabs">
+    <!-- container -->
     <div class="container-sm">
         <div class="tab-view-pages">
             <!-- Tab pages button -->
@@ -89,11 +91,11 @@ include 'includes/header.php';
                         </div>
                     </div>
                 </div>
+
                 <div class="tab-pane fade" id="contact0" role="tabpanel" aria-labelledby="contact-tab0">
-                <div class="tab-header">
+                    <div class="tab-header">
                         <h1>Search</h1>
                     </div>
-
                     <!-- Tab view page body -->
                     <div class="tab-body">
                         <div class="notification-item row">
@@ -112,11 +114,16 @@ include 'includes/header.php';
                                 <i class="fas fa-circle"></i>
                             </div>
                         </div>
+                    </div>
                 </div>
+
             </div>
         </div>
+
     </div>
+    <!-- end of container -->
 </div>
+<!-- end of page container -->
 
 <?php
 
