@@ -710,156 +710,6 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
-/* Start Login-Register */
-.backRight {
-  position: absolute;
-  right: 0;
-  width: 50%;
-  height: 100%;
-  background: #3498db url(https://images.unsplash.com/photo-1576176539998-0237d1ac6a85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxfDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit);
-  background-size: cover;
-  background-position: 50% 50%;
-}
-
-.backLeft {
-  position: absolute;
-  left: 0;
-  width: 50%;
-  height: 100%;
-  background: #e74c3c url(https://images.unsplash.com/photo-1529230117010-b6c436154f25?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjE3NzUzNjU1&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit);
-  background-size: cover;
-  background-position: 50% 50%;
-}
-
-#back {
-  width: 100%;
-  height: 90%;
-  position: absolute;
-  z-index: -999;
-}
-
-#slideBox {
-  width: 50%;
-  height: 90%;
-  overflow: hidden;
-  margin-left: 50%;
-  position: absolute;
-  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
-}
-
-.topLayer {
-  width: 200%;
-  height: 100%;
-  position: relative;
-  left: 0;
-  left: -100%;
-}
-
-.left {
-  width: 50%;
-  height: 100%;
-  background: #2c3034;
-  left: 0;
-  position: absolute;
-}
-
-.left .h2 {
-  color: #FFFFFF;
-}
-
-.right {
-  width: 50%;
-  height: 100%;
-  background: #f9f9f9;
-  right: 0;
-  position: absolute;
-}
-
-.content {
-  width: 100%;
-  height: 100%;
-  margin: 0 auto;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
-.content h2 {
-  color: #292929;
-  font-weight: 300;
-  font-size: 35px;
-  font-family: "Poppins", sans-serif;
-  margin-bottom: 15px;
-}
-
-.content form {
-  width: 60%;
-}
-
-.content .btn-div {
-  width: 60%;
-  margin-top: 15px;
-}
-
-button {
-  background: #DD9857;
-  padding: 10px 16px;
-  width: auto;
-  font-weight: 600;
-  text-transform: uppercase;
-  font-size: 14px;
-  color: #fff;
-  line-height: 16px;
-  letter-spacing: 0.5px;
-  border-radius: 2px;
-  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
-  border: 0;
-  outline: 0;
-  margin: 15px 15px 15px 0;
-  -webkit-transition: all 0.25s;
-  transition: all 0.25s;
-}
-
-button:hover {
-  background: #EFA45D;
-  -webkit-box-shadow: 0 4px 7px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
-          box-shadow: 0 4px 7px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
-}
-
-.off {
-  background: none;
-  color: #03a9f4;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-.right .off:hover {
-  background: #eee;
-  color: #03a9f4;
-  -webkit-box-shadow: none;
-          box-shadow: none;
-}
-
-.left .off:hover {
-  -webkit-box-shadow: none;
-          box-shadow: none;
-  color: #03a9f4;
-  background: #363a3d;
-}
-
-/* End Login-Register */
 .inbox-messenger-page {
   height: auto;
   width: 100%;
@@ -1134,6 +984,156 @@ button:hover {
   font-size: "Poppins", sans-serif;
 }
 
+/* Start Login-Register */
+.backRight {
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  background: #3498db url(https://images.unsplash.com/photo-1576176539998-0237d1ac6a85?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MXwxfDB8MXxhbGx8fHx8fHx8fA&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+.backLeft {
+  position: absolute;
+  left: 0;
+  width: 50%;
+  height: 100%;
+  background: #e74c3c url(https://images.unsplash.com/photo-1529230117010-b6c436154f25?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwxfDB8MXxhbGx8fHx8fHx8fHwxNjE3NzUzNjU1&ixlib=rb-1.2.1&q=80&w=1080&utm_source=unsplash_source&utm_medium=referral&utm_campaign=api-credit);
+  background-size: cover;
+  background-position: 50% 50%;
+}
+
+#back {
+  width: 100%;
+  height: 90%;
+  position: absolute;
+  z-index: -999;
+}
+
+#slideBox {
+  width: 50%;
+  height: 90%;
+  overflow: hidden;
+  margin-left: 50%;
+  position: absolute;
+  -webkit-box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+          box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+}
+
+.topLayer {
+  width: 200%;
+  height: 100%;
+  position: relative;
+  left: 0;
+  left: -100%;
+}
+
+.left {
+  width: 50%;
+  height: 100%;
+  background: #2c3034;
+  left: 0;
+  position: absolute;
+}
+
+.left .h2 {
+  color: #FFFFFF;
+}
+
+.right {
+  width: 50%;
+  height: 100%;
+  background: #f9f9f9;
+  right: 0;
+  position: absolute;
+}
+
+.content {
+  width: 100%;
+  height: 100%;
+  margin: 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.content h2 {
+  color: #292929;
+  font-weight: 300;
+  font-size: 35px;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 15px;
+}
+
+.content form {
+  width: 60%;
+}
+
+.content .btn-div {
+  width: 60%;
+  margin-top: 15px;
+}
+
+button {
+  background: #DD9857;
+  padding: 10px 16px;
+  width: auto;
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 14px;
+  color: #fff;
+  line-height: 16px;
+  letter-spacing: 0.5px;
+  border-radius: 2px;
+  -webkit-box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+  border: 0;
+  outline: 0;
+  margin: 15px 15px 15px 0;
+  -webkit-transition: all 0.25s;
+  transition: all 0.25s;
+}
+
+button:hover {
+  background: #EFA45D;
+  -webkit-box-shadow: 0 4px 7px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 4px 7px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
+}
+
+.off {
+  background: none;
+  color: #03a9f4;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.right .off:hover {
+  background: #eee;
+  color: #03a9f4;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.left .off:hover {
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  color: #03a9f4;
+  background: #363a3d;
+}
+
+/* End Login-Register */
 /* terms and condition */
 h1 {
   font-size: 1.4em;

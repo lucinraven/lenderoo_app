@@ -8,9 +8,6 @@
  * Time: 11:30 PM
  */
 
- /** @var $this \app\core\View */
- $this->title = 'Lenderoo';
-
 ?>
 
 <!---START OF CAROUSEL -->
