@@ -2,11 +2,13 @@
     height: auto;
     width: 100%;
     padding: 40px 0 80px 0;
+    background: $secondary-bg-color;
 
     .row {
         height: auto;
         width: 100%;
         background: $main-bg-color;
+        box-shadow: 2px 2px 15px 1px #d1d1d1;
     }
 
     .col-md-3 {
@@ -15,6 +17,7 @@
         border: solid;
         border-width: thin;
         border-color: #d1d1d1;
+        background: $main-bg-color;
 
         .left-header {
             padding-left: 15px;
@@ -36,7 +39,6 @@
             height: 550px;
             width: 100%;
             overflow-y: scroll;
-            background-color: cadetblue;
 
             .row {
                 height: auto;
@@ -90,6 +92,7 @@
         border-bottom: solid;
         border-width: thin;
         border-color: #d1d1d1;
+        background: $main-bg-color;
 
         .right-header {
             height: 80px;
@@ -132,11 +135,11 @@
             height: auto;
             width: 100%;
 
+
             .conversation-body {
                 height: 480px;
                 width: 100%;
                 overflow-y: auto;
-                background-color: rebeccapurple;
             }
 
             .conversation-message-input {
@@ -144,7 +147,6 @@
                 border-top: solid;
                 border-width: thin;
                 border-color: #d1d1d1;
-                background-color: bisque;
 
                 form {
                     height: 100%;
@@ -154,7 +156,7 @@
 
                 input {
                     margin: 15px;
-                    height: 40px;
+                    height: 35px;
                     width: 600px;
                     padding-left: 15px;
                     background: #ededed;
@@ -164,13 +166,15 @@
                     border-radius: 20px;
                     font-size: 16px;
                     color: #000000;
+                    outline: none;
                 }
 
                 .send-btn {
-                    margin-left: 15px;
+                    margin-left: 5px;
                     font-size: 24px;
                     color: #22b4ee;
                     background: none;
+                    border: none;
                     box-shadow: none;
                 }
                 .send-btn:hover {

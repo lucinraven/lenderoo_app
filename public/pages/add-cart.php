@@ -131,7 +131,7 @@ include 'includes/header.php';
                     <p>Aed/Day</p>
                 </div>
                 <div class="summary-footer">
-                    <button>Lease All Item</button>
+                    <button class="btn">Lease All Item</button>
                 </div>
             </div>
         </div>

@@ -168,6 +168,7 @@ body {
   height: auto;
   width: 100%;
   padding-bottom: 100px;
+  background: #f2f3f4;
 }
 
 .account-tabs .tab-view-pages {
@@ -492,6 +493,7 @@ body {
   height: auto;
   width: 100%;
   padding: 20px 0 100px 0;
+  background: #f2f3f4;
 }
 
 .add-cart-page .row {
@@ -505,7 +507,9 @@ body {
   border: solid;
   border-width: thin;
   border-color: #d1d1d1;
-  background-color: #FFFFFF;
+  background: #FFFFFF;
+  -webkit-box-shadow: 2px 2px 15px 1px #d1d1d1;
+          box-shadow: 2px 2px 15px 1px #d1d1d1;
 }
 
 .add-cart-page .row .col-md-9 .cart-list-header {
@@ -586,6 +590,8 @@ body {
   border-width: thin;
   border-color: #d1d1d1;
   background-color: #FFFFFF;
+  -webkit-box-shadow: 2px 2px 15px 1px #d1d1d1;
+          box-shadow: 2px 2px 15px 1px #d1d1d1;
 }
 
 .add-cart-page .row .col-md-3 .summary-content h1 {
@@ -598,17 +604,19 @@ body {
   padding-left: 15px;
 }
 
-.add-cart-page .row .col-md-3 .summary-footer button {
+.add-cart-page .row .col-md-3 .summary-footer .btn {
+  width: 100%;
   margin-top: 10px;
-  display: block;
   float: right;
   background-color: #DD9857;
   font-size: 14px;
   font-weight: 300;
   font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
+  color: #FFFFFF;
 }
 
-.add-cart-page .row .col-md-3 .summary-footer button:hover {
+.add-cart-page .row .col-md-3 .summary-footer .btn:hover {
   background-color: #ecaf75;
 }
 
@@ -726,12 +734,15 @@ body {
   height: auto;
   width: 100%;
   padding: 40px 0 80px 0;
+  background: #f2f3f4;
 }
 
 .inbox-messenger-page .row {
   height: auto;
   width: 100%;
   background: #FFFFFF;
+  -webkit-box-shadow: 2px 2px 15px 1px #d1d1d1;
+          box-shadow: 2px 2px 15px 1px #d1d1d1;
 }
 
 .inbox-messenger-page .col-md-3 {
@@ -740,6 +751,7 @@ body {
   border: solid;
   border-width: thin;
   border-color: #d1d1d1;
+  background: #FFFFFF;
 }
 
 .inbox-messenger-page .col-md-3 .left-header {
@@ -772,7 +784,6 @@ body {
   height: 550px;
   width: 100%;
   overflow-y: scroll;
-  background-color: cadetblue;
 }
 
 .inbox-messenger-page .col-md-3 .left-body .row {
@@ -833,6 +844,7 @@ body {
   border-bottom: solid;
   border-width: thin;
   border-color: #d1d1d1;
+  background: #FFFFFF;
 }
 
 .inbox-messenger-page .col-md-9 .right-header {
@@ -889,7 +901,6 @@ body {
   height: 480px;
   width: 100%;
   overflow-y: auto;
-  background-color: rebeccapurple;
 }
 
 .inbox-messenger-page .col-md-9 .right-body .conversation-message-input {
@@ -897,7 +908,6 @@ body {
   border-top: solid;
   border-width: thin;
   border-color: #d1d1d1;
-  background-color: bisque;
 }
 
 .inbox-messenger-page .col-md-9 .right-body .conversation-message-input form {
@@ -916,7 +926,7 @@ body {
 
 .inbox-messenger-page .col-md-9 .right-body .conversation-message-input input {
   margin: 15px;
-  height: 40px;
+  height: 35px;
   width: 600px;
   padding-left: 15px;
   background: #ededed;
@@ -926,13 +936,15 @@ body {
   border-radius: 20px;
   font-size: 16px;
   color: #000000;
+  outline: none;
 }
 
 .inbox-messenger-page .col-md-9 .right-body .conversation-message-input .send-btn {
-  margin-left: 15px;
+  margin-left: 5px;
   font-size: 24px;
   color: #22b4ee;
   background: none;
+  border: none;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
@@ -1165,6 +1177,131 @@ body {
 }
 
 /* End Login-Register */
+.payment-method-page {
+  height: auto;
+  width: 100%;
+  padding: 20px 0 100px 0;
+  background: #f2f3f4;
+}
+
+.payment-method-page .row {
+  margin: 10px 0;
+  width: 100%;
+}
+
+.payment-method-page .col-md-9 {
+  height: auto;
+  margin: 0;
+  padding: 0 0 15px 0;
+  border: solid;
+  border-width: thin;
+  border-color: #d1d1d1;
+  background: #FFFFFF;
+  -webkit-box-shadow: 2px 2px 15px 1px #d1d1d1;
+          box-shadow: 2px 2px 15px 1px #d1d1d1;
+}
+
+.payment-method-page .col-md-9 h1 {
+  font-size: 24px;
+  margin: 20px 0 20px 20px;
+}
+
+.payment-method-page .col-md-9 .payment-card-item {
+  height: auto;
+  width: 100%;
+  margin: 10px 0;
+  background-color: #FFFFFF;
+}
+
+.payment-method-page .col-md-9 .payment-card-item .card-header label {
+  padding-left: 15px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+.payment-method-page .col-md-9 .payment-card-item .card-header label:hover {
+  cursor: pointer;
+}
+
+.payment-method-page .col-md-9 .payment-card-item .collapse {
+  padding: 5px;
+}
+
+.payment-method-page .col-md-9 .payment-card-item .card-body {
+  height: 300px;
+  width: 100%;
+}
+
+.payment-method-page .col-md-9 .payment-card-item .card-body .col-2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.payment-method-page .col-md-9 .payment-card-item .card-body .col-2 label {
+  display: block;
+  margin: 0 auto;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+.payment-method-page .col-md-9 .payment-card-item .card-body input {
+  margin: 10px 0;
+  padding-left: 5px;
+  height: 30px;
+  width: 100%;
+  border-style: solid;
+  border-color: #d1d1d1;
+  outline: none;
+}
+
+.payment-method-page .col-md-3 {
+  height: auto;
+}
+
+.payment-method-page .col-md-3 .summary-content {
+  border: solid;
+  height: auto;
+  border-width: thin;
+  border-color: #d1d1d1;
+  background-color: #FFFFFF;
+  -webkit-box-shadow: 2px 2px 15px 1px #d1d1d1;
+          box-shadow: 2px 2px 15px 1px #d1d1d1;
+}
+
+.payment-method-page .col-md-3 .summary-content p {
+  margin: 10px 0 10px 15px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+.payment-method-page .col-md-3 .summary-content .summary-footer {
+  width: 100%;
+  background-color: darkorange;
+}
+
+.payment-method-page .col-md-3 .summary-content .summary-footer .btn {
+  width: 100%;
+  margin-top: 10px;
+  float: right;
+  background-color: #DD9857;
+  font-size: 14px;
+  font-weight: 300;
+  font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
+  color: #FFFFFF;
+}
+
+.payment-method-page .col-md-3 .summary-content .summary-footer .btn:hover {
+  background-color: #ecaf75;
+}
+
 /* terms and condition */
 h1 {
   font-size: 1.4em;
