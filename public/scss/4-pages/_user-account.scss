@@ -35,11 +35,12 @@
                 margin: 15px;
             }
             li {
+                margin: 9px;
                 list-style: none;
             }
 
             a {
-                padding: 10px 16px 10px 16px;
+                padding: 10px 16px 10px 0;
                 color: #000000;
                 font-family: $font-family;
                 font-weight: 600;
@@ -97,6 +98,7 @@
                     }
 
                     input {
+                        height: 25px;
                         width: 300px;
                         border: solid;
                         border-width: thin;
