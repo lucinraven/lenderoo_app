@@ -78,6 +78,12 @@ body {
           justify-content: space-between;
 }
 
+.main-header .nav-left b {
+  color: #DD9857;
+  text-transform: uppercase;
+  font-family: "Poppins", sans-serif;
+}
+
 .main-header .nav-center {
   width: 350px;
   display: -webkit-box;
@@ -96,27 +102,27 @@ body {
   margin-right: 15px;
 }
 
+.main-header .nav-center .btn {
+  background: #DD9857;
+}
+
 .main-header .nav-right li {
   margin-right: 25px;
 }
 
-.main-header .title {
-  font-size: 18px;
-  color: #fff;
-  font-family: Arial;
-  cursor: pointer;
-}
-
 .main-header .option {
   font-size: 16px;
-  color: #6d6f79;
   font-family: Arial;
   cursor: pointer;
 }
 
-.main-header .option .option:hover {
+.main-header .option a {
+  color: #FFFFFFFF;
+}
+
+.main-header .option a:hover {
   font-size: 16px;
-  color: #9598a7;
+  color: #EFA45D;
 }
 
 /* Footer */

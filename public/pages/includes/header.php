@@ -45,11 +45,10 @@
             <div class="nav-left">
                 <li class="title">
                     <a class="navbar-brand" href="../pages/index.php">
-                        <img src="https://mdbootstrap.com/img/logo/mdb-transaprent-noshadows.png" height="30" alt="" loading="lazy" />
+                       <b>Lenderoo</b>
                     </a>
                 </li>
-                <li class="option"> <a href="../pages/browser.php">Browse by Product</a></li>
-                <li class="option"> Lorem </li>
+                <li class="option"><a href="../pages/browser.php">Browse by Product</a></li>
             </div>
 
             <div class="nav-center">
@@ -70,7 +69,6 @@
                 <li class="option"><a href="../pages/add-cart.php"><i class="fas fa-shopping-cart"></i></a></li>
                 <li class="option"><a href="../pages/authentication.php">Login</a></li>
                 <li class="option"><a href="../pages/user-account.php">User Account</a></li>
-
             </div>
         </ul>
     </header>

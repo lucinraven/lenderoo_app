@@ -21,6 +21,12 @@
         width: 330px;
         @include center;
         justify-content: space-between;
+
+        b{
+            color: $primary;
+            text-transform: uppercase;
+            font-family: $font-family;
+        }
     }
 
     .nav-center {
@@ -31,28 +37,28 @@
             width: 100%;
             margin-right: 15px;
         }
+
+        .btn{
+            background: $primary;
+        }
     }
 
     .nav-right li {
         margin-right: 25px;
     }
 
-    .title {
-        font-size: 18px;
-        color: #fff;
-        font-family: Arial;
-        cursor: pointer;
-    }
-
     .option {
         font-size: 16px;
-        color: #6d6f79;
         font-family: Arial;
         cursor: pointer;
 
-        .option:hover {
+        a{
+            color: #FFFFFFFF;
+        }
+
+        a:hover {
             font-size: 16px;
-            color: #9598a7;
+            color: $primaryVariants;
         }
     }
 }
