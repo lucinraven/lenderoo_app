@@ -11,75 +11,79 @@ include 'includes/header.php';
 
 ?>
 <div class="view-item-page">
-    <div class="container-xl">
-        <!-- View item header -->
-        <div class="view-item-head">
-            <div class="row">
-                <div class="col-md-3">
-                    <div class="left-info">
-                        <h1>Item Product Name</h1>
-                        <ul>
-                            <li>
-                                <p>Overview: Test</p>
-                            </li>
-                            <li>
-                                <p>Brand: Test</p>
-                            </li>
-                            <li>
-                                <p>Age: Test</p>
-                            </li>
-                            <li>
-                                <p>Condition: Test</p>
-                            </li>
-                            <li>
-                                <p>Review: Test</p>
-                            </li>
-                        </ul>
+    <!-- View item header -->
+    <div class="view-item-head">
+        <div class="overlay">
+            <div class="container-lg">
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="left-info">
+                            <h1>Item Product Name</h1>
+                            <ul>
+                                <li>
+                                    <p>Overview: Test</p>
+                                </li>
+                                <li>
+                                    <p>Brand: Test</p>
+                                </li>
+                                <li>
+                                    <p>Age: Test</p>
+                                </li>
+                                <li>
+                                    <p>Condition: Test</p>
+                                </li>
+                                <li>
+                                    <p>Review: Test</p>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
-                </div>
-                <div class="col-md-5">
-                    <div class="img-main-ctn">
-                        <img src="" alt="" class="main-img">
-                    </div>
-                    <div class="img-showcase-ctn">
-                        <div class="row justify-content-center">
-                            <div class="col-md-2">
+
+                    <div class="col-md-5">
+                        <div class="img-main-ctn">
+                            <img src="" alt="" class="main-img">
+                        </div>
+                        <div class="img-showcase-ctn row">
+                            <div class="image-card">
                                 <img src="" alt="">
                             </div>
-                            <div class="col-md-2">
+                            <div class="image-card">
                                 <img src="" alt="">
                             </div>
-                            <div class="col-md-2">
+                            <div class="image-card">
                                 <img src="" alt="">
                             </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-3">
-                    <div class="right-info">
-                        <h1>50 AED/ Day</h1>
-                        <ul>
-                            <li>
-                                <p>Leaser Information: Test</p>
-                            </li>
-                            <li>
-                                <p>Company: Test</p>
-                            </li>
-                            <li>
-                                <p>Address: Test</p>
-                            </li>
-                            <li>
-                                <p>City: Test</p>
-                            </li>
-                            <li>
-                                <p>Review: Test</p>
-                            </li>
-                        </ul>
+
+                    <div class="col-md-3">
+                        <div class="right-info">
+                            <h1>50 AED/ Day</h1>
+                            <ul>
+                                <li>
+                                    <p>Leaser Information: Test</p>
+                                </li>
+                                <li>
+                                    <p>Company: Test</p>
+                                </li>
+                                <li>
+                                    <p>Address: Test</p>
+                                </li>
+                                <li>
+                                    <p>City: Test</p>
+                                </li>
+                                <li>
+                                    <p>Review: Test</p>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
+    <div class="container-lg">
         <!-- View item body -->
         <div class="view-item-body">
             <div class="desc-scrip-ctn">
@@ -179,7 +183,7 @@ include 'includes/header.php';
                     <form action="">
                         <textarea name="post-review" id="" cols="30" rows="10"></textarea>
 
-                        <input type="button" value="Post">
+                        <input class="btn" type="button" value="Post">
                     </form>
                 </div>
             </div>
