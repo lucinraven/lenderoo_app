@@ -710,6 +710,18 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+.browser-page-ctn .pagination-footer {
+  padding: 10px;
+}
+
+.browser-page-ctn .pagination-footer ul {
+  margin: 0;
+}
+
+.browser-page-ctn .pagination-footer a {
+  font-size: 16px;
+}
+
 .inbox-messenger-page {
   height: auto;
   width: 100%;

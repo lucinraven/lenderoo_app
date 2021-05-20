@@ -87,4 +87,16 @@
       }
     }
   }
+  
+  .pagination-footer{
+    padding: 10px;
+    
+    ul{ 
+      margin: 0;
+    }
+
+    a{
+      font-size: 16px;
+    }
+  }
 }
