@@ -2,116 +2,119 @@
     height: auto;
     width: 100%;
     padding-bottom: 100px;
-    background: $primary;
+    background: $main-bg-color;
 
-    .container-xl{
-        height: auto;
-        padding: 0 50px;
-    
-        .view-item-head{
-            width: 100%;
-       
-            .row{
-                margin: 0;
-                background-color: $secondaryVariant;
-                display: flex;
-                justify-content: center;
-                align-self: center;
+    .overlay{
+        height: 100%;
+        width: 100%;
+        padding: 30px 0;
+        background: #000000;
+        opacity: .9;
+    }
+
+    .view-item-head{
+        width: 100%;
+        background: url('../../images/tools.jpg');
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        .row{
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-self: center;
+        }
+
+        .col-md-5{
+            height: auto;
+
+            .img-main-ctn{
+                height: 400px;
+                width: 100%;
+                margin: 5px 0;
+                @include center;
             }
-            .col-md-5{
+
+            .main-img{
+                height: 100%;
+                width: 400px;
+                background: $primary;
+            }
+
+            .img-showcase-ctn{
                 height: auto;
-                background-color: pink;
+                width: 100%;
+                margin: 5px 0;
 
-                .img-main-ctn{
-                    height: 380px;
-                    width: 100%;
-                    margin: 5px 0;
-                    box-sizing: content-box;
-                    background: chocolate;
-                }
-
-                .main-img{
-                    height: 100%;
-                    width: 100%;
-                    padding: 10px;
-                }
-
-                .img-showcase-ctn{
-                    height: auto;
-                    width: 100%;
-                    margin: 5px 0;
-                    background: khaki;
-                    
-                    .row{
-                        height: 110px;
-                        margin: 0 auto;
-                    }
-
-                    .col-md-2{
-                        margin: 5px;
-                        display: block;
-                        background-color: lawngreen;
-                    }
-                }
-            }
-            .col-md-3{
-                background: red;
-
-                .left-info{
-                    height: 100%;
-                    width: 100%;
-                    padding: 60px 0;
-
-                    h1{
-                        margin: 0;
-                        padding: 50px 5px;
-                        text-align: center;
-                        font-size: 30px;
-                        font-family: $font-family;
-                        color: $font-color;
-                    }
-                    ul{
-                        margin: 20px 0;
-                    }
-                    li{
-                        list-style-type: none;
-                    }
-                    p{
-                        margin-bottom: 12px;
-                        font-size: 16px;
-                        font-family: $font-family;
-                        color: $font-color;
-                    }
-                }
-                .right-info{
-                    height: 100%;
-                    width: 100%;
-                    padding: 60px 0;
-                  
-                    h1{
-                        margin: 0;
-                        padding: 50px 5px;
-                        text-align: center;
-                        font-size: 30px;
-                        font-family: $font-family;
-                        color: $primaryVariants;
-                    }
-                    ul{
-                        margin: 20px 0;
-                    }
-                    li{
-                        list-style-type: none;
-                    }
-                    p{
-                        margin-bottom: 12px;
-                        font-size: 16px;
-                        font-family: $font-family;
-                        color: $font-color;
-                    }
+                .image-card{
+                    height: 90px;
+                    width: 100px;
+                    margin: 5px;
+                    display: block;
+                    background-color: $primary;
                 }
             }
         }
+        .col-md-3{
+            .left-info{
+                height: 100%;
+                width: 100%;
+                padding: 60px 0;
 
+                h1{
+                    margin: 0;
+                    padding: 50px 5px;
+                    text-align: center;
+                    font-size: 26px;
+                    font-family: $font-family;
+                    color: $font-color;
+                }
+                ul{
+                    margin: 20px 0;
+                }
+                li{
+                    list-style-type: none;
+                }
+                p{
+                    margin-bottom: 12px;
+                    font-size: 16px;
+                    font-family: $font-family;
+                    color: $font-color;
+                }
+            }
+            .right-info{
+                height: 100%;
+                width: 100%;
+                padding: 60px 0;
+              
+                h1{
+                    margin: 0;
+                    padding: 50px 5px;
+                    text-align: center;
+                    font-size: 26px;
+                    font-family: $font-family;
+                    color: $primaryVariants;
+                }
+                ul{
+                    margin: 20px 0;
+                }
+                li{
+                    list-style-type: none;
+                }
+                p{
+                    margin-bottom: 12px;
+                    font-size: 16px;
+                    font-family: $font-family;
+                    color: $font-color;
+                }
+            }
+        }
+    }
+
+    .container-lg{
+        height: auto;
+        padding: 0 50px;
+    
         .view-item-body{    
             height: auto;
             width: 100%;
@@ -189,6 +192,22 @@
                     width: 150px;
                     height: 30px;
                     background-color: aqua;
+                }
+
+                .btn {
+                    height: 40px;
+                    width: 150px;
+                    margin-top: 10px;
+                    float: right;
+                    background-color: $primary;
+                    font-size: 14px;
+                    font-weight: 300;
+                    font-family: $font-family;
+                    text-transform: capitalize;
+                    color: $heading-color;
+                }
+                .btn:hover {
+                    background-color: #ecaf75;
                 }
             }
         }
