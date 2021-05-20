@@ -519,8 +519,8 @@ body {
 }
 
 .add-cart-page .row .col-md-9 .cart-list-header h1 {
-  font-size: 24px;
   padding-left: 15px;
+  font-size: 24px;
 }
 
 .add-cart-page .row .col-md-9 .cart-list {
@@ -573,6 +573,16 @@ body {
           flex-direction: column;
 }
 
+.add-cart-page .row .col-md-9 .cart-item .middle-content h2 {
+  font-size: 18px;
+  font-family: "Poppins", sans-serif;
+}
+
+.add-cart-page .row .col-md-9 .cart-item .middle-content p {
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+}
+
 .add-cart-page .row .col-md-9 .cart-item .right-content {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -583,6 +593,8 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
 }
 
 .add-cart-page .row .col-md-3 .summary-content {

@@ -1,40 +1,40 @@
-.add-cart-page{
+.add-cart-page {
     height: auto;
     width: 100%;
     padding: 20px 0 100px 0;
     background: $secondary-bg-color;
-    
-    .row{
+
+    .row {
         margin: 0;
         height: auto;
         width: 100%;
 
-        .col-md-9{
+        .col-md-9 {
             padding: 0;
             border: solid;
             border-width: thin;
             border-color: #d1d1d1;
             background: $main-bg-color;
             box-shadow: 2px 2px 15px 1px #d1d1d1;
-         
-            .cart-list-header{
+
+            .cart-list-header {
                 border-bottom: solid;
                 border-width: thin;
                 border-color: #d1d1d1;
 
-                h1{
-                    font-size: 24px;
+                h1 {
                     padding-left: 15px;
+                    font-size: 24px;
                     $font-family: $font-family;
                 }
             }
-         
-            .cart-list{
+
+            .cart-list {
                 height: auto;
                 width: 100%;
             }
 
-            .cart-item{
+            .cart-item {
                 margin-top: 10px;
                 padding: 5px;
                 height: 150px;
@@ -43,55 +43,64 @@
                 border-width: thin;
                 border-color: #d1d1d1;
 
-                .left-content{
-                    padding: 10px;  
+                .left-content {
+                    padding: 10px;
                     @include center;
 
-                    img{
+                    img {
                         height: 100%;
                         width: 100%;
-                        background-color: darkgray  ;
+                        background-color: darkgray;
                     }
-    
                 }
-          
-                .middle-content{
+
+                .middle-content {
                     display: flex;
                     justify-content: center;
                     align-items: flex-start;
                     flex-direction: column;
+
+                    h2 {
+                        font-size: 18px;
+                        font-family: $font-family;
+                    }
+
+                    p {
+                        font-size: 14px;
+                        font-family: $font-family;
+                    }
                 }
 
-                .right-content{
-                   @include center;
+                .right-content {
+                    @include center;
+                    font-size: 14px;
+                    font-family: $font-family;
                 }
             }
         }
-    
-        .col-md-3{
-            
-            .summary-content{
+
+        .col-md-3 {
+            .summary-content {
                 border: solid;
                 border-width: thin;
                 border-color: #d1d1d1;
                 background-color: $main-bg-color;
-            box-shadow: 2px 2px 15px 1px #d1d1d1;
+                box-shadow: 2px 2px 15px 1px #d1d1d1;
 
-                h1{
+                h1 {
                     font-size: 24px;
                     padding-left: 15px;
                     $font-family: $font-family;
                 }
 
-                p{
+                p {
                     font-size: 16px;
                     padding-left: 15px;
                     $font-family: $font-family;
                 }
             }
-            .summary-footer{
-
-                .btn{
+            .summary-footer {
+                .btn {
                     width: 100%;
                     margin-top: 10px;
                     float: right;
@@ -102,11 +111,10 @@
                     text-transform: capitalize;
                     color: $heading-color;
                 }
-                .btn:hover{
+                .btn:hover {
                     background-color: #ecaf75;
                 }
             }
         }
-    
     }
 }

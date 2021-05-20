@@ -35,7 +35,6 @@ include 'includes/header.php';
 
                         <div class="right-content col-md-2">
                             <p>AED/Day</p>
-
                         </div>
                     </div>
 
