@@ -2,6 +2,7 @@
     height: auto;
     width: 100%;
     padding-bottom: 100px;
+    background: $secondary-bg-color;
 
     .tab-view-pages{
         height: 100vh;
@@ -70,10 +71,8 @@
                         border-radius: 50px;
                         background-color: $primary;
                     }
-
                 }
 
-            
                 .right-content{
                     height: 100%;
                     display: flex;
@@ -93,7 +92,6 @@
                     }
                 }
 
-                
                 .delete-btn{
                     @include center;
 
