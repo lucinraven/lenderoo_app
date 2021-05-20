@@ -17,7 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="../../css/mainStylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="../../public/css/mainStylesheet.css" />
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" />
     <!-- Font Awesome -->
