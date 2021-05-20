@@ -1,0 +1,135 @@
+.view-order-page {
+    height: auto;
+    width: 100%;
+    padding: 20px 0 100px 0;
+    background: $secondary-bg-color;
+
+    .order-details {
+        height: auto;
+        width: 100%;
+        margin: 0 auto;
+
+        .col-md-8 {
+            padding: 0 8px 8px 0;
+
+            .left-column {
+                height: 100%;
+                width: 100%;
+                border: solid;
+                border-width: thin;
+                border-color: #d1d1d1;
+                background: $main-bg-color;
+            }
+
+            .content-header {
+                border-bottom: solid;
+                border-width: thin;
+                border-color: #d1d1d1;
+
+                h1 {
+                    margin-left: 15px;
+                    font-size: 20px;
+                    font-family: $font-family;
+                }
+            }
+
+            .content-body {
+                height: 100%;
+                display: flex;
+                flex-direction: row;
+
+                .left-content {
+                    height: 100%;
+                    width: 100%;
+                    margin: 15px 0 15px 15px;
+
+                    p {
+                        font-size: 14px;
+                        font-family: $font-family;
+                    }
+                }
+
+                .right-content {
+                    @extend .left-content;
+                }
+            }
+        }
+
+        .col-md-4 {
+            padding: 0 0 8px 0;
+
+            .right-column {
+                height: 100%;
+                width: 100%;
+                border: solid;
+                border-width: thin;
+                border-color: #d1d1d1;
+                background: $main-bg-color;
+            }
+
+            .content-header {
+                border-bottom: solid;
+                border-width: thin;
+                border-color: #d1d1d1;
+
+                h1 {
+                    margin-left: 15px;
+                    font-size: 20px;
+                    font-family: $font-family;
+                }
+            }
+
+            .content-body {
+                height: 100%;
+
+                p {
+                    margin: 15px 0 15px 15px;
+                    font-size: 14px;
+                    font-family: $font-family;
+                }
+            }
+        }
+    }
+
+    .ordered-item {
+        height: 500px;
+        width: 100%;
+        margin: 0 auto;
+
+        .ordered-card-item {
+            padding: 0;
+            border: solid;
+            border-width: thin;
+            border-color: #d1d1d1;
+            background: $main-bg-color;
+
+            .content-header {
+                width: 100%;
+                border-bottom: solid;
+                border-width: thin;
+                border-color: #d1d1d1;
+
+                h1 {
+                    margin-left: 15px;
+                    font-size: 20px;
+                    font-family: $font-family;
+                }
+            }
+
+            .content-body {
+                padding: 5px;
+                .product-information-table {
+                    height: auto;
+                    width: 100%;
+                }
+                th,
+                td {
+                    padding: 8px;
+                    text-align: center;
+                    border: 1px solid #d1d1d1;
+                    font-family: $font-family;
+                }
+            }
+        }
+    }
+}
