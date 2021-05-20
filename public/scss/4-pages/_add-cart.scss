@@ -2,7 +2,8 @@
     height: auto;
     width: 100%;
     padding: 20px 0 100px 0;
-
+    background: $secondary-bg-color;
+    
     .row{
         margin: 0;
         height: auto;
@@ -13,8 +14,9 @@
             border: solid;
             border-width: thin;
             border-color: #d1d1d1;
-            background-color: $main-bg-color;
-        
+            background: $main-bg-color;
+            box-shadow: 2px 2px 15px 1px #d1d1d1;
+         
             .cart-list-header{
                 border-bottom: solid;
                 border-width: thin;
@@ -67,12 +69,13 @@
         }
     
         .col-md-3{
-
+            
             .summary-content{
                 border: solid;
                 border-width: thin;
                 border-color: #d1d1d1;
                 background-color: $main-bg-color;
+            box-shadow: 2px 2px 15px 1px #d1d1d1;
 
                 h1{
                     font-size: 24px;
@@ -88,16 +91,18 @@
             }
             .summary-footer{
 
-                button{
+                .btn{
+                    width: 100%;
                     margin-top: 10px;
-                    display: block;
                     float: right;
                     background-color: $primary;
                     font-size: 14px;
                     font-weight: 300;
                     font-family: $font-family;
+                    text-transform: capitalize;
+                    color: $heading-color;
                 }
-                button:hover{
+                .btn:hover{
                     background-color: #ecaf75;
                 }
             }

@@ -1,0 +1,116 @@
+.payment-method-page {
+    height: auto;
+    width: 100%;
+    padding: 20px 0 100px 0;
+    background: $secondary-bg-color;
+
+    .row {
+        margin: 10px 0;
+        width: 100%;
+    }
+
+    .col-md-9 {
+        height: auto;
+        margin: 0;
+        padding: 0 0 15px 0;
+        border: solid;
+        border-width: thin;
+        border-color: #d1d1d1;
+        background: $main-bg-color;
+        box-shadow: 2px 2px 15px 1px #d1d1d1;
+
+        h1 {
+            font-size: 24px;
+            $font-family: $font-family;
+            margin: 20px 0 20px 20px;
+        }
+
+        .payment-card-item {
+            height: auto;
+            width: 100%;
+            margin: 10px 0;
+            background-color: $main-bg-color;
+
+            .card-header {
+                label {
+                    padding-left: 15px;
+                    font-size: 16px;
+                    font-family: $font-family;
+                }
+
+                label:hover {
+                    cursor: pointer;
+                }
+            }
+
+            .collapse {
+                padding: 5px;
+            }
+
+            .card-body {
+                height: 300px;
+                width: 100%;
+
+                .col-2 {
+                    @include center;
+
+                    label {
+                        display: block;
+                        margin: 0 auto;
+                        font-size: 16px;
+                        font-family: $font-family;
+                    }
+                }
+
+                input {
+                    margin: 10px 0;
+                    padding-left: 5px;
+                    height: 30px;
+                    width: 100%;
+                    border-style: solid;
+                    border-color: #d1d1d1;
+                    outline: none;
+                }
+            }
+        }
+    }
+
+    .col-md-3 {
+        height: auto;
+
+        .summary-content {
+            border: solid;
+            height: auto;
+            border-width: thin;
+            border-color: #d1d1d1;
+            background-color: $main-bg-color;
+            box-shadow: 2px 2px 15px 1px #d1d1d1;
+
+            p {
+                margin: 10px 0 10px 15px;
+                font-size: 16px;
+                font-family: $font-family;
+            }
+
+            .summary-footer {
+                width: 100%;
+                background-color: darkorange;
+
+                .btn {
+                    width: 100%;
+                    margin-top: 10px;
+                    float: right;
+                    background-color: $primary;
+                    font-size: 14px;
+                    font-weight: 300;
+                    font-family: $font-family;
+                    text-transform: capitalize;
+                    color: $heading-color;
+                }
+                .btn:hover {
+                    background-color: #ecaf75;
+                }
+            }
+        }
+    }
+}
