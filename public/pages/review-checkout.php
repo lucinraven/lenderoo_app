@@ -15,7 +15,6 @@ include 'includes/header.php';
         <div class="row">
             <div class="col-md-9">
                 <!-- left-content-row-1 -->
-
                 <div class="left-content-row-1">
                     <div class="content-header">
                         <h1>Review Item</h1>
