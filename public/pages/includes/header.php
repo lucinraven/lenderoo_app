@@ -36,6 +36,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+
+    <!-- Slick Slider -->
+    <link rel="stylesheet" type="text/css" href="slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="slick/slick-theme.css" />
 </head>
 
 <body>
@@ -45,7 +49,7 @@
             <div class="nav-left">
                 <li class="title">
                     <a class="navbar-brand" href="../pages/index.php">
-                       <b>Lenderoo</b>
+                        <b>Lenderoo</b>
                     </a>
                 </li>
                 <li class="option"><a href="../pages/browser.php">Browse by Product</a></li>

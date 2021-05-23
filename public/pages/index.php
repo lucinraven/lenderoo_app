@@ -15,7 +15,6 @@ include 'includes/header.php';
 <!---START OF CAROUSEL -->
 <!--Section: Block Content-->
 <section>
-
   <!--Carousel Wrapper-->
   <div id="carousel-example-2" class="carousel slide carousel-fade" data-ride="carousel">
     <!--Indicators-->
@@ -30,7 +29,7 @@ include 'includes/header.php';
     <div class="carousel-inner" role="listbox">
       <div class="carousel-item active">
         <div class="view">
-          <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Others/clothes(5)-crop.jpg" alt="First slide">
+          <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Others/clothes(5)-crop.jpg" alt="First slide" />
           <a href="#!">
             <div class="mask rgba-black-light"></div>
           </a>
@@ -38,14 +37,15 @@ include 'includes/header.php';
 
         <div class="carousel-caption">
           <h3 class="h3-responsive">First shop item</h3>
-          <p>First text</p>z
+          <p>First text</p>
+          z
         </div>
       </div>
 
       <div class="carousel-item">
         <!--Mask color-->
         <div class="view">
-          <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Others/clothes(4)-crop.jpg" alt="Second slide">
+          <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Others/clothes(4)-crop.jpg" alt="Second slide" />
           <a href="#!">
             <div class="mask rgba-black-light"></div>
           </a>
@@ -60,7 +60,7 @@ include 'includes/header.php';
       <div class="carousel-item">
         <!--Mask color-->
         <div class="view">
-          <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Others/clothes(3)-crop.jpg" alt="Third slide">
+          <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Others/clothes(3)-crop.jpg" alt="Third slide" />
           <a href="#!">
             <div class="mask rgba-black-light"></div>
           </a>
@@ -96,206 +96,131 @@ include 'includes/header.php';
 <div class="index-pg-body">
   <div class="container-lg">
     <div class="items-showcase">
+      <!-- Showcased Row -->
       <div class="row">
-        <h1>Featured Items</h1>
-        <!-- Product Widget Showcase-->
-        <div class="item-widget">
-          <img src="" alt="">
-
-          <h2>Title</h2>
-          <p>50 Aed/Day</p>
-        </div>
-
-        <div class="item-widget">
-          <img src="" alt="">
-
-          <h2>Title</h2>
-          <p>50 Aed/Day</p>
-        </div>
-
-        <div class="item-widget">
-          <img src="" alt="">
-
-          <h2>Title</h2>
-          <p>50 Aed/Day</p>
-        </div>
-
-        <div class="item-widget">
-          <img src="" alt="">
-
-          <h2>Title</h2>
-          <p>50 Aed/Day</p>
-        </div>
-
-        <div class="item-widget">
-          <img src="" alt="">
-
-          <h2>Title</h2>
-          <p>50 Aed/Day</p>
-        </div>
-      </div>
-
-      <div class="row">
-        <h1>Frequently Borrowed Items</h1>
-
-        <!-- Product Widget Showcase-->
-        <div class="item-widget">
-          <img src="" alt="">
-
-          <h2>Title</h2>
-          <p>50 Aed/Day</p>
-        </div>
-
-        <div class="item-widget">
-          <img src="" alt="">
-
-          <h2>Title</h2>
-          <p>50 Aed/Day</p>
-        </div>
-
-        <div class="item-widget">
-          <img src="" alt="">
-
-          <h2>Title</h2>
-          <p>50 Aed/Day</p>
-        </div>
-
-        <div class="item-widget">
-          <img src="" alt="">
-
-          <h2>Title</h2>
-          <p>50 Aed/Day</p>
-        </div>
-
-        <div class="item-widget">
-          <img src="" alt="">
-
-          <h2>Title</h2>
-          <p>50 Aed/Day</p>
-        </div>
-
-      </div>
-
-      <div class="row">
-        <h1>Bundles</h1>
-        <!-- Product Widget Showcase-->
-        <div class="item-widget">
-          <img src="" alt="">
-
-          <h2>Title</h2>
-          <p>50 Aed/Day</p>
-        </div>
-
-        <div class="item-widget">
-          <img src="" alt="">
-
-          <h2>Title</h2>
-          <p>50 Aed/Day</p>
-        </div>
-
-        <div class="item-widget">
-          <img src="" alt="">
-
-          <h2>Title</h2>
-          <p>50 Aed/Day</p>
-        </div>
-
-        <div class="item-widget">
-          <img src="" alt="">
-
-          <h2>Title</h2>
-          <p>50 Aed/Day</p>
-        </div>
-
-        <div class="item-widget">
-          <img src="" alt="">
-
-          <h2>Title</h2>
-          <p>50 Aed/Day</p>
-        </div>
-      </div>
-      
-      <div class="row">
-        <h1>Popular Items</h1>
+        <h1>Featured</h1>
         <!-- Product Widget Showcase-->
         <a class="view-item" href="../pages/view-items.php">
-          <div class="item-widget">
-            <img src="" alt="">
+          <img src="" alt="" />
 
-            <h2>Title</h2>
-            <p>50 Aed/Day</p>
-          </div>
+          <h2>Title</h2>
+          <p>50 Aed/Day</p>
+        </a>
+
+        <a class="view-item" href="../pages/view-items.php">
+          <img src="" alt="" />
+
+          <h2>Title</h2>
+          <p>50 Aed/Day</p>
+        </a>
+
+        <a class="view-item" href="../pages/view-items.php">
+          <img src="" alt="" />
+
+          <h2>Title</h2>
+          <p>50 Aed/Day</p>
+        </a>
+
+        <a class="view-item" href="../pages/view-items.php">
+          <img src="" alt="" />
+
+          <h2>Title</h2>
+          <p>50 Aed/Day</p>
+        </a>
+        <a class="view-item" href="../pages/view-items.php">
+          <img src="" alt="" />
+
+          <h2>Title</h2>
+          <p>50 Aed/Day</p>
         </a>
       </div>
-    </div>
-  </div>
 
-<!--
-  <div class="row mx-auto my-auto">
+      <!-- Showcased Row -->
+      <div class="row">
+        <h1>Frequently Borrowed Items</h1>
+        <!-- Product Widget Showcase-->
+        <a class="view-item" href="../pages/view-items.php">
+          <img src="" alt="" />
 
-    <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
-      <div class="carousel-inner w-100" role="listbox">
-        <div class="carousel-item active">
-          <div class="col-md-4">
-            <div class="card card-body">
-              <img class="img-fluid" src="http://placehold.it/280x350?text=1">
-            </div>
-          </div>
-        </div>
+          <h2>Title</h2>
+          <p>50 Aed/Day</p>
+        </a>
 
-        <div class="carousel-item">
-          <div class="col-md-4">
-            <div class="card card-body">
-              <img class="img-fluid" src="http://placehold.it/280x350?text=2">
-            </div>
-          </div>
-        </div>
+        <a class="view-item" href="../pages/view-items.php">
+          <img src="" alt="" />
 
-        <div class="carousel-item">
-          <div class="col-md-4">
-            <div class="card card-body">
-              <img class="img-fluid" src="http://placehold.it/280x350?text=3">
-            </div>
-          </div>
-        </div>
+          <h2>Title</h2>
+          <p>50 Aed/Day</p>
+        </a>
 
-        <div class="carousel-item">
-          <div class="col-md-4">
-            <div class="card card-body">
-              <img class="img-fluid" src="http://placehold.it/280x350?text=4">
-            </div>
-          </div>
-        </div>
+        <a class="view-item" href="../pages/view-items.php">
+          <img src="" alt="" />
 
-        <div class="carousel-item">
-          <div class="col-md-4">
-            <div class="card card-body">
-              <img class="img-fluid" src="http://placehold.it/280x350?text=5">
-            </div>
-          </div>
-        </div>
+          <h2>Title</h2>
+          <p>50 Aed/Day</p>
+        </a>
 
-        <div class="carousel-item">
-          <div class="col-md-4">
-            <div class="card card-body">
-              <img class="img-fluid" src="http://placehold.it/280x350?text=6">
-            </div>
-          </div>
-        </div>
+        <a class="view-item" href="../pages/view-items.php">
+          <img src="" alt="" />
+
+          <h2>Title</h2>
+          <p>50 Aed/Day</p>
+        </a>
+        <a class="view-item" href="../pages/view-items.php">
+          <img src="" alt="" />
+
+          <h2>Title</h2>
+          <p>50 Aed/Day</p>
+        </a>
       </div>
 
-      <a class="carousel-control-prev w-auto" href="#recipeCarousel" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="carousel-control-next w-auto" href="#recipeCarousel" role="button" data-slide="next">
-        <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
+      <!-- Showcased Row -->
+      <div class="row slick-class" data-slick='{"slidesToShow": 4, "slidesToScroll": 4}'>
+        <!-- Product Widget Showcase-->
+        <a class="view-item" href="../pages/view-items.php">
+          <img src="" alt="" />
+
+          <h2>Title</h2>
+          <p>50 Aed/Day</p>
+        </a>
+
+        <a class="view-item" href="../pages/view-items.php">
+          <img src="" alt="" />
+
+          <h2>Title</h2>
+          <p>50 Aed/Day</p>
+        </a>
+
+        <a class="view-item" href="../pages/view-items.php">
+          <img src="" alt="" />
+
+          <h2>Title</h2>
+          <p>50 Aed/Day</p>
+        </a>
+
+        <a class="view-item" href="../pages/view-items.php">
+          <img src="" alt="" />
+
+          <h2>Title</h2>
+          <p>50 Aed/Day</p>
+        </a>
+        <a class="view-item" href="../pages/view-items.php">
+          <img src="" alt="" />
+
+          <h2>Title</h2>
+          <p>50 Aed/Day</p>
+        </a>
+
+      </div>
     </div>
   </div>
--->
 </div>
+
+<!-- Slick javascript -->
+<script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+<script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+<script type="text/javascript" src="slick/slick.min.js"></script>
+
 
 <?php
 

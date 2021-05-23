@@ -943,6 +943,7 @@ body {
 }
 
 .index-pg-body {
+  background: #f2f3f4;
   padding: 15px 15px 100px 15px;
 }
 
@@ -950,7 +951,6 @@ body {
   height: auto;
   width: auto;
   padding: 5px 0 5px 0;
-  background-color: red;
 }
 
 .index-pg-body .container-lg .items-showcase {
@@ -959,55 +959,53 @@ body {
 }
 
 .index-pg-body .container-lg .row {
-  margin: 0;
-  padding: 0;
-  background-color: salmon;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  margin: 10px;
+  border: solid;
+  border-width: thin;
+  border-color: #d1d1d1;
+  background-color: #FFFFFF;
 }
 
 .index-pg-body .container-lg .row h1 {
   margin: 0;
-  font-size: 20px;
+  padding: 15px 15px 15px 25px;
+  font-size: 24px;
   font-size: "Poppins", sans-serif;
+  border-bottom: solid;
+  border-width: thin;
+  border-color: #d1d1d1;
 }
 
-.index-pg-body .container-lg .row a {
-  margin: 0px;
-  padding: 0;
-}
-
-.index-pg-body .container-lg .row .item-widget {
+.index-pg-body .container-lg .row .view-item {
+  margin: 10px auto;
+  padding: 10px;
   height: auto;
   width: 190px;
-  margin: 10px;
-  background-color: seagreen;
+  display: inline-block;
+  background-color: #f2f3f4;
+  border: solid;
+  border-width: thin;
+  border-color: #d1d1d1;
 }
 
-.index-pg-body .container-lg .row .item-widget img {
+.index-pg-body .container-lg .row .view-item img {
   display: block;
   height: 120px;
   width: 100%;
-  margin: 10px auto;
-  background-color: skyblue;
+  background-color: #DD9857;
 }
 
-.index-pg-body .container-lg .row .item-widget h2 {
+.index-pg-body .container-lg .row .view-item h2 {
   margin-top: 10px;
   font-size: 20px;
   font-size: "Poppins", sans-serif;
+  color: #DD9857;
 }
 
-.index-pg-body .container-lg .row .item-widget p {
+.index-pg-body .container-lg .row .view-item p {
   font-size: 14px;
   font-size: "Poppins", sans-serif;
+  color: #000000;
 }
 
 .payment-method-page {
