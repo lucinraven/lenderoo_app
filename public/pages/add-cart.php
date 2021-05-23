@@ -130,7 +130,8 @@ include 'includes/header.php';
                     <p>Aed/Day</p>
                 </div>
                 <div class="summary-footer">
-                    <button class="btn">Lease All Item</button>
+                    <a href="../pages/payment-method.php"><button class="btn">Lease All Item</button></a>
+                   
                 </div>
             </div>
         </div>

@@ -1,11 +1,11 @@
 .index-pg-body {
+    background: $secondary-bg-color;
     padding: 15px 15px 100px 15px;
 
     .container-lg {
         height: auto;
         width: auto;
         padding: 5px 0 5px 0;
-        background-color: red;
 
         .items-showcase{
             width: auto;
@@ -13,47 +13,59 @@
         }
 
         .row {
-            margin: 0;
-            padding: 0;
-            background-color: salmon;
-            @include center;
+            margin: 10px;
+            border: solid;
+            border-width: thin;
+            border-color: #d1d1d1;
+            background-color: $main-bg-color;
 
             h1 {
                 margin: 0;
-                font-size: 20px;
+                padding: 15px 15px 15px 25px;
+                font-size: 24px;
                 font-size: $font-family;
+                border-bottom: solid;
+                border-width: thin;
+                border-color: #d1d1d1;
             }
 
-            a{
-                margin: 0px;
-                padding: 0;
-            }
-
-            .item-widget {
+            .view-item{
+                margin: 10px auto;
+                padding: 10px;
                 height: auto;
                 width: 190px;
-                margin: 10px;
-                background-color: seagreen;
+                display: inline-block;
+                background-color: $secondary-bg-color;
+                border: solid;
+                border-width: thin;
+                border-color: #d1d1d1;
 
                 img {
                     display: block;
                     height: 120px;
                     width: 100%;
-                    margin: 10px auto;
-                    background-color: skyblue;
+                    background-color: $primary;
                 }
 
                 h2 {
                     margin-top: 10px;
                     font-size: 20px;
                     font-size: $font-family;
+                    color: $primary;
                 }
 
                 p {
                     font-size: 14px;
                     font-size: $font-family;
+                    color: #000000;
                 }
             }
+
+            .view-items:hover{
+
+            }
+
+    
         }
     }
 }
