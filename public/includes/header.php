@@ -71,11 +71,15 @@ require '../../private/config/config.php'
                 <li class="option"><a href="../pages/account-tabs.php"><i class="fas fa-bookmark"></i></a></li>
                 <li class="option"><a href="../pages/inbox-messenger.php"><i class="fas fa-inbox"></i></a></li>
                 <li class="option"><a href="../pages/add-cart.php"><i class="fas fa-shopping-cart"></i></a></li>
-                <?php
-                if (isset($_SESSION['email'])) {
-                    echo '<li class="option"><a href="../pages/user-account.php">User Account</a></li>';
-                } else {
-                    echo '<li class="option"><a href="../pages/authentication.php">Login</a></li>';
+                <?php if(isset($_SESSION['email'])){
+                    echo '<div class="dropdown">
+                    <button class="btn drop-btn">'. $_SESSION["email"] .'</button>
+                    <div class="dropdown-content">
+                        <a href="user-account.php">My Account</a>
+                        <a href="../../private/includes/handler/logout.php">Logout</a>
+                    </div>
+                </div>'; } else {
+                    echo '<a href="login.php" class="btn btn-primary">Login or Sign Up</a>';
                 }
                 ?>
             </div>

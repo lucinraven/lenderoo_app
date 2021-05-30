@@ -125,6 +125,53 @@ body {
   color: #EFA45D;
 }
 
+.main-header .drop-btn {
+  background-color: #DD9857;
+  color: #FFFFFFFF;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  border: none;
+}
+
+.main-header .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.main-header .dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 160px;
+  -webkit-box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+          box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.main-header .dropdown-content a {
+  color: black;
+  padding: 12px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  text-decoration: none;
+  display: block;
+}
+
+.main-header .dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.main-header .dropdown:hover .dropdown-content {
+  display: block;
+  z-index: 999999;
+}
+
+.main-header .dropdown:hover .drop-btn {
+  background-color: #DD9857;
+}
+
 /* Footer */
 .content {
   -webkit-box-flex: 1;
@@ -1009,7 +1056,7 @@ body {
 }
 
 .payment-method-page {
-  height: auto;
+  height: 100vh;
   width: 100%;
   padding: 20px 0 100px 0;
   background: #f2f3f4;

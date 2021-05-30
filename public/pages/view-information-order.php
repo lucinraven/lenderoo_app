@@ -6,7 +6,7 @@
  * Date: 5/21/2021
  * Time: 12:01 am
  */
-include 'includes/header.php'
+include '../includes/header.php';
 ?>
 
 <!-- View more order information -->

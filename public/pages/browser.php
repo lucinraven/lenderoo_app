@@ -6,7 +6,7 @@
  * Time: 11:36 PM
  */
 
-include 'includes/header.php';
+include '../includes/header.php';
 
 ?>
 
@@ -168,10 +168,9 @@ include 'includes/header.php';
                         </ul>
                     </nav>
                 </div>
+
             </div>
-
         </div>
-
     </div>
 </div>
 

@@ -5,8 +5,7 @@
  * Date: 5/15/2021
  * Time: 12:05 PM
  */
-
-include 'includes/header.php';
+include '../includes/header.php';
 ?>
 
 <!-- start of account tabs page -->

@@ -6,8 +6,7 @@
  * Date: 5/9/2021
  * Time: 12:54 AM
  */
-
-include 'includes/header.php';
+include '../includes/header.php';
 
 ?>
 <div class="view-item-page">

@@ -6,8 +6,7 @@
  * Date: 5/19/2021
  * Time: 11:30 am
  */
-
-include '../pages/includes/header.php'
+include '../includes/header.php';
 ?>
 
 <!-- Payment method page -->

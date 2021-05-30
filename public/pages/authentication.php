@@ -164,7 +164,7 @@ if (isset($_POST['signupBtn'])) {
                         </form>
 
                         <button id="goLeft" class="off">Sign in</button>
-                        <button type='submit'>Sign up</button>
+                        <button type='submit' name="signupBtn">Sign up</button>
                     </div>
                 </div>
                 <!-- END OF SIGN UP FORM -->
