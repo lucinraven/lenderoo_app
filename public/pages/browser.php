@@ -18,14 +18,7 @@ include 'includes/header.php';
                 <div class="category-filter">
                     <h1>Category</h1>
                     <ul>
-                        <li><a href="#">Outdoor</a></li>
-                        <li><a href="#">Camping</a></li>
-                        <li><a href="#">Fishing</a></li>
-                        <li><a href="#">Hardware & Tools</a></li>
-                        <li><a href="#">Hiking</a></li>
-                        <li><a href="#">Sailing & </br> Motorboating</a></li>
-                        <li><a href="#">Canoeing, Kayaking</br> and Rafting</a></li>
-                        <li><a href="#">Outdoor Cooking</a></li>
+                     
                     </ul>
                 </div>
 
