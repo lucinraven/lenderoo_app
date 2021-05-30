@@ -5,7 +5,7 @@
  * Date: 4/23/2021
  * Time: 11:07 PM
  */
-
+require '../../private/config/config.php'
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +17,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="../../css/mainStylesheet.css" />
+    <link rel="stylesheet" type="text/css" href="../css/mainStylesheet.css" />
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" />
     <!-- Font Awesome -->
@@ -71,8 +71,13 @@
                 <li class="option"><a href="../pages/account-tabs.php"><i class="fas fa-bookmark"></i></a></li>
                 <li class="option"><a href="../pages/inbox-messenger.php"><i class="fas fa-inbox"></i></a></li>
                 <li class="option"><a href="../pages/add-cart.php"><i class="fas fa-shopping-cart"></i></a></li>
-                <li class="option"><a href="../pages/authentication.php">Login</a></li>
-                <li class="option"><a href="../pages/user-account.php">User Account</a></li>
+                <?php
+                if (isset($_SESSION['email'])) {
+                    echo '<li class="option"><a href="../pages/user-account.php">User Account</a></li>';
+                } else {
+                    echo '<li class="option"><a href="../pages/authentication.php">Login</a></li>';
+                }
+                ?>
             </div>
         </ul>
     </header>

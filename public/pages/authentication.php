@@ -7,6 +7,12 @@
  * Time: 11:36 PM
  */
 
+/**
+ * TODO: Forgot Password
+ * TODO: Change Password
+ * TODO: Add Cookie
+ */
+
 require '../../private/config/config.php';
 require '../../private/includes/form_handler/signinForm.php';
 require '../../private/includes/form_handler/signupForm.php';
@@ -97,8 +103,13 @@ if (isset($_POST['signupBtn'])) {
                 <li class="option"><a href="../pages/account-tabs.php"><i class="fas fa-bookmark"></i></a></li>
                 <li class="option"><a href="../pages/inbox-messenger.php"><i class="fas fa-inbox"></i></a></li>
                 <li class="option"><a href="../pages/add-cart.php"><i class="fas fa-shopping-cart"></i></a></li>
-                <li class="option"><a href="../pages/authentication.php">Login</a></li>
-                <li class="option"><a href="../pages/user-account.php">User Account</a></li>
+                <?php
+                if (isset($_SESSION['email'])) {
+                    echo '<li class="option"><a href="../pages/user-account.php">User Account</a></li>';
+                } else {
+                    echo '<li class="option"><a href="../pages/authentication.php">Login</a></li>';
+                }
+                ?>
             </div>
         </ul>
     </header>

@@ -7,7 +7,11 @@
  * Time: 11:36 PM
  */
 
-include 'includes/header.php';
+include '../includes/header.php';
+
+include '../../private/includes/form_handler/accountForm.php';
+include '../../private/includes/form_handler/addItems.php';
+include '../../private/includes/handler/accountHandler.php';
 
 ?>
 
@@ -26,18 +30,20 @@ include 'includes/header.php';
                     </ul>
                 </div>
 
-                <!-- Lender Central tab views-->
-                <div class="row-2">
-                    <h1>Lender Central</h1>
-                    <ul>
-                        <li><a class="tab-btn" data-mdb-toggle="modal" href="#addItem" role="button">Add Item</a></li>
-                        <li><button class="tab-btn tablink" onclick="openTab(event, 'lendInventory')">Inventory</button></li>
-                        <li><button class="tab-btn tablink" onclick="openTab(event, 'lendOutgoing')">Outgoing Items</button></li>
-                        <li><button class="tab-btn tablink" onclick="openTab(event, 'lendAd')">Advertising</button></li>
-                        <li><button class="tab-btn tablink" onclick="openTab(event, 'lendTerms')">Terms & Condition</button></li>
-                        <li><button class="tab-btn tablink" onclick="openTab(event, 'lendRequest')">Return Request</button></li>
-                    </ul>
-                </div>
+                <?php if ($lender == 1) {
+                    echo '<!-- Lender Central tab views-->
+                    <div class="row-2">
+                        <h1>Lender Central</h1>
+                        <ul>
+                            <li><a class="tab-btn" data-mdb-toggle="modal" href="#addItem" role="button">Add Item</a></li>
+                            <li><button class="tab-btn tablink" onclick="openTab(event, \'lendInventory\')">Inventory</button></li>
+                            <li><button class="tab-btn tablink" onclick="openTab(event, \'lendOutgoing\')">Outgoing Items</button></li>
+                            <li><button class="tab-btn tablink" onclick="openTab(event, \'lendAd\')">Advertising</button></li>
+                            <li><button class="tab-btn tablink" onclick="openTab(event, \'lendTerms\')">Terms & Condition</button></li>
+                            <li><button class="tab-btn tablink" onclick="openTab(event, \'lendRequest\')">Return Request</button></li>
+                        </ul>
+                    </div>';
+                } ?>
             </div>
 
             <!-- Tab view contents -->
@@ -71,6 +77,10 @@ include 'includes/header.php';
                                     <label for="itemName">Confirm Password</label>
                                     <input type="text" value=" ">
                                 </div>
+                            </form>
+
+                            <form method='post'>
+                                <button type='submit' name='becomeLender'>Become a Lender</button>
                             </form>
                         </div>
                     </div>
@@ -264,7 +274,7 @@ include 'includes/header.php';
                                 <td>Delivered</td>
                             </tr>
                         </tbody>
-                    </table>    
+                    </table>
                 </div>
 
                 <div id="lendAd" class="lendAd acc-tabs" style="display: none;">
@@ -291,40 +301,39 @@ include 'includes/header.php';
 
                         <!-- Adding Category Icons -->
                         <div class="modal-body">
-                            <form action="" method="post">
+                            <form action="user-account.php" method="post">
                                 <h1>What Item Category will you put on leasing?</h1>
                                 <div class="row add-category">
                                     <div class="col-md-3">
-                                        <input type="button" value="Outdoor">
+                                        <input type="button" name="catOutegory" value="Outdoor" data-mdb-target="#addTitle" data-mdb-toggle="modal" data-mdb-dismiss="modal">
                                     </div>
                                     <div class="col-md-3">
-                                        <input type="button" value="Camping">
+                                        <input type="button" name="category" value="Camping" data-mdb-target="#addTitle" data-mdb-toggle="modal" data-mdb-dismiss="modal">
                                     </div>
                                     <div class="col-md-3">
-                                        <input type="button" value="Fishing">
+                                        <input type="button" name="category" value="Fishing" data-mdb-target="#addTitle" data-mdb-toggle="modal" data-mdb-dismiss="modal">
                                     </div>
                                     <div class="col-md-3">
-                                        <input type="button" value="Hardware & Tools">
+                                        <input type="button" name="catHardegory" value="Hardware & Tools" data-mdb-target="#addTitle" data-mdb-toggle="modal" data-mdb-dismiss="modal">
                                     </div>
                                     <div class="col-md-3">
-                                        <input type="button" value="Sailing">
+                                        <input type="button" name="category" value="Sailing" data-mdb-target="#addTitle" data-mdb-toggle="modal" data-mdb-dismiss="modal">
                                     </div>
                                     <div class="col-md-3">
-                                        <input type="button" value="Boating">
+                                        <input type="button" name="category" value="Boating" data-mdb-target="#addTitle" data-mdb-toggle="modal" data-mdb-dismiss="modal">
                                     </div>
                                     <div class="col-md-3">
-                                        <input type="button" value="Hiking">
+                                        <input type="button" name="category" value="Hiking" data-mdb-target="#addTitle" data-mdb-toggle="modal" data-mdb-dismiss="modal">
                                     </div>
                                     <div class="col-md-3">
-                                        <input type="button" value="Cooking">
+                                        <input type="button" name="category" value="Cooking" data-mdb-target="#addTitle" data-mdb-toggle="modal" data-mdb-dismiss="modal">
                                     </div>
-                                </div>                              
-                            </form>
+                                </div>
                         </div>
                         <!-- End of Code Category Icons -->
-                        <div class="modal-footer">
+                        <!-- <div class="modal-footer">
                             <button class="btn btn-primary" data-mdb-target="#addTitle" data-mdb-toggle="modal" data-mdb-dismiss="modal">Continue</button>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
@@ -343,10 +352,7 @@ include 'includes/header.php';
                         <div class="modal-body">
                             <h1>First, enter a short title to describe your listing</h1>
                             <p>Make your title informative and attractive.</p>
-
-                            <form action="" method="post">
-                                <input type="text" placeholder="e.g. 6 person Tent for Rent" value=" ">
-                            </form>
+                            <input type="text" name="title" placeholder="e.g. 6 person Tent for Rent">
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-primary" data-mdb-target="#addDscrpt" data-mdb-toggle="modal" data-mdb-dismiss="modal">Continue</button>
@@ -370,57 +376,55 @@ include 'includes/header.php';
                             <h1>You're almost there!</h1>
                             <p>Please include much details and picture as possible, and set the right pricing per day and leasing duration.</p>
                             <!-- Start code for adding description form-->
-                            <form action="" method="POST">
-                                <div class="row">
-                                    <label for="itemName">Item Name</label>
-                                    <input type="text" value=" ">
-                                </div>
+                            <div class="row">
+                                <label for="itemName">Item Name</label>
+                                <input type="text" name="itemName">
+                            </div>
 
-                                <div class="row">
-                                    <label for="itemName">Upload Picture</label>
-                                    <input type="text" value=" ">
-                                </div>
+                            <div class="row">
+                                <label for="itemName">Upload Picture</label>
+                                <input type="file" name="itemImage">
+                            </div>
 
-                                <div class="row">
-                                    <label for="itemName">Pricing/Day</label>
-                                    <input type="text" value=" ">
-                                </div>
+                            <div class="row">
+                                <label for="itemName">Pricing/Day</label>
+                                <input type="text" name="itemPrice">
+                            </div>
 
-                                <div class="row">
-                                    <label for="brand">Leasing Duraiton</label>
-                                    <input type="number" id="duration" name="duration" min="1" max="30">
-                                </div>
+                            <div class="row">
+                                <label for="brand">Leasing Duraiton</label>
+                                <input type="number" id="itemDuration" name="itemDuration" min="1" max="30">
+                            </div>
 
-                                <div class="row">
-                                    <label for="age">Age</label>
-                                    <select name="age" id="age">
-                                        <option value="1">Brand New</option>
-                                        <option value="2">0-1 month</option>
-                                        <option value="3">1-6 months</option>
-                                        <option value="4">6-12 months</option>
-                                        <option value="5">1-2 years</option>
-                                        <option value="6">2-5 years</option>
-                                        <option value="7">5+ years</option>
-                                        <option value="8">10+ years</option>
-                                    </select>
-                                </div>
+                            <div class="row">
+                                <label for="age">Age</label>
+                                <select name="itemAge" id="age">
+                                    <option value="1">Brand New</option>
+                                    <option value="2">0-1 month</option>
+                                    <option value="3">1-6 months</option>
+                                    <option value="4">6-12 months</option>
+                                    <option value="5">1-2 years</option>
+                                    <option value="6">2-5 years</option>
+                                    <option value="7">5+ years</option>
+                                    <option value="8">10+ years</option>
+                                </select>
+                            </div>
 
-                                <div class="row">
-                                    <label for="condition">Condition</label>
-                                    <select name="condition" id="condition">
-                                        <option value="">Never Used</option>
-                                        <option value="">Excellent Condition</option>
-                                        <option value="">Good Condition</option>
-                                        <option value="">Fair Condition</option>
-                                        <option value="">Poor Condition</option>
-                                    </select>
-                                </div>
+                            <div class="row">
+                                <label for="condition">Condition</label>
+                                <select name="itemCondition" id="condition">
+                                    <option value="">Never Used</option>
+                                    <option value="">Excellent Condition</option>
+                                    <option value="">Good Condition</option>
+                                    <option value="">Fair Condition</option>
+                                    <option value="">Poor Condition</option>
+                                </select>
+                            </div>
 
-                                <div class="row">
-                                    <label for="description">Description</label>
-                                    <textarea name="description" rows="10" cols="30">Enter Description</textarea>
-                                </div>
-                            </form>
+                            <div class="row">
+                                <label for="description">Description</label>
+                                <textarea name="itemDescription" rows="10" cols="30">Enter Description</textarea>
+                            </div>
                             <!-- End code for adding description form-->
                         </div>
 
@@ -432,7 +436,7 @@ include 'includes/header.php';
             </div>
             <!-- End of third modal dialog -->
 
-            <!-- Third fourth dialog -->
+            <!-- Fourth modal dialog -->
             <div class="addSpec modal fade" id="addSpec" aria-hidden="true" aria-labelledby="exampleModalToggleLabel22" tabindex="-1">
                 <div class="modal-dialog modal-lg modal-dialog-centered">
                     <div class="modal-content">
@@ -513,8 +517,9 @@ include 'includes/header.php';
                             <p>Odio beatae minima vitae magnam earum minus fugit aliquid magni atque ducimus cumque quos dolores repellendus veniam ipsum, ab obcaecati alias quisquam quasi repudiandae temporibus quo. Eos accusantium dolorem fugit.</p>
                         </div>
                         <div class="modal-footer">
-                            <button class="btn btn-primary" data-mdb-target="#itemSpec" data-mdb-toggle="modal" data-mdb-dismiss="modal">Continue</button>
+                            <button class="btn btn-primary" type="submit" name="addItem" data-mdb-target="#itemSpec" data-mdb-toggle="modal" data-mdb-dismiss="modal">Submit</button>
                         </div>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -529,6 +534,6 @@ include 'includes/header.php';
 
 <?php
 
-include 'includes/footer.php';
+include '../includes/footer.php';
 
 ?>

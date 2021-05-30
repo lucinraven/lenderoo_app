@@ -35,7 +35,7 @@ if (isset($_POST['signinBtn'])) {
 		}
 
 		$_SESSION['email'] = $email;
-		header("Location: index.php");
+		header("Location: /");
 		exit();
 	} else {
 		array_push($error_array, "Email or password was incorrect<br>");
