@@ -76,7 +76,7 @@ require '../../private/config/config.php'
                     <button class="btn drop-btn">'. $_SESSION["email"] .'</button>
                     <div class="dropdown-content">
                         <a href="user-account.php">My Account</a>
-                        <a href="../../private/includes/handler/logout.php">Logout</a>
+                        <a href="../includes/logout.php">Logout</a>
                     </div>
                 </div>'; } else {
                     echo '<a href="login.php" class="btn btn-primary">Login or Sign Up</a>';
