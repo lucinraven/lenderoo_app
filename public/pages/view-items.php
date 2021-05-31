@@ -93,7 +93,7 @@ include '../includes/header.php';
                             <div class="right-bottom">
                                 <button class="btn btn-primary">Add to cart</button>
                                 
-                                <button class="btn btn-primary">Rent now</button>
+                                <a class="btn btn-primary" href="payment-method.php">Rent now</a>
                             </div>
                         </div>
                     </div>
