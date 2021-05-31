@@ -137,41 +137,23 @@ include '../includes/header.php';
 
       <!-- Showcased Row -->
       <div class="row">
-        <h1>Frequently Borrowed Items</h1>
-        <!-- Product Widget Showcase-->
-        <a class="view-item" href="../pages/view-items.php">
-          <img src="" alt="" />
+        <h1>Browse</h1>
+        <?php 
+          $sql = "SELECT product_id, product_name,product_title, price FROM `product` LIMIT 12"; //remove product_title, and add product_names in DB
+          $stmt = $con->prepare($sql);
+          $stmt->execute();
+          $result = $stmt->get_result();
 
-          <h2>Title</h2>
-          <p>50 Aed/Day</p>
-        </a>
+          while($row = $result->fetch_assoc()){
+            echo '<a class="view-item" href="../pages/view-items.php?prod_id='.$row['product_id'].'">
+                    <img src="" alt="" />
 
-        <a class="view-item" href="../pages/view-items.php">
-          <img src="" alt="" />
+                    <h2>'.$row['product_title'].'</h2>
+                    <p>'.$row['price'].' Aed/Day</p>
+                  </a>';
+          };
 
-          <h2>Title</h2>
-          <p>50 Aed/Day</p>
-        </a>
-
-        <a class="view-item" href="../pages/view-items.php">
-          <img src="" alt="" />
-
-          <h2>Title</h2>
-          <p>50 Aed/Day</p>
-        </a>
-
-        <a class="view-item" href="../pages/view-items.php">
-          <img src="" alt="" />
-
-          <h2>Title</h2>
-          <p>50 Aed/Day</p>
-        </a>
-        <a class="view-item" href="../pages/view-items.php">
-          <img src="" alt="" />
-
-          <h2>Title</h2>
-          <p>50 Aed/Day</p>
-        </a>
+        ?>
       </div>
 
       <!-- Showcased Row -->
@@ -184,32 +166,6 @@ include '../includes/header.php';
           <p>50 Aed/Day</p>
         </a>
 
-        <a class="view-item" href="../pages/view-items.php">
-          <img src="" alt="" />
-
-          <h2>Title</h2>
-          <p>50 Aed/Day</p>
-        </a>
-
-        <a class="view-item" href="../pages/view-items.php">
-          <img src="" alt="" />
-
-          <h2>Title</h2>
-          <p>50 Aed/Day</p>
-        </a>
-
-        <a class="view-item" href="../pages/view-items.php">
-          <img src="" alt="" />
-
-          <h2>Title</h2>
-          <p>50 Aed/Day</p>
-        </a>
-        <a class="view-item" href="../pages/view-items.php">
-          <img src="" alt="" />
-
-          <h2>Title</h2>
-          <p>50 Aed/Day</p>
-        </a>
 
       </div>
     </div>

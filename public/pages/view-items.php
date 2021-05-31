@@ -8,6 +8,20 @@
  */
 include '../includes/header.php';
 
+if(isset($_GET['prod_id'])){
+    $sql = "UPDATE product SET click_counter = click_counter + 1 WHERE product_id = ?";
+    $stmt = $con->prepare($sql);
+    $stmt-> bind_param("i",$_GET['prod_id']);
+    $stmt->execute();
+}
+
+$sql = "SELECT * FROM `product` p INNER JOIN users u ON p.lender_id = u.user_id WHERE product_id = ?";
+$stmt = $con->prepare($sql);
+$stmt-> bind_param("i",$_GET['prod_id']);
+$stmt->execute();
+
+$result = $stmt->get_result();
+$row = $result->fetch_assoc()
 ?>
 <div class="view-item-page">
     <!-- View item header -->
@@ -18,25 +32,25 @@ include '../includes/header.php';
                     <div class="col-md-3">
                         <div class="left-info-top row">
                             <div class="left-header">
-                                <h1>For Sale PokPok</h1>
+                                <h1><?php echo $row['product_title']; ?></h1>
                             </div>
 
                             <div class="left-body">
                                 <ul>
                                     <li>
-                                        <p>Overview: Magaling All Around</p>
+                                        <p>Overview: <?php echo $row['product_title']; ?></p>
                                     </li>
                                     <li>
-                                        <p>Brand: NFPS</p>
+                                        <p>Brand: <?php echo $row['product_title']; ?></p>
                                     </li>
                                     <li>
-                                        <p>Age: 30</p>
+                                        <p>Age: <?php echo $row['product_title']; ?></p>
                                     </li>
                                     <li>
-                                        <p>Condition: Overused</p>
+                                        <p>Condition: <?php echo $row['product_title']; ?></p>
                                     </li>
                                     <li>
-                                        <p>Review: 5 / 5 Stars</p>
+                                        <p>Review: <?php echo $row['product_title']; ?></p>
                                     </li>
                                 </ul>
                             </div>
@@ -73,13 +87,13 @@ include '../includes/header.php';
                             <div class="right-body">
                                 <ul>
                                     <li>
-                                        <p>Leaser Information: Jules Perez</p>
+                                        <p>Leaser Information: <?php echo $row['firstName'] . " " . $row['lastName']; ?></p>
                                     </li>
                                     <li>
                                         <p>Company: Bahay ng poks</p>
                                     </li>
                                     <li>
-                                        <p>Address: Iloilo</p>
+                                        <p>Address: <?php echo $row['address'] ?></p>
                                     </li>
                                     <li>
                                         <p>City: Iloilo</p>
