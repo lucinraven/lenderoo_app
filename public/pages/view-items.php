@@ -16,31 +16,41 @@ include '../includes/header.php';
             <div class="container-lg">
                 <div class="row">
                     <div class="col-md-3">
-                        <div class="left-info">
-                            <h1>Item Product Name</h1>
-                            <ul>
-                                <li>
-                                    <p>Overview: Test</p>
-                                </li>
-                                <li>
-                                    <p>Brand: Test</p>
-                                </li>
-                                <li>
-                                    <p>Age: Test</p>
-                                </li>
-                                <li>
-                                    <p>Condition: Test</p>
-                                </li>
-                                <li>
-                                    <p>Review: Test</p>
-                                </li>
-                            </ul>
+                        <div class="left-info-top row">
+                            <div class="left-header">
+                                <h1>For Sale PokPok</h1>
+                            </div>
+
+                            <div class="left-body">
+                                <ul>
+                                    <li>
+                                        <p>Overview: Magaling All Around</p>
+                                    </li>
+                                    <li>
+                                        <p>Brand: NFPS</p>
+                                    </li>
+                                    <li>
+                                        <p>Age: 30</p>
+                                    </li>
+                                    <li>
+                                        <p>Condition: Overused</p>
+                                    </li>
+                                    <li>
+                                        <p>Review: 5 / 5 Stars</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="left-bottom">
+                            
+                            
+                            </div>
                         </div>
                     </div>
 
                     <div class="col-md-5">
                         <div class="img-main-ctn">
-                            <img src="" alt="" class="main-img">
+                            <img src="../images/daddy.jpg" alt="" class="main-img">
                         </div>
                         <div class="img-showcase-ctn row">
                             <div class="image-card">
@@ -56,25 +66,35 @@ include '../includes/header.php';
                     </div>
 
                     <div class="col-md-3">
-                        <div class="right-info">
-                            <h1>50 AED/ Day</h1>
-                            <ul>
-                                <li>
-                                    <p>Leaser Information: Test</p>
-                                </li>
-                                <li>
-                                    <p>Company: Test</p>
-                                </li>
-                                <li>
-                                    <p>Address: Test</p>
-                                </li>
-                                <li>
-                                    <p>City: Test</p>
-                                </li>
-                                <li>
-                                    <p>Review: Test</p>
-                                </li>
-                            </ul>
+                        <div class="right-info-top row">
+                            <div class="right-header">
+                                <h1>5 PHP / Day</h1>
+                            </div>
+                            <div class="right-body">
+                                <ul>
+                                    <li>
+                                        <p>Leaser Information: Jules Perez</p>
+                                    </li>
+                                    <li>
+                                        <p>Company: Bahay ng poks</p>
+                                    </li>
+                                    <li>
+                                        <p>Address: Iloilo</p>
+                                    </li>
+                                    <li>
+                                        <p>City: Iloilo</p>
+                                    </li>
+                                    <li>
+                                        <p>Review: Test</p>
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="right-bottom">
+                                <button class="btn btn-primary">Add to cart</button>
+                                
+                                <button class="btn btn-primary">Rent now</button>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -192,6 +212,6 @@ include '../includes/header.php';
 
 <?php
 
-include 'includes/footer.php';
+include '../includes/footer.php';
 
 ?>

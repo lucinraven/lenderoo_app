@@ -79,7 +79,7 @@ require '../../private/config/config.php'
                         <a href="../includes/logout.php">Logout</a>
                     </div>
                 </div>'; } else {
-                    echo '<a href="login.php" class="btn btn-primary">Login or Sign Up</a>';
+                    echo '<a href="authentication.php" class="btn btn-primary">Login or Sign Up</a>';
                 }
                 ?>
             </div>

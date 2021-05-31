@@ -1905,8 +1905,8 @@ h1 {
   height: 100%;
   width: 100%;
   padding: 30px 0;
-  background: #000000;
-  opacity: .9;
+  background: black;
+  opacity: 0.9;
 }
 
 .view-item-page .view-item-head {
@@ -1967,64 +1967,136 @@ h1 {
   background-color: #DD9857;
 }
 
-.view-item-page .view-item-head .col-md-3 .left-info {
+.view-item-page .view-item-head .left-info-top {
   height: 100%;
   width: 100%;
-  padding: 60px 0;
 }
 
-.view-item-page .view-item-head .col-md-3 .left-info h1 {
+.view-item-page .view-item-head .left-info-top .left-header {
+  height: 20%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.view-item-page .view-item-head .left-info-top .left-header h1 {
   margin: 0;
-  padding: 50px 5px;
+  padding: 0 5px;
   text-align: center;
   font-size: 26px;
   font-family: "Poppins", sans-serif;
   color: #FFFFFF;
 }
 
-.view-item-page .view-item-head .col-md-3 .left-info ul {
+.view-item-page .view-item-head .left-info-top .left-body {
+  height: 50%;
+  width: 100%;
+}
+
+.view-item-page .view-item-head .left-info-top .left-body ul {
+  padding: 0;
   margin: 20px 0;
 }
 
-.view-item-page .view-item-head .col-md-3 .left-info li {
+.view-item-page .view-item-head .left-info-top .left-body li {
   list-style-type: none;
 }
 
-.view-item-page .view-item-head .col-md-3 .left-info p {
+.view-item-page .view-item-head .left-info-top .left-body p {
   margin-bottom: 12px;
   font-size: 16px;
   font-family: "Poppins", sans-serif;
   color: #FFFFFF;
 }
 
-.view-item-page .view-item-head .col-md-3 .right-info {
-  height: 100%;
+.view-item-page .view-item-head .left-info-top .left-bottom {
+  height: 30%;
   width: 100%;
-  padding: 60px 0;
 }
 
-.view-item-page .view-item-head .col-md-3 .right-info h1 {
+.view-item-page .view-item-head .right-info-top {
+  height: 100%;
+  width: 100%;
+}
+
+.view-item-page .view-item-head .right-info-top .right-header {
+  height: 20%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.view-item-page .view-item-head .right-info-top .right-header h1 {
   margin: 0;
-  padding: 50px 5px;
+  padding: 0 5px;
   text-align: center;
   font-size: 26px;
   font-family: "Poppins", sans-serif;
   color: #EFA45D;
 }
 
-.view-item-page .view-item-head .col-md-3 .right-info ul {
+.view-item-page .view-item-head .right-info-top .right-body {
+  height: 50%;
+  width: 100%;
+}
+
+.view-item-page .view-item-head .right-info-top .right-body ul {
+  padding: 0;
   margin: 20px 0;
 }
 
-.view-item-page .view-item-head .col-md-3 .right-info li {
+.view-item-page .view-item-head .right-info-top .right-body li {
   list-style-type: none;
 }
 
-.view-item-page .view-item-head .col-md-3 .right-info p {
+.view-item-page .view-item-head .right-info-top .right-body p {
   margin-bottom: 12px;
   font-size: 16px;
   font-family: "Poppins", sans-serif;
   color: #FFFFFF;
+}
+
+.view-item-page .view-item-head .right-info-top .right-bottom {
+  height: 30%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.view-item-page .view-item-head .right-info-top .right-bottom .btn {
+  height: 40px;
+  width: 180px;
+  background-color: #DD9857;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
 }
 
 .view-item-page .container-lg {
