@@ -529,8 +529,6 @@ include '../../private/includes/handler/accountHandler.php';
     </div>
 </div>
 
-<!-- External Javascript Code -->
-<script type="text/javascript" src="../js/main.js"></script>
 
 <?php
 
