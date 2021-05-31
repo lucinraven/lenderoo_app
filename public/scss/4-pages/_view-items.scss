@@ -1,52 +1,52 @@
-.view-item-page{
+.view-item-page {
     height: auto;
     width: 100%;
     padding-bottom: 100px;
     background: $main-bg-color;
 
-    .overlay{
+    .overlay {
         height: 100%;
         width: 100%;
         padding: 30px 0;
-        background: #000000;
-        opacity: .9;
+        background: rgb(0, 0, 0);
+        opacity: 0.9;
     }
 
-    .view-item-head{
+    .view-item-head {
         width: 100%;
-        background: url('../../images/tools.jpg');
+        background: url("../../images/tools.jpg");
         background-size: cover;
         background-repeat: no-repeat;
 
-        .row{
+        .row {
             margin: 0;
             display: flex;
             justify-content: center;
             align-self: center;
         }
 
-        .col-md-5{
+        .col-md-5 {
             height: auto;
 
-            .img-main-ctn{
+            .img-main-ctn {
                 height: 400px;
                 width: 100%;
                 margin: 5px 0;
                 @include center;
             }
 
-            .main-img{
+            .main-img {
                 height: 100%;
                 width: 400px;
                 background: $primary;
             }
 
-            .img-showcase-ctn{
+            .img-showcase-ctn {
                 height: auto;
                 width: 100%;
                 margin: 5px 0;
 
-                .image-card{
+                .image-card {
                     height: 90px;
                     width: 100px;
                     margin: 5px;
@@ -55,138 +55,184 @@
                 }
             }
         }
-        .col-md-3{
-            .left-info{
-                height: 100%;
-                width: 100%;
-                padding: 60px 0;
 
-                h1{
+        .left-info-top {
+            height: 100%;
+            width: 100%;
+
+            .left-header {
+                height: 20%;
+                width: 100%;
+                @include center;
+
+                h1 {
                     margin: 0;
-                    padding: 50px 5px;
+                    padding: 0 5px;
                     text-align: center;
                     font-size: 26px;
                     font-family: $font-family;
                     color: $font-color;
                 }
-                ul{
+            }
+
+            .left-body {
+                height: 50%;
+                width: 100%;
+
+                ul {
+                    padding: 0;
                     margin: 20px 0;
                 }
-                li{
+                li {
                     list-style-type: none;
                 }
-                p{
+                p {
                     margin-bottom: 12px;
                     font-size: 16px;
                     font-family: $font-family;
                     color: $font-color;
                 }
             }
-            .right-info{
-                height: 100%;
+
+            .left-bottom {
+                height: 30%;
                 width: 100%;
-                padding: 60px 0;
-              
-                h1{
+            }
+        }
+
+        .right-info-top {
+            height: 100%;
+            width: 100%;
+
+            .right-header {
+                height: 20%;
+                width: 100%;
+                @include center;
+
+                h1 {
                     margin: 0;
-                    padding: 50px 5px;
+                    padding: 0 5px;
                     text-align: center;
                     font-size: 26px;
                     font-family: $font-family;
                     color: $primaryVariants;
                 }
-                ul{
+            }
+
+            .right-body {
+                height: 50%;
+                width: 100%;
+
+                ul {
+                    padding: 0;
                     margin: 20px 0;
                 }
-                li{
+                li {
                     list-style-type: none;
                 }
-                p{
+                p {
                     margin-bottom: 12px;
                     font-size: 16px;
                     font-family: $font-family;
                     color: $font-color;
                 }
             }
+
+            .right-bottom {
+                height: 30%;
+                width: 100%;
+                @include center;
+                justify-content: space-around;
+                flex-direction: column;
+
+                .btn {
+                    height: 40px;
+                    width: 180px;
+                    background-color: $primary;
+                    font-size: 16px;
+                    font-family: $font-family;
+                    text-transform: capitalize;
+                }
+            }
         }
     }
 
-    .container-lg{
+    .container-lg {
         height: auto;
         padding: 0 50px;
-    
-        .view-item-body{    
+
+        .view-item-body {
             height: auto;
             width: 100%;
- 
-            .desc-scrip-ctn{
+
+            .desc-scrip-ctn {
                 height: 100%;
                 width: 100%;
 
-                h1{
+                h1 {
                     font-size: 24px;
                     font-family: $font-family;
                 }
-                p{
+                p {
                     font-size: 16px;
                     font-family: $font-family;
                 }
 
-                .description-ctn{
+                .description-ctn {
                     width: 50%;
                     margin: 40px 0;
                 }
 
-                .spec-table{
+                .spec-table {
                     margin: 40px 0;
 
-                    h1{
+                    h1 {
                         font-size: 24px;
                         font-family: $font-family;
                     }
-                    th td{
+                    th td {
                         font-size: 16px;
                         font-family: $font-family;
                     }
-                    .table{
+                    .table {
                         width: 50%;
                         margin: 10px;
                     }
                 }
             }
 
-            .customer-review-ctn{
-                width: 50%; 
+            .customer-review-ctn {
+                width: 50%;
                 margin: 40px 0;
 
-                .post-review{
+                .post-review {
                     margin: 50px 0;
                 }
 
-                h1{
+                h1 {
                     font-size: 24px;
                     font-family: $font-family;
                 }
 
-                h5{
+                h5 {
                     font-size: 16px;
                     font-family: $font-family;
                 }
 
-                p{
+                p {
                     font-size: 16px;
                     font-family: $font-family;
                 }
             }
-            .post-review-ctn{
 
-                textarea{
+            .post-review-ctn {
+                textarea {
                     width: 100%;
                     resize: none;
                     padding: 7px 0 0 7px;
                 }
 
-                input{
+                input {
                     float: right;
                     display: block;
                     width: 150px;
