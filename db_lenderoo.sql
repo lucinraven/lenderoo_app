@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: May 30, 2021 at 08:38 AM
+-- Generation Time: May 31, 2021 at 05:50 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -217,7 +217,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `firstName`, `lastName`, `email`, `password`, `contact`, `address`, `lender`, `status`, `created_at`) VALUES
-(1, 'Nanno', 'Amarin', 'nanno@gmail.com', '9a1336773808610d69e1dd86113f771f', '+971561234567', '', 1, 0, '2021-05-30 08:42:35');
+(1, 'Nanno', 'Amarin', 'nanno@gmail.com', '9a1336773808610d69e1dd86113f771f', '+971561234567', '', 1, 0, '2021-05-30 08:42:35'),
+(2, 'Jules', 'Perez', 'julesperez@gmail.com', '6eea9b7ef19179a06954edd0f6c05ceb', '055-3223131', '', 0, 0, '2021-05-30 15:41:38');
 
 --
 -- Indexes for dumped tables
@@ -373,7 +374,7 @@ ALTER TABLE `review`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- Constraints for dumped tables
@@ -419,13 +420,6 @@ ALTER TABLE `orders`
   ADD CONSTRAINT `orders_ibfk_1` FOREIGN KEY (`cart_id`) REFERENCES `cart` (`cart_id`);
 
 --
--- Constraints for table `product`
---
-ALTER TABLE `product`
-  ADD CONSTRAINT `product_ibfk_1` FOREIGN KEY (`lender_id`) REFERENCES `users` (`user_id`),
-  ADD CONSTRAINT `product_ibfk_3` FOREIGN KEY (`product_id`) REFERENCES `rate` (`rate_id`);
-
---
 -- Constraints for table `product_image`
 --
 ALTER TABLE `product_image`
@@ -436,14 +430,6 @@ ALTER TABLE `product_image`
 --
 ALTER TABLE `rate`
   ADD CONSTRAINT `rate_ibfk_1` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`);
-
---
--- Constraints for table `review`
---
-ALTER TABLE `review`
-  ADD CONSTRAINT `review_ibfk_1` FOREIGN KEY (`product_id`) REFERENCES `product` (`product_id`),
-  ADD CONSTRAINT `review_ibfk_2` FOREIGN KEY (`user_id`) REFERENCES `users` (`user_id`),
-  ADD CONSTRAINT `review_ibfk_3` FOREIGN KEY (`rate_id`) REFERENCES `rate` (`rate_id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
