@@ -68,8 +68,7 @@
                 h1 {
                     margin: 0;
                     padding: 0 5px;
-                    text-align: center;
-                    font-size: 26px;
+                    font-size: 18px;
                     font-family: $font-family;
                     color: $font-color;
                 }
@@ -164,97 +163,97 @@
         .view-item-body {
             height: auto;
             width: 100%;
+        }
 
-            .desc-scrip-ctn {
-                height: 100%;
-                width: 100%;
-
-                h1 {
-                    font-size: 24px;
-                    font-family: $font-family;
-                }
-                p {
-                    font-size: 16px;
-                    font-family: $font-family;
-                }
-
-                .description-ctn {
-                    width: 50%;
-                    margin: 40px 0;
-                }
-
-                .spec-table {
-                    margin: 40px 0;
-
-                    h1 {
-                        font-size: 24px;
-                        font-family: $font-family;
-                    }
-                    th td {
-                        font-size: 16px;
-                        font-family: $font-family;
-                    }
-                    .table {
-                        width: 50%;
-                        margin: 10px;
-                    }
-                }
+        .desc-scrip-ctn {
+            height: 100%;
+            width: 70%;
+    
+            h1 {
+                font-size: 24px;
+                font-family: $font-family;
+            }
+            p {
+                font-size: 16px;
+                font-family: $font-family;
             }
 
-            .customer-review-ctn {
-                width: 50%;
+            .description{
+                margin: 40px 0;
+                text-align: justify;
+            }
+
+            .spec-table {
                 margin: 40px 0;
 
-                .post-review {
-                    margin: 50px 0;
-                }
-
                 h1 {
                     font-size: 24px;
                     font-family: $font-family;
                 }
-
-                h5 {
-                    font-size: 16px;
+                th td {
+                    font-size: 18px;
                     font-family: $font-family;
                 }
-
-                p {
-                    font-size: 16px;
-                    font-family: $font-family;
+                .table {
+                    margin: 10px;
                 }
             }
+        }
 
-            .post-review-ctn {
-                textarea {
-                    width: 100%;
-                    resize: none;
-                    padding: 7px 0 0 7px;
-                }
+        .customer-review-ctn {
+            width: 70%;
+            margin: 40px 0;
 
-                input {
-                    float: right;
-                    display: block;
-                    width: 150px;
-                    height: 30px;
-                    background-color: aqua;
-                }
+            .post-review {
+                margin: 50px 0;
+            }
 
-                .btn {
-                    height: 40px;
-                    width: 150px;
-                    margin-top: 10px;
-                    float: right;
-                    background-color: $primary;
-                    font-size: 14px;
-                    font-weight: 300;
-                    font-family: $font-family;
-                    text-transform: capitalize;
-                    color: $heading-color;
-                }
-                .btn:hover {
-                    background-color: #ecaf75;
-                }
+            h1 {
+                font-size: 24px;
+                font-family: $font-family;
+            }
+
+            h5 {
+                font-size: 16px;
+                font-family: $font-family;
+            }
+
+            p {
+                font-size: 16px;
+                font-family: $font-family;
+            }
+        }
+
+        .post-review-ctn {
+            
+            textarea {
+                width: 100%;
+                resize: none;
+                padding: 7px 0 0 7px;
+            }
+
+            input {
+                float: right;
+                display: block;
+                width: 150px;
+                height: 30px;
+                background-color: aqua;
+            }
+
+            .btn {
+                height: 40px;
+                width: 150px;
+                margin-top: 10px;
+                float: right;
+                background-color: $primary;
+                font-size: 14px;
+                font-weight: 300;
+                font-family: $font-family;
+                text-transform: capitalize;
+                color: $heading-color;
+            }
+            .btn:hover {
+                background-color: #ecaf75;
             }
         }
     }

@@ -18,6 +18,9 @@
             border-width: thin;
             border-color: #d1d1d1;
             background-color: $main-bg-color;
+            display: flex;
+            flex-wrap: wrap; 
+            justify-content: space-around;
 
             h1 {
                 margin: 0;
@@ -34,7 +37,6 @@
                 padding: 10px;
                 height: auto;
                 width: 190px;
-                display: inline-block;
                 background-color: $secondary-bg-color;
                 border: solid;
                 border-width: thin;
@@ -49,7 +51,7 @@
 
                 h2 {
                     margin-top: 10px;
-                    font-size: 20px;
+                    font-size: 16px;
                     font-size: $font-family;
                     color: $primary;
                 }
@@ -61,11 +63,11 @@
                 }
             }
 
-            .view-items:hover{
-
+            .filling-empty-space-childs {
+                margin: 10px auto;
+                width: 190px; 
+                height: 0; 
             }
-
-    
         }
     }
 }

@@ -8,6 +8,7 @@
  */
 include '../includes/header.php';
 
+// Number of times the product with a specific id is clicked and updates the click counter database column in mysql.
 if(isset($_GET['prod_id'])){
     $sql = "UPDATE product SET click_counter = click_counter + 1 WHERE product_id = ?";
     $stmt = $con->prepare($sql);
@@ -38,19 +39,19 @@ $row = $result->fetch_assoc()
                             <div class="left-body">
                                 <ul>
                                     <li>
-                                        <p>Overview: <?php echo $row['product_title']; ?></p>
+                                        <p>Overview:</p>
                                     </li>
                                     <li>
-                                        <p>Brand: <?php echo $row['product_title']; ?></p>
+                                        <p>Brand: <?php echo $row['brand']; ?></p>
                                     </li>
                                     <li>
-                                        <p>Age: <?php echo $row['product_title']; ?></p>
+                                        <p>Age: <?php echo $row['age']; ?></p>
                                     </li>
                                     <li>
-                                        <p>Condition: <?php echo $row['product_title']; ?></p>
+                                        <p>Condition: <?php echo $row['pr_condition']; ?></p>
                                     </li>
                                     <li>
-                                        <p>Review: <?php echo $row['product_title']; ?></p>
+                                        <p>Review:</p>
                                     </li>
                                 </ul>
                             </div>
@@ -120,9 +121,9 @@ $row = $result->fetch_assoc()
         <!-- View item body -->
         <div class="view-item-body">
             <div class="desc-scrip-ctn">
-                <div class="description-ctn">
+                <div class="description">
                     <h1>Description</h1>
-                    <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Aut sequi enim officia sint et qui dignissimos in ullam, odit possimus? Adipisci voluptate libero dolore nihil sit ducimus provident laborum iusto.</p>
+                    <p><?php echo $row['description']; ?></p>
                 </div>
 
                 <div class="spec-table">

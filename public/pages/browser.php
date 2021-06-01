@@ -18,7 +18,7 @@ include '../includes/header.php';
                 <div class="category-filter">
                     <h1>Category</h1>
                     <ul>
-                     
+
                     </ul>
                 </div>
 
@@ -146,6 +146,11 @@ include '../includes/header.php';
                         <h2 class="item-heading">Title</h2>
                         <h2 class="price-heading">50 AED/Day</h2>
                     </div>
+
+                    <!-- filling gaps or spaces on row with empty child divs -->
+                    <div class="filling-empty-space-childs"></div>
+                    <div class="filling-empty-space-childs"></div>
+                    <div class="filling-empty-space-childs"></div>
                 </div>
 
                 <!-- Index body footer -->
