@@ -8,6 +8,17 @@
 
 include '../includes/header.php';
 
+
+if(isset($_POST['product_id'])){
+
+    $sql = "SELECT * FROM `cart` WHERE user_id = ? AND is_active = 1";
+    $stmt = $con->prepare($sql);
+    $stmt->execute();
+
+    $stmt->store_result();
+   
+}
+
 ?>
 
 <!-- Cart page -->
@@ -37,88 +48,6 @@ include '../includes/header.php';
                             <p>AED/Day</p>
                         </div>
                     </div>
-
-                    <!-- Cart item -->
-                    <div class="cart-item row">
-                        <div class="left-content col-md-3">
-                            <img src="" alt="">
-                        </div>
-
-                        <div class="middle-content col-md-7">
-                            <h2>Heading</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem dolore cumque vitae deleniti, nesciunt suscipit molestias quod!</p>
-                        </div>
-
-                        <div class="right-content col-md-2">
-                            <p>AED/Day</p>
-
-                        </div>
-                    </div>
-
-                    <!-- Cart item -->
-                    <div class="cart-item row">
-                        <div class="left-content col-md-3">
-                            <img src="" alt="">
-                        </div>
-
-                        <div class="middle-content col-md-7">
-                            <h2>Heading</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem dolore cumque vitae deleniti, nesciunt suscipit molestias quod!</p>
-                        </div>
-
-                        <div class="right-content col-md-2">
-                            <p>AED/Day</p>
-
-                        </div>
-                    </div>
-
-                    <div class="cart-item row">
-                        <div class="left-content col-md-3">
-                            <img src="" alt="">
-                        </div>
-
-                        <div class="middle-content col-md-7">
-                            <h2>Heading</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem dolore cumque vitae deleniti, nesciunt suscipit molestias quod!</p>
-                        </div>
-
-                        <div class="right-content col-md-2">
-                            <p>AED/Day</p>
-
-                        </div>
-                    </div>
-
-                    <div class="cart-item row">
-                        <div class="left-content col-md-3">
-                            <img src="" alt="">
-                        </div>
-
-                        <div class="middle-content col-md-7">
-                            <h2>Heading</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem dolore cumque vitae deleniti, nesciunt suscipit molestias quod!</p>
-                        </div>
-
-                        <div class="right-content col-md-2">
-                            <p>AED/Day</p>
-
-                        </div>
-                    </div>
-
-                    <div class="cart-item row">
-                        <div class="left-content col-md-3">
-                            <img src="" alt="">
-                        </div>
-
-                        <div class="middle-content col-md-7">
-                            <h2>Heading</h2>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quidem dolore cumque vitae deleniti, nesciunt suscipit molestias quod!</p>
-                        </div>
-
-                        <div class="right-content col-md-2">
-                            <p>AED/Day</p>
-
-                        </div>
-                    </div>
                 </div>
             </div>
 
@@ -131,7 +60,7 @@ include '../includes/header.php';
                 </div>
                 <div class="summary-footer">
                     <a href="../pages/payment-method.php"><button class="btn">Lease All Item</button></a>
-                   
+
                 </div>
             </div>
         </div>

@@ -9,16 +9,16 @@
 include '../includes/header.php';
 
 // Number of times the product with a specific id is clicked and updates the click counter database column in mysql.
-if(isset($_GET['prod_id'])){
+if (isset($_GET['prod_id'])) {
     $sql = "UPDATE product SET click_counter = click_counter + 1 WHERE product_id = ?";
     $stmt = $con->prepare($sql);
-    $stmt-> bind_param("i",$_GET['prod_id']);
+    $stmt->bind_param("i", $_GET['prod_id']);
     $stmt->execute();
 }
 
-$sql = "SELECT * FROM `product` p INNER JOIN users u ON p.lender_id = u.user_id WHERE product_id = ?";
+$sql = "SELECT * FROM `product` p LEFT JOIN users u ON p.lender_id = u.user_id WHERE product_id = ?";
 $stmt = $con->prepare($sql);
-$stmt-> bind_param("i",$_GET['prod_id']);
+$stmt->bind_param("i", $_GET['prod_id']);
 $stmt->execute();
 
 $result = $stmt->get_result();
@@ -57,8 +57,8 @@ $row = $result->fetch_assoc()
                             </div>
 
                             <div class="left-bottom">
-                            
-                            
+
+
                             </div>
                         </div>
                     </div>
@@ -105,8 +105,11 @@ $row = $result->fetch_assoc()
                             <div class="right-bottom">
                                 <a class="btn btn-primary" href="inbox-messenger.php">Inquire Lender</a>
 
-                                <a class="btn btn-primary" href="add-cart.php">Add to cart</a>
-                                
+                                <form action="add-cart.php" method="POST">
+                                    <input class="btn btn-primary" type="submit" name="add-cart" value="Add Cart">
+                                    <input type="hidden" name="product_id" value="<?php echo $row['product_id']?>">
+                                </form>
+                               
                                 <a class="btn btn-primary" href="payment-method.php">Rent now</a>
                             </div>
                         </div>
