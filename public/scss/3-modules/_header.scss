@@ -27,6 +27,17 @@
             text-transform: uppercase;
             font-family: $font-family;
         }
+
+        a{
+            font-size: 14px;
+            font-family: $font-family;
+            text-decoration: none;
+            color: #FFFFFF;
+        }
+
+        a:hover{
+            color: $primaryVariants;
+        }
     }
 
     .nav-center {
@@ -41,6 +52,10 @@
         .btn{
             background: $primary;
         }
+    }
+    
+    .nav-right{
+        @include center;
     }
 
     .nav-right li {

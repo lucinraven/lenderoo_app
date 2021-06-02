@@ -227,26 +227,101 @@
 
             // Lender Central for Lenders and is hidden from regular user account.
             .lendInventory {
-                @extend .accInfo;
+                height: 100%;
+                width: 100%;
+                padding: 15px 0 0 0;
 
-                .inventory-table {
-                    height: auto;
+                .content-header{
+                    padding: 0 15px;
+                    border-bottom: solid;
+                    border-width: thin;
+                    border-color: #d1d1d1;
+                }
+
+                .content-body {
+                    padding: 20px;
                     width: 100%;
-                    margin: 20px 0 20px 0;
                 }
-                th,
-                td {
-                    text-align: center;
-                    border: 1px solid #ddd;
-                    padding: 8px;
-                    font-family: $font-family;
+
+                .card-item {
+                    margin: 10px 0;
+                    display: block;
+                    height: 130px;
+                    width: 100%;
+                    background: $main-bg-color;
+                    border: solid;
+                    border-width: thin;
+                    border-color: #d1d1d1;
+                    color: #000000;
+                    text-decoration: none;
                 }
-                tr:nth-child(even) {
-                    background-color: #f2f2f2;
+
+                .card-item:hover{
+                    opacity: 0.9;
                 }
-                tr:hover {
-                    cursor: pointer;
-                    background-color: #ddd;
+
+                .left-content {
+                    padding: 10px;
+                    height: 100%;
+                    width: 20%;
+                    float: left;
+
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        background: $primary;
+                    }
+                }
+
+                .right-content {
+                    padding: 10px;
+                    height: 100%;
+                    width: 80%;
+                    float: right;
+
+                    .right-header{
+                        margin: 5px 0 0 0;
+                        height: 20%;
+                        width: 100%;
+
+                        h3 {
+                            font-size: 20px;
+                            font-family: $font-family;
+                            display: block;
+                            float: left;
+                        }
+    
+                        p {
+                            margin: 0 20px 0 0;
+                            font-size: 16px;
+                            font-family: $font-family;
+                            display: block;
+                            float: right;
+                        }
+                    }
+
+                    .right-body {
+                        margin-top: 20px;
+                        width: 100%;
+
+                        .row{
+                            margin-bottom: 10px;
+                        }
+
+                        .col-md-6{
+                            padding: 0;
+                        }
+
+                        label {
+                            display: inline-block;
+                            margin-right: 10px;
+                        }
+
+                        p {
+                            display: inline-block;
+                            margin: 0;
+                        }
+                    }
                 }
             }
 

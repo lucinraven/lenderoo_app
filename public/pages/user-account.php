@@ -169,33 +169,59 @@ include '../../private/includes/handler/accountHandler.php';
 
                 <!-- Lender Central Inventory -->
                 <div id="lendInventory" class="lendInventory acc-tabs" style="display: none;">
-                    <h1>Inventory</h1>
-                    <table class="inventory-table">
-                        <thead>
-                            <tr>
-                                <th>Item Image</th>
-                                <th>Product Id</th>
-                                <th>Name</th>
-                                <th>Date Ordered</th>
-                                <th>Date of Return</th>
-                                <th>Price/Day</th>
-                                <th>Duration</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr class='clickable-row' data-href='view-items.php'>
-                                <td></td>
-                                <td>030303</td>
-                                <td>Tool</td>
-                                <td>03/15/21</td>
-                                <td>03/25/21</td>
-                                <td>10 Aed</td>
-                                <td>10 Days</td>
-                                <td>Delivered</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                <div class="content-header">
+                        <h1>Inventory</h1>
+                    </div>
+
+                    <div class="content-body">
+                        <?php
+                        $sql = "SELECT * FROM `product`"; //remove product_title, and add product_names in DB
+                        $stmt = $con->prepare($sql);
+                        $stmt->execute();
+                        $result = $stmt->get_result();
+
+                        while ($row = $result->fetch_assoc()) {
+                            echo
+                            '<a class="card-item" href="view-items.php">
+                                <div class="left-content">
+                                    <img src="" alt="">
+                                </div>
+
+                                <div class="right-content">
+                                    <div class="right-header">
+                                        <h3>Heading</h3>
+                                        <p>Status</p>
+                                    </div>
+                                    <div class="right-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label for="">Date Ordered:</label>
+                                                <p>30/21/21</p>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label for="">Date of Return:</label>
+                                                <p>30/21/21</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label for="">Leasing Duration:</label>
+                                                <p>10 Days</p>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label for="">Pricing:</label>
+                                                <p>10 Dhs / Day</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>';
+                        };
+                        ?>
+                    </div>
                 </div>
 
                 <!-- Lender Central Outgoing -->

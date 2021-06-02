@@ -52,7 +52,7 @@ require '../../private/config/config.php'
                         <b>Lenderoo</b>
                     </a>
                 </li>
-                <li class="option"><a href="../pages/browser.php">Browse by Product</a></li>
+                <li><a href="../pages/browser.php">Browse by Product</a></li>
             </div>
 
             <div class="nav-center">

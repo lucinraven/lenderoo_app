@@ -26,49 +26,50 @@ include '../includes/header.php';
     <!--/Indicators-->
 
     <!--Slides-->
-    <div class="carousel-inner" role="listbox">
-      <div class="carousel-item active">
-        <div class="view">
-          <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Others/clothes(5)-crop.jpg" alt="First slide" />
-          <a href="#!">
-            <div class="mask rgba-black-light"></div>
-          </a>
+    <div class="overlay">
+      <div class="carousel-inner" role="listbox">
+        <div class="carousel-item active">
+          <div class="view">
+            <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Others/clothes(5)-crop.jpg" alt="First slide" />
+            <a href="#!">
+              <div class="mask rgba-black-light"></div>
+            </a>
+          </div>
+
+          <div class="carousel-caption">
+            <h3 class="h3-responsive">First shop item</h3>
+            <p>First text</p>
+          </div>
         </div>
 
-        <div class="carousel-caption">
-          <h3 class="h3-responsive">First shop item</h3>
-          <p>First text</p>
-          z
-        </div>
-      </div>
+        <div class="carousel-item">
+          <!--Mask color-->
+          <div class="view">
+            <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Others/clothes(4)-crop.jpg" alt="Second slide" />
+            <a href="#!">
+              <div class="mask rgba-black-light"></div>
+            </a>
+          </div>
 
-      <div class="carousel-item">
-        <!--Mask color-->
-        <div class="view">
-          <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Others/clothes(4)-crop.jpg" alt="Second slide" />
-          <a href="#!">
-            <div class="mask rgba-black-light"></div>
-          </a>
-        </div>
-
-        <div class="carousel-caption">
-          <h3 class="h3-responsive">Second shop item</h3>
-          <p>Secondary text</p>
-        </div>
-      </div>
-
-      <div class="carousel-item">
-        <!--Mask color-->
-        <div class="view">
-          <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Others/clothes(3)-crop.jpg" alt="Third slide" />
-          <a href="#!">
-            <div class="mask rgba-black-light"></div>
-          </a>
+          <div class="carousel-caption">
+            <h3 class="h3-responsive">Second shop item</h3>
+            <p>Secondary text</p>
+          </div>
         </div>
 
-        <div class="carousel-caption">
-          <h3 class="h3-responsive">Third shop item</h3>
-          <p>Third text</p>
+        <div class="carousel-item">
+          <!--Mask color-->
+          <div class="view">
+            <img class="d-block w-100" src="https://mdbootstrap.com/img/Photos/Others/clothes(3)-crop.jpg" alt="Third slide" />
+            <a href="#!">
+              <div class="mask rgba-black-light"></div>
+            </a>
+          </div>
+
+          <div class="carousel-caption">
+            <h3 class="h3-responsive">Third shop item</h3>
+            <p>Third text</p>
+          </div>
         </div>
       </div>
     </div>
