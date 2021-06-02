@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 02, 2021 at 04:33 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.10
+-- Generation Time: Jun 02, 2021 at 08:27 PM
+-- Server version: 10.4.19-MariaDB
+-- PHP Version: 7.3.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -46,6 +46,14 @@ CREATE TABLE `cart` (
   `is_active` bit(1) DEFAULT b'1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`cart_id`, `user_id`, `is_active`) VALUES
+(15, 2, b'1'),
+(16, 3, b'1');
+
 -- --------------------------------------------------------
 
 --
@@ -55,8 +63,20 @@ CREATE TABLE `cart` (
 CREATE TABLE `cart_products` (
   `id` int(11) NOT NULL,
   `product_id` int(11) DEFAULT NULL,
+  `quantity` int(11) DEFAULT NULL,
   `cart_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cart_products`
+--
+
+INSERT INTO `cart_products` (`id`, `product_id`, `quantity`, `cart_id`) VALUES
+(34, 2, 9, 15),
+(35, 4, 1, 15),
+(36, 7, 1, 15),
+(37, 1, 1, 16),
+(38, 9, 1, 16);
 
 -- --------------------------------------------------------
 
@@ -164,15 +184,15 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `product_title`, `product_name`, `description`, `brand`, `age`, `pr_condition`, `technicalDesc`, `price`, `category`, `status`, `click_counter`, `lender_id`, `max_lend_duration`) VALUES
-(1, 'Coleman Cabin Tent with Instant Setup in 60 Seconds', NULL, 'Weatherproof: Welded corners and inverted seams keep water from getting in; integrated rainfly offers extra weather protection with better airflow\r\nBuilt to last: Double-thick fabric stands up to the elements season after season\r\nInstant setup: In as fast as 1 minute\r\nRoomy interior: 8 x 7 ft. With 4 ft. 11 in. Center height; fits 1 queen-size air bed\r\n1-year limited warranty', 'Coleman', '1 - 2 months', 'Excellent Condition', 'Capacity Name : ‎4\r\nColor : Brown/Black\r\nSize : ‎4-Person\r\nStyle : ‎4-person\r\nLength : 96 inches\r\nWeight : ‎9.8 Pounds', 12.5, 'Camping', 'Available', 25, 1, NULL),
-(2, 'Bestway Hydro-Force Inflatable Stand Up Paddle Board SUP', NULL, 'Contents: Paddle board, Paddle, hand pump, travel bag, surf leash\r\nWeight capacity: 209 lbs\r\nNon-slip traction pad\r\nAdjustable 2.17M (85 inch ) aluminum oar included\r\nConvenient deck handle to easily carry the SUP', 'Bestway', '1 - 2 months', 'Excellent Condition', 'Style : Aqua Journey - 9 Ft.\r\nNumber of Items : ‎1\r\nBatteries Included? : ‎No', 22, 'Outdoor', 'Available', 4, 2, NULL),
-(3, '2 Pack Portable LED Camping Lantern Flashlights Survival Kit for Emergency, Hurricane, Outage', NULL, 'ULTRA BRIGHT: Includes 30 individual energy saving LED bulbs, designed for a longer lifespan. Carry 360 degree of luminous light while saving energy(batteries included)\r\nDEPENDABLE BUILD: Constructed with military grade; promising long-time durability, no matter where you go\r\nDESIGNED FOR CONVENIENCE: The extremely lightweight build allows you to take your lantern on the go with ease. When not in use collapse the lantern to a smaller size; store it effortlessly, taking little space\r\nLOW CONSUMPTION: Light up to 12 hours of regular, continuous use with enough battery capacity', 'SKY-TOUCH', '6-12 months', 'Good Condition', 'Batteries ‏ : ‎ 3 AA batteries required.\r\nProduct Dimensions ‏ : ‎ 5 x 4 x 3 cm; 540 Grams', 5.3, 'Camping', 'Available', 1, 3, NULL),
-(4, 'Camptrek Foldable Beach And Garden Chair, Red, BCI-3707', NULL, 'Type: Chairs\r\nMaterial: Nylon\r\nFoldable metal legs\r\nPortable and lightweight', 'Camptrek', '2-5 years', 'Fair Condition', 'Color : ‎Red\r\nProduct Dimensions : ‎12 x 80 x 19 cm; 1.5 Kilograms\r\nPrimary material : Polyester\r\nShipping Weight : ‎1.5 Kilograms', 6, 'Camping', 'Available', 2, NULL, NULL),
+(1, 'Coleman Cabin Tent with Instant Setup in 60 Seconds', NULL, 'Weatherproof: Welded corners and inverted seams keep water from getting in; integrated rainfly offers extra weather protection with better airflow\r\nBuilt to last: Double-thick fabric stands up to the elements season after season\r\nInstant setup: In as fast as 1 minute\r\nRoomy interior: 8 x 7 ft. With 4 ft. 11 in. Center height; fits 1 queen-size air bed\r\n1-year limited warranty', 'Coleman', '1 - 2 months', 'Excellent Condition', 'Capacity Name : ‎4\r\nColor : Brown/Black\r\nSize : ‎4-Person\r\nStyle : ‎4-person\r\nLength : 96 inches\r\nWeight : ‎9.8 Pounds', 12.5, 'Camping', 'Available', 42, 1, NULL),
+(2, 'Bestway Hydro-Force Inflatable Stand Up Paddle Board SUP', NULL, 'Contents: Paddle board, Paddle, hand pump, travel bag, surf leash\r\nWeight capacity: 209 lbs\r\nNon-slip traction pad\r\nAdjustable 2.17M (85 inch ) aluminum oar included\r\nConvenient deck handle to easily carry the SUP', 'Bestway', '1 - 2 months', 'Excellent Condition', 'Style : Aqua Journey - 9 Ft.\r\nNumber of Items : ‎1\r\nBatteries Included? : ‎No', 22, 'Outdoor', 'Available', 165, 2, NULL),
+(3, '2 Pack Portable LED Camping Lantern Flashlights Survival Kit for Emergency, Hurricane, Outage', NULL, 'ULTRA BRIGHT: Includes 30 individual energy saving LED bulbs, designed for a longer lifespan. Carry 360 degree of luminous light while saving energy(batteries included)\r\nDEPENDABLE BUILD: Constructed with military grade; promising long-time durability, no matter where you go\r\nDESIGNED FOR CONVENIENCE: The extremely lightweight build allows you to take your lantern on the go with ease. When not in use collapse the lantern to a smaller size; store it effortlessly, taking little space\r\nLOW CONSUMPTION: Light up to 12 hours of regular, continuous use with enough battery capacity', 'SKY-TOUCH', '6-12 months', 'Good Condition', 'Batteries ‏ : ‎ 3 AA batteries required.\r\nProduct Dimensions ‏ : ‎ 5 x 4 x 3 cm; 540 Grams', 5.3, 'Camping', 'Available', 3, 3, NULL),
+(4, 'Camptrek Foldable Beach And Garden Chair, Red, BCI-3707', NULL, 'Type: Chairs\r\nMaterial: Nylon\r\nFoldable metal legs\r\nPortable and lightweight', 'Camptrek', '2-5 years', 'Fair Condition', 'Color : ‎Red\r\nProduct Dimensions : ‎12 x 80 x 19 cm; 1.5 Kilograms\r\nPrimary material : Polyester\r\nShipping Weight : ‎1.5 Kilograms', 6, 'Camping', 'Available', 5, NULL, NULL),
 (5, 'Fishing Chair, Sturdy Durable Foldable Camping Chair, Practical for Camping Fishing', NULL, 'Suitable for outdoor activities such as fishing, camping, mountain climbing, long‑distance travel, etc. It is also suitable for indoor use, with Oxford cloth bags.\r\nThe clever design can be folded or unfolded easily and quickly. Professional structure design, stylish atmosphere, strong, lightweight, safe and comfortable.\r\nThe unique ergonomic seat design provides you with the best seat experience, allowing you to relax.\r\nThe use of high‑strength 7075 aviation aluminum alloy and a foldable bracket composed of high‑strength and thick nylon components, lightweight, compact and portable, and can bear a maximum load bearing of 150KG, very convenient and practical.\r\nThe fishing chair is equipped with a sponge pillow and a high back, which can full relax your back and support your head.', 'Denkerm', 'Brand New', 'Never Used', NULL, 18.62, 'Outdoor', 'Available', 0, NULL, NULL),
 (6, 'Cosmoplast Keep Cold Plastic Picnic Cooler Icebox 24 Liters', NULL, 'Thick polyurethane insulation up to 3 days of ice retention.\r\nProduct dimensions: L 41.5 x W 28 x H 35 cm.\r\nBail handle with secure lid locking.\r\nHolds up to 36 cans.\r\nFits 1.5 liter bottles upright.\r\nLeak proof tap for easy drainage of water.\r\nCup holders for easy access to beverages.\r\nPerfect for beach, hiking, camping, picnic, and other.', 'Cosmoplast', 'Brand New', 'Never Used', NULL, 20.56, 'Cooking', 'Available', 0, NULL, NULL),
-(7, 'Cosmoplast Keep Cold Plastic Picnic Cooler Icebox 24 Liters', NULL, 'Thick polyurethane insulation up to 3 days of ice retention.\r\nProduct dimensions: L 41.5 x W 28 x H 35 cm.\r\nBail handle with secure lid locking.\r\nHolds up to 36 cans.\r\nFits 1.5 liter bottles upright.\r\nLeak proof tap for easy drainage of water.\r\nCup holders for easy access to beverages.\r\nPerfect for beach, hiking, camping, picnic, and other.', 'Cosmoplast', 'Brand New', 'Never Used', NULL, 20.56, 'Cooking', 'Available', 0, NULL, NULL),
+(7, 'Cosmoplast Keep Cold Plastic Picnic Cooler Icebox 24 Liters', NULL, 'Thick polyurethane insulation up to 3 days of ice retention.\r\nProduct dimensions: L 41.5 x W 28 x H 35 cm.\r\nBail handle with secure lid locking.\r\nHolds up to 36 cans.\r\nFits 1.5 liter bottles upright.\r\nLeak proof tap for easy drainage of water.\r\nCup holders for easy access to beverages.\r\nPerfect for beach, hiking, camping, picnic, and other.', 'Cosmoplast', 'Brand New', 'Never Used', NULL, 20.56, 'Cooking', 'Available', 2, NULL, NULL),
 (8, 'Cosmoplast Keep Cold Plastic Picnic Cooler Icebox 24 Liters', NULL, 'Thick polyurethane insulation up to 3 days of ice retention.\r\nProduct dimensions: L 41.5 x W 28 x H 35 cm.\r\nBail handle with secure lid locking.\r\nHolds up to 36 cans.\r\nFits 1.5 liter bottles upright.\r\nLeak proof tap for easy drainage of water.\r\nCup holders for easy access to beverages.\r\nPerfect for beach, hiking, camping, picnic, and other.', 'Cosmoplast', 'Brand New', 'Never Used', NULL, 20.56, 'Cooking', 'Available', 4, NULL, NULL),
-(9, 'Cosmoplast Keep Cold Plastic Picnic Cooler Icebox 24 Liters', NULL, 'Thick polyurethane insulation up to 3 days of ice retention.\r\nProduct dimensions: L 41.5 x W 28 x H 35 cm.\r\nBail handle with secure lid locking.\r\nHolds up to 36 cans.\r\nFits 1.5 liter bottles upright.\r\nLeak proof tap for easy drainage of water.\r\nCup holders for easy access to beverages.\r\nPerfect for beach, hiking, camping, picnic, and other.', 'Cosmoplast', 'Brand New', 'Never Used', NULL, 20.56, 'Cooking', 'Available', 0, NULL, NULL),
+(9, 'Cosmoplast Keep Cold Plastic Picnic Cooler Icebox 24 Liters', NULL, 'Thick polyurethane insulation up to 3 days of ice retention.\r\nProduct dimensions: L 41.5 x W 28 x H 35 cm.\r\nBail handle with secure lid locking.\r\nHolds up to 36 cans.\r\nFits 1.5 liter bottles upright.\r\nLeak proof tap for easy drainage of water.\r\nCup holders for easy access to beverages.\r\nPerfect for beach, hiking, camping, picnic, and other.', 'Cosmoplast', 'Brand New', 'Never Used', NULL, 20.56, 'Cooking', 'Available', 1, NULL, NULL),
 (10, 'Cosmoplast Keep Cold Plastic Picnic Cooler Icebox 24 Liters', NULL, 'Thick polyurethane insulation up to 3 days of ice retention.\r\nProduct dimensions: L 41.5 x W 28 x H 35 cm.\r\nBail handle with secure lid locking.\r\nHolds up to 36 cans.\r\nFits 1.5 liter bottles upright.\r\nLeak proof tap for easy drainage of water.\r\nCup holders for easy access to beverages.\r\nPerfect for beach, hiking, camping, picnic, and other.', 'Cosmoplast', 'Brand New', 'Never Used', NULL, 20.56, 'Cooking', 'Available', 0, NULL, NULL),
 (11, 'Cosmoplast Keep Cold Plastic Picnic Cooler Icebox 24 Liters', NULL, 'Thick polyurethane insulation up to 3 days of ice retention.\r\nProduct dimensions: L 41.5 x W 28 x H 35 cm.\r\nBail handle with secure lid locking.\r\nHolds up to 36 cans.\r\nFits 1.5 liter bottles upright.\r\nLeak proof tap for easy drainage of water.\r\nCup holders for easy access to beverages.\r\nPerfect for beach, hiking, camping, picnic, and other.', 'Cosmoplast', 'Brand New', 'Never Used', NULL, 20.56, 'Cooking', 'Available', 1, NULL, NULL),
 (12, 'Cosmoplast Keep Cold Plastic Picnic Cooler Icebox 24 Liters', NULL, 'Thick polyurethane insulation up to 3 days of ice retention.\r\nProduct dimensions: L 41.5 x W 28 x H 35 cm.\r\nBail handle with secure lid locking.\r\nHolds up to 36 cans.\r\nFits 1.5 liter bottles upright.\r\nLeak proof tap for easy drainage of water.\r\nCup holders for easy access to beverages.\r\nPerfect for beach, hiking, camping, picnic, and other.', 'Cosmoplast', 'Brand New', 'Never Used', NULL, 20.56, 'Cooking', 'Available', 0, NULL, NULL),
@@ -271,7 +291,8 @@ CREATE TABLE `user_rented_products` (
 --
 ALTER TABLE `broken_cart`
   ADD PRIMARY KEY (`cart_id`),
-  ADD KEY `user_id` (`user_id`);
+  ADD KEY `user_id` (`user_id`),
+  ADD KEY `broken_cart_ibfk_1` (`product_id`);
 
 --
 -- Indexes for table `cart`
@@ -378,13 +399,13 @@ ALTER TABLE `broken_cart`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT for table `cart_products`
 --
 ALTER TABLE `cart_products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
 -- AUTO_INCREMENT for table `credit`

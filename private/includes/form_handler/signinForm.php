@@ -20,7 +20,7 @@ if (isset($_POST['signinBtn'])) {
 	if ($check_login_query == 1) {
 		$row = $result->fetch_assoc();
 		$email = $row['email'];
-
+		$user_id = $row['user_id'];
 		$user_closed_query = $con->prepare("SELECT * FROM users WHERE email=? AND status=1");
 		$user_closed_query->bind_param("s", $email);
 		$user_closed_query->execute();
@@ -35,6 +35,7 @@ if (isset($_POST['signinBtn'])) {
 		}
 
 		$_SESSION['email'] = $email;
+		$_SESSION['user_id'] = $user_id;
 		header("Location: index.php");
 		exit();
 	} else {
