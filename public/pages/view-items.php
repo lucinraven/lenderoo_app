@@ -99,14 +99,13 @@ $row = $result->fetch_assoc()
                                     <li>
                                         <p>City: Iloilo</p>
                                     </li>
-                                    <li>
-                                        <p>Review: Test</p>
-                                    </li>
                                 </ul>
                             </div>
 
                             <div class="right-bottom">
-                                <button class="btn btn-primary">Add to cart</button>
+                                <a class="btn btn-primary" href="inbox-messenger.php">Inquire Lender</a>
+
+                                <a class="btn btn-primary" href="add-cart.php">Add to cart</a>
                                 
                                 <a class="btn btn-primary" href="payment-method.php">Rent now</a>
                             </div>

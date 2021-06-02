@@ -38,9 +38,7 @@ include '../../private/includes/handler/accountHandler.php';
                             <li><a class="tab-btn" data-mdb-toggle="modal" href="#addItem" role="button">Add Item</a></li>
                             <li><button class="tab-btn tablink" onclick="openTab(event, \'lendInventory\')">Inventory</button></li>
                             <li><button class="tab-btn tablink" onclick="openTab(event, \'lendOutgoing\')">Outgoing Items</button></li>
-                            <li><button class="tab-btn tablink" onclick="openTab(event, \'lendAd\')">Advertising</button></li>
                             <li><button class="tab-btn tablink" onclick="openTab(event, \'lendTerms\')">Terms & Condition</button></li>
-                            <li><button class="tab-btn tablink" onclick="openTab(event, \'lendRequest\')">Return Request</button></li>
                         </ul>
                     </div>';
                 } ?>
@@ -53,6 +51,9 @@ include '../../private/includes/handler/accountHandler.php';
                     <div class="row">
                         <div class="col-md-5">
                             <form action="">
+                                <div class="form-header">
+                                    <i class="fas fa-edit"></i>
+                                </div>
                                 <div class="row">
                                     <label for="itemName">First Name</label>
                                     <input type="text" value=" ">
@@ -87,63 +88,79 @@ include '../../private/includes/handler/accountHandler.php';
                 </div>
 
                 <div id="accOrdrs" class="accOrdrs acc-tabs" style="display: none;">
-                    <h1>Your Orders</h1>
-                    <table class="orders-table">
-                        <thead>
-                            <tr>
-                                <th>Item Image</th>
-                                <th>Product Id</th>
-                                <th>Name</th>
-                                <th>Date Ordered</th>
-                                <th>Date of Return</th>
-                                <th>Price/Day</th>
-                                <th>Duration</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td></td>
-                                <td>030303</td>
-                                <td>Tool</td>
-                                <td>03/15/21</td>
-                                <td>03/25/21</td>
-                                <td>10 Aed</td>
-                                <td>10 Days</td>
-                                <td>Delivered</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>030303</td>
-                                <td>Tool</td>
-                                <td>03/15/21</td>
-                                <td>03/25/21</td>
-                                <td>10 Aed</td>
-                                <td>10 Days</td>
-                                <td>Delivered</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>030303</td>
-                                <td>Tool</td>
-                                <td>03/15/21</td>
-                                <td>03/25/21</td>
-                                <td>10 Aed</td>
-                                <td>10 Days</td>
-                                <td>Delivered</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>030303</td>
-                                <td>Tool</td>
-                                <td>03/15/21</td>
-                                <td>03/25/21</td>
-                                <td>10 Aed</td>
-                                <td>10 Days</td>
-                                <td>Delivered</td>
-                            </tr>
-                        </tbody>
-                    </table>
+                    <div class="content-header">
+                        <h1>Your Orders</h1>
+                    </div>
+
+                    <div class="content-body">
+                        <?php
+                        $sql = "SELECT * FROM `product`"; //remove product_title, and add product_names in DB
+                        $stmt = $con->prepare($sql);
+                        $stmt->execute();
+                        $result = $stmt->get_result();
+
+                        while ($row = $result->fetch_assoc()) {
+                            echo
+                            '<a class="card-item" href="view-information-order.php">
+                                <div class="left-content">
+                                    <img src="" alt="">
+                                </div>
+
+                                <div class="right-content">
+                                    <div class="right-header">
+                                        <h3>Heading</h3>
+                                        <p>Status</p>
+                                    </div>
+                                    <div class="right-body">
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label for="">Date Ordered:</label>
+                                                <p>30/21/21</p>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label for="">Date of Return:</label>
+                                                <p>30/21/21</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="row">
+                                            <div class="col-md-6">
+                                                <label for="">Leasing Duration:</label>
+                                                <p>10 Days</p>
+                                            </div>
+
+                                            <div class="col-md-6">
+                                                <label for="">Pricing:</label>
+                                                <p>10 Dhs / Day</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>';
+                        };
+                        ?>
+                    </div>
+
+                    <div class="pagination-footer ">
+                        <nav aria-label="Page navigation example ">
+                            <ul class="pagination justify-content-center ">
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
                 </div>
 
                 <div id="accLender" class="accLender acc-tabs" style="display: none;">
@@ -167,37 +184,7 @@ include '../../private/includes/handler/accountHandler.php';
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td></td>
-                                <td>030303</td>
-                                <td>Tool</td>
-                                <td>03/15/21</td>
-                                <td>03/25/21</td>
-                                <td>10 Aed</td>
-                                <td>10 Days</td>
-                                <td>Delivered</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>030303</td>
-                                <td>Tool</td>
-                                <td>03/15/21</td>
-                                <td>03/25/21</td>
-                                <td>10 Aed</td>
-                                <td>10 Days</td>
-                                <td>Delivered</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>030303</td>
-                                <td>Tool</td>
-                                <td>03/15/21</td>
-                                <td>03/25/21</td>
-                                <td>10 Aed</td>
-                                <td>10 Days</td>
-                                <td>Delivered</td>
-                            </tr>
-                            <tr>
+                            <tr class='clickable-row' data-href='view-items.php'>
                                 <td></td>
                                 <td>030303</td>
                                 <td>Tool</td>
@@ -216,7 +203,7 @@ include '../../private/includes/handler/accountHandler.php';
                     <h1>Outgoing</h1>
                     <table class="outgoing-table">
                         <thead>
-                            <tr>
+                            <tr class='clickable-row' data-href='view-items.php'>
                                 <th>Item Image</th>
                                 <th>Order Id</th>
                                 <th>Name</th>
@@ -240,49 +227,8 @@ include '../../private/includes/handler/accountHandler.php';
                                 <td>johndale@gmai.com</td>
                                 <td>Delivered</td>
                             </tr>
-                            <tr>
-                                <td></td>
-                                <td>030303</td>
-                                <td>Tool</td>
-                                <td>03/15/21</td>
-                                <td>03/25/21</td>
-                                <td>John Dale</td>
-                                <td>055-232322</td>
-                                <td>johndale@gmai.com</td>
-                                <td>Delivered</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>030303</td>
-                                <td>Tool</td>
-                                <td>03/15/21</td>
-                                <td>03/25/21</td>
-                                <td>John Dale</td>
-                                <td>055-232322</td>
-                                <td>johndale@gmai.com</td>
-                                <td>Delivered</td>
-                            </tr>
-                            <tr>
-                                <td></td>
-                                <td>030303</td>
-                                <td>Tool</td>
-                                <td>03/15/21</td>
-                                <td>03/25/21</td>
-                                <td>John Dale</td>
-                                <td>055-232322</td>
-                                <td>johndale@gmai.com</td>
-                                <td>Delivered</td>
-                            </tr>
                         </tbody>
                     </table>
-                </div>
-
-                <div id="lendAd" class="lendAd acc-tabs" style="display: none;">
-                    <h1>Advertising</h1>
-                </div>
-
-                <div id="lendRequest" class="lendRequest acc-tabs" style="display: none;">
-                    <h1>Request Return</h1>
                 </div>
 
                 <div id="lendTerms" class="lendTerm acc-tabs" style="display: none;">
