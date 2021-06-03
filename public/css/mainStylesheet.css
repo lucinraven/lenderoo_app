@@ -1731,7 +1731,7 @@ h1 {
 .account-pg-ctn .row .col-md-9 .lendInventory .card-item {
   margin: 10px 0;
   display: block;
-  height: 130px;
+  height: 170px;
   width: 100%;
   background: #FFFFFF;
   border: solid;
@@ -1748,7 +1748,7 @@ h1 {
 .account-pg-ctn .row .col-md-9 .lendInventory .left-content, .account-pg-ctn .row .col-md-9 .lendInventory .view-order-page .order-details .col-md-8 .content-body .right-content, .view-order-page .order-details .col-md-8 .content-body .account-pg-ctn .row .col-md-9 .lendInventory .right-content, .account-pg-ctn .row .col-md-9 .lendInventory .view-outgoing-page .order-details .col-md-8 .content-body .right-content, .view-outgoing-page .order-details .col-md-8 .content-body .account-pg-ctn .row .col-md-9 .lendInventory .right-content {
   padding: 10px;
   height: 100%;
-  width: 20%;
+  width: 30%;
   float: left;
 }
 
@@ -1761,7 +1761,7 @@ h1 {
 .account-pg-ctn .row .col-md-9 .lendInventory .right-content {
   padding: 10px;
   height: 100%;
-  width: 80%;
+  width: 70%;
   float: right;
 }
 
@@ -1772,7 +1772,7 @@ h1 {
 }
 
 .account-pg-ctn .row .col-md-9 .lendInventory .right-content .right-header h3 {
-  font-size: 20px;
+  font-size: 16px;
   font-family: "Poppins", sans-serif;
   display: block;
   float: left;
