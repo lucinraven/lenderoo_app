@@ -35,7 +35,6 @@
             }
         }
 
-
         .card-body {
             height: auto;
             width: 100%;
@@ -62,24 +61,23 @@
                 outline: none;
             }
         }
-    }
 
-    .summary-footer {
-        width: 100%;
+        .summary-footer {
+            width: 100%;
 
-        .btn {
-            width: 200px;
-            margin-top: 10px;
-            float: right;
-            background-color: $primary;
-            font-size: 14px;
-            font-weight: 300;
-            font-family: $font-family;
-            text-transform: capitalize;
-            color: $heading-color;
-        }
-        .btn:hover {
-            background-color: #ecaf75;
+            .btn {
+                width: 200px;
+                float: right;
+                background-color: $primary;
+                font-size: 14px;
+                font-weight: 300;
+                font-family: $font-family;
+                text-transform: capitalize;
+                color: $heading-color;
+            }
+            .btn:hover {
+                background-color: #ecaf75;
+            }
         }
     }
 }

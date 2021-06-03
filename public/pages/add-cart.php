@@ -115,7 +115,7 @@ if (isset($_POST['product_id'])) {
                     <p>Aed/Day</p>
                 </div>
                 <div class="summary-footer">
-                    <a href="../pages/payment-method.php"><button class="btn">Lease All Item</button></a>
+                    <a href="../pages/review-checkout.php"><button class="btn">Lease All Item</button></a>
 
                 </div>
             </div>

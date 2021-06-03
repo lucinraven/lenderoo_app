@@ -11,7 +11,7 @@ include '../includes/header.php';
 // checks if user is not logged in to access the page
 if (!isset($_SESSION['email'])) {
     header("Location: ../pages/authentication.php");
-} 
+}
 ?>
 
 <!-- Payment method page -->
@@ -28,20 +28,10 @@ if (!isset($_SESSION['email'])) {
                 </div>
 
                 <div class="card-body">
-                    <form action="">
+                    <form action="review-checkout.php">
                         <div class="row">
                             <div class="col-md-5">
-                                <label for="">First Name</label>
-                                <input type="text">
-
-                                <label for="">Last Name</label>
-                                <input type="text">
-
-                                <label for="">Mobile</label>
-                                <input type="text">
-                            </div>
-                            <div class="col-md-5">
-                                <label for="">Address</label>
+                                <label for="">Delivery Address</label>
                                 <input type="text">
 
                                 <label for="">Emirates</label>
@@ -51,17 +41,14 @@ if (!isset($_SESSION['email'])) {
                                 <input type="text">
                             </div>
                         </div>
+                        <div class="summary-footer">
+                            <button class="btn" type="submit">Continue</button>
+                        </div>
                     </form>
                 </div>
             </div>
         </div>
-
-        <div class="summary-footer">
-            <button class="btn">Continue</button>
-        </div>
-
     </div>
-</div>
 </div>
 
 <?php

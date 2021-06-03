@@ -19,7 +19,7 @@ include '../includes/header.php';
                     <div class="content-header">
                         <h1>Review Item</h1>
                     </div>
-                    <div class="content-body">
+                    <form action="confirm-order.php" class="content-body" id="placeOrder" method="POST" >
                         <div class="content">
                             <h1>Shipping Address</h1>
                             <p>John Doe</p>
@@ -39,9 +39,7 @@ include '../includes/header.php';
                                 <option value="saab">Delivered by lender</option>
                             </select>
                         </div>
-
-
-                    </div>
+                    </form>
                 </div>
 
                 <!-- left-content-row-2 -->
@@ -54,48 +52,36 @@ include '../includes/header.php';
                     <div class="content-body">
                         <!-- card-items -->
                         <div class="listed-cards-item row">
-                            <div class="col-md-2">
-                                <img src="" alt="">
-                            </div>
+                            <?php
+                            $user_id = $_SESSION['user_id'];
 
-                            <div class="col-md-8">
-                                <h4>Heading</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum enim sed sapiente aut dolor dolore? Nostrum enim debitis quae tenetur unde nulla dolorem soluta laboriosam. Ducimus veniam sunt unde perferendis!</p>
-                            </div>
-                            <div class="col-md-2">
-                                <p>Aed/Day</p>
+                            $sql = "SELECT * FROM cart_products cp INNER JOIN product p ON cp.product_id = p.product_id INNER JOIN cart c ON c.cart_id = cp.cart_id WHERE c.is_active = 1 AND c.user_id = ?";
+                            $stmt = $con->prepare($sql);
+                            $stmt->bind_param("i", $user_id);
+                            $stmt->execute();
 
-                            </div>
-                        </div>
+                            $productInCartRes = $stmt->get_result();
+                            while ($row = $productInCartRes->fetch_assoc()) {
+                                echo '
+                                    <div class="listed-cards-item row">
+                                        <div class="col-md-2">
+                                            <img src="" alt="">
+                                        </div>
 
-                         <div class="listed-cards-item row">
-                            <div class="col-md-2">
-                                <img src="" alt="">
-                            </div>
+                                        <div class="right-content col-md-8">
+                                            <h4>'.$row['product_title'].'</h4>
+                                            <p>'.$row['description'].'</p>
+                                        </div>
 
-                            <div class="col-md-8">
-                                <h4>Heading</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum enim sed sapiente aut dolor dolore? Nostrum enim debitis quae tenetur unde nulla dolorem soluta laboriosam. Ducimus veniam sunt unde perferendis!</p>
-                            </div>
-                            <div class="col-md-2">
-                                <p>Aed/Day</p>
+                                        <div class="col-md-2">
+                                            <p>' . $row['price'] . 'Aed/Day</p>
+        
+                                        </div>
+                                    </div>
+                            ';
+                            }
 
-                            </div>
-                        </div>
-
-                        <div class="listed-cards-item row">
-                            <div class="col-md-2">
-                                <img src="" alt="">
-                            </div>
-
-                            <div class="col-md-8">
-                                <h4>Heading</h4>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eum enim sed sapiente aut dolor dolore? Nostrum enim debitis quae tenetur unde nulla dolorem soluta laboriosam. Ducimus veniam sunt unde perferendis!</p>
-                            </div>
-                            <div class="col-md-2">
-                                <p>Aed/Day</p>
-
-                            </div>
+                            ?>
                         </div>
                     </div>
                 </div>
@@ -111,7 +97,7 @@ include '../includes/header.php';
                         <p>Total</p>
                     </div>
                     <div class="summary-footer">
-                        <button class="btn">Place Order</button>
+                        <button class="btn" onclick="document.getElementById('placeOrder').submit()">Place Order</button>
                     </div>
                 </div>
             </div>

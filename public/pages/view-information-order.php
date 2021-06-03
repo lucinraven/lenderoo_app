@@ -22,13 +22,14 @@ include '../includes/header.php';
 
                     <div class="content-body">
                         <div class="left-content">
-                            <p>Leased Duration</p>
-                            <p>Date Ordered</p>
-                            <p>Return Date</p>
+                            <p>Order Id:</p>
+                            <p>Leased Duration:</p>
+                            <p>Date Ordered<:/p>
+                            <p>Return Date:</p>
                         </div>
 
                         <div class="right-content">
-                            <p>Delivered Date</p>
+                            <p>Delivered Date:</p>
                         </div>
                     </div>
                 </div>
