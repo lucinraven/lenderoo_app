@@ -13,3 +13,4 @@ function openTab(event, tabPages) {
   evt.currentTarget.className += " w3-red";
 }
 /* end of tab view codes */
+
