@@ -1,0 +1,95 @@
+.confirm-order-page{
+    height: auto;
+    width: 100%;
+    background-color: $secondary-bg-color;
+
+    .container-lg{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .confirm-order-content{
+        margin: 50px 0 100px 0;
+        height: 400px;
+        width: 60%;
+        border: solid;
+        border-width: thin;
+        border-color: #d1d1d1;
+        background: $main-bg-color;
+        box-shadow: 2px 2px 15px 1px #d1d1d1;
+    }
+
+    .content-header{
+        height: 15%;
+        border-bottom: solid;
+        border-width: thin;
+        border-color: #d1d1d1;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+
+        h4{
+            margin-bottom: 0;
+            margin-left: 15px;
+            font-family: $font-family;
+        }
+    }
+
+    .content-body{
+        height: 70%;
+
+        .order-text{
+            height: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+
+            h5{
+                font-family: $font-family;
+                text-align: center;
+            }
+    
+            h6{
+                font-family: $font-family;
+                text-align: center;
+            }
+        }
+
+        .order-details{
+            height: 50%;
+            margin-left: 50px;
+
+            p{
+                margin-bottom: 9px;
+                font-size: 14px;
+                font-family: $font-family;
+            }
+        }
+
+      
+    }
+
+    .content-footer{
+        padding: 20px 0;
+        height: 15%;
+        border-top: solid;
+        border-width: thin;
+        border-color: #d1d1d1;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+
+        .btn{
+            width: 170px;
+            margin-right: 15px;
+            font-size: 14px;
+            font-family: $font-family;
+            text-transform: capitalize;
+            background-color: $primary;
+            color: #ffffff;
+        }
+
+    }
+}
