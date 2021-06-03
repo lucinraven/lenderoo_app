@@ -2,6 +2,10 @@
 
 include '../includes/header.php';
 
+// checks if user is not logged in to access the page
+if (!isset($_SESSION['email'])) {
+    header("Location: ../pages/authentication.php");
+} 
 ?>
 
 <!-- Inbox messenger page -->

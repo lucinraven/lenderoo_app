@@ -125,46 +125,45 @@ if (isset($_POST['signupBtn'])) {
                 <!-- SIGN UP FORM -->
                 <div class="left">
                     <div class="content">
-                        <h2>Sign Up</h2>
+                        <h2 class="left-heading">Sign Up</h2>
 
-                        <form method='post' action='authentication.php'>
-                            <!-- FirstName input -->
-                            <div class="form-outline mb-4">
-                                <input type="text" name="signup_firstName" class="form-control" />
-                                <label class="form-label">First Name</label>
-                            </div>
+                        <div class="form-container">
+                            <form method='post' action='authentication.php'>
+                                <!-- FirstName input -->
+                                <div class="form-outline mb-4">
+                                    <input type="text" name="signup_firstName" class="form-control" />
+                                    <label class="form-label">First Name</label>
+                                </div>
 
-                            <!-- FirstName input -->
-                            <div class="form-outline mb-4">
-                                <input type="text" name="signup_lastName" class="form-control" />
-                                <label class="form-label">Last Name</label>
-                            </div>
+                                <!-- FirstName input -->
+                                <div class="form-outline mb-4">
+                                    <input type="text" name="signup_lastName" class="form-control" />
+                                    <label class="form-label">Last Name</label>
+                                </div>
 
-                            <!-- Email input -->
-                            <div class="form-outline mb-4">
-                                <input type="email" name="signup_email" class="form-control" />
-                                <label class="form-label">Email address</label>
-                            </div>
+                                <!-- Email input -->
+                                <div class="form-outline mb-4">
+                                    <input type="email" name="signup_email" class="form-control" />
+                                    <label class="form-label">Email address</label>
+                                </div>
 
-                            <!-- Password input -->
-                            <div class="form-outline mb-4">
-                                <input type="password" name="signup_password" class="form-control" />
-                                <label class="form-label">Password</label>
-                            </div>
+                                <!-- Password input -->
+                                <div class="form-outline mb-4">
+                                    <input type="password" name="signup_password" class="form-control" />
+                                    <label class="form-label">Password</label>
+                                </div>
 
-                            <!-- Contact input -->
-                            <div class="form-outline mb-4">
-                                <input type="text" name="signup_contact" class="form-control" />
-                                <label class="form-label">Contact</label>
-                            </div>
+                                <!-- Contact input -->
+                                <div class="form-outline mb-4">
+                                    <input type="text" name="signup_contact" class="form-control" />
+                                    <label class="form-label">Contact</label>
+                                </div>
+                                <!-- Submit button -->
+                                <input type="submit" name="signupBtn" class="btn btn-primary btn-block" value="Sign Up">
+                            </form>
+                        </div>
 
-                            <!-- Submit button -->
-                            <input type="submit" name="signupBtn" class="btn btn-primary btn-block mb-4" value="Sign Up">
-
-                        </form>
-
-                        <button id="goLeft" class="off">Sign in</button>
-                        <button type='submit' name="signupBtn">Sign up</button>
+                        <button id="goLeft" class="off">Have an account? Sign in</button>
                     </div>
                 </div>
                 <!-- END OF SIGN UP FORM -->
@@ -172,40 +171,26 @@ if (isset($_POST['signupBtn'])) {
                 <!-- SIGN IN FORM -->
                 <div class="right">
                     <div class="content">
-                        <h2>Sign In</h2>
+                        <h2 class="right-heading">Sign In</h2>
 
-                        <form method='post'>
-                            <!-- Email input -->
-                            <div class="form-outline mb-4">
-                                <input type="email" name="signin_email" class="form-control" />
-                                <label class="form-label">Email address</label>
-                            </div>
-
-                            <!-- Password input -->
-                            <div class="form-outline mb-4">
-                                <input type="password" name="signin_password" class="form-control" />
-                                <label class="form-label">Password</label>
-                            </div>
-
-                            <!-- 2 column grid layout for inline styling -->
-                            <div class="row mb-4">
-                                <div class="col d-flex justify-content-center">
-                                    <!-- Checkbox -->
-                                    <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" value="" id="form2Example3" checked />
-                                        <label class="form-check-label" for="form2Example3"> Remember me </label>
-                                    </div>
+                        <div class="form-container">
+                            <form method='post'>
+                                <!-- Email input -->
+                                <div class="form-outline mb-4">
+                                    <input type="email" name="signin_email" class="form-control" />
+                                    <label class="form-label">Email address</label>
                                 </div>
-
+                                <!-- Password input -->
+                                <div class="form-outline mb-4">
+                                    <input type="password" name="signin_password" class="form-control" />
+                                    <label class="form-label">Password</label>
+                                </div>
                                 <!-- Submit button -->
-                                <button type="submit" name="signinBtn" class="btn btn-primary btn-block mb-4">Sign in</button>
+                                <button type="submit" name="signinBtn" class="btn btn-primary btn-block" value="Signin">Sign in</button>
+                            </form>
+                        </div>
 
-                            </div>
-
-                        </form>
-
-                        <div>
-                            <!-- Simple link -->
+                        <div class="forgot-password-ctn">
                             <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal"> Forgot Password </button>
 
                             <!-- Modal -->
@@ -234,8 +219,7 @@ if (isset($_POST['signupBtn'])) {
                         </div>
 
                         <div>
-                            <button id="goRight" class="off">Sign up</button>
-                            <button id="login" type="submit">Sign in</button>
+                            <button id="goRight" class="off">Not registered yet? Sign up</button>
                         </div>
 
                     </div>

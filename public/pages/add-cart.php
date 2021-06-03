@@ -8,8 +8,13 @@
 
 include '../includes/header.php';
 
-$user_id = $_SESSION['user_id'];
+// checks if user is not logged in to access the page
+if (!isset($_SESSION['email'])) {
 
+    header("Location: ../pages/authentication.php");
+}
+
+$user_id = $_SESSION['user_id'];
 if (isset($_POST['product_id'])) {
     $product_id = $_POST['product_id'];
     $sql = "SELECT * FROM cart WHERE user_id = ? AND is_active = 1 LIMIT 1;";
