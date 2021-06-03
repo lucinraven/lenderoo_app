@@ -37,7 +37,7 @@
             .cart-item {
                 margin-top: 10px;
                 padding: 5px;
-                height: 150px;
+                height: 170px;
                 width: 100%;
                 border-bottom: solid;
                 border-width: thin;
@@ -54,27 +54,39 @@
                     }
                 }
 
-                .middle-content {
+                .right-content{
+                    padding: 10px;
+                }
+
+                .right-header {
+                    height: 40%;
+                    width: 100%;
                     display: flex;
-                    justify-content: center;
-                    align-items: flex-start;
-                    flex-direction: column;
+                    justify-content: flex-start;
+                    align-items: flex-end;
 
                     h2 {
-                        font-size: 18px;
-                        font-family: $font-family;
-                    }
-
-                    p {
-                        font-size: 14px;
+                        margin-bottom: 0;
+                        margin-right: 30px;
+                        font-size: 16px;
                         font-family: $font-family;
                     }
                 }
 
-                .right-content {
-                    @include center;
-                    font-size: 14px;
-                    font-family: $font-family;
+                .right-body {
+                    height: 60%;
+                    width: 100%;
+                    display: flex;
+                    justify-content: flex-start;
+                    align-items: center;
+
+                    p {
+                        display: inline-block;
+                        margin-bottom: 0;
+                        margin-right: 30px;
+                        font-size: 14px;
+                        font-family: $font-family;
+                    }
                 }
             }
         }

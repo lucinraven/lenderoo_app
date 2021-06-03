@@ -85,7 +85,7 @@
                     font-family: $font-family;
                 }
 
-                .col-md-5 {
+                .col-md-8 {
                     margin: 0 25px;
 
                     form {
@@ -122,6 +122,25 @@
                         border-width: thin;
                         font-family: $font-family;
                         color: #000000;
+                    }
+
+                    h3{
+                        font-family: $font-family;
+                        color: $primary;
+                        margin-bottom: 9px;
+                    }
+                    
+                    p{
+                        font-size: 16px;
+                        font-family: $font-family;
+                        margin-bottom: 30px;
+                    }
+
+                    .btn{
+                        background-color: $primary;
+                        font-size: 16px;
+                        font-family: $font-family;
+                        text-transform: capitalize;
                     }
                 }
             }

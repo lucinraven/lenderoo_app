@@ -63,16 +63,13 @@
 
                         <ul class="list-unstyled mb-0">
                             <li>
-                                <a href="#!" class="text-white">Your Account</a>
+                                <a href="user-account.php" class="text-white">Your Account</a>
                             </li>
                             <li>
-                                <a href="#!" class="text-white">Your Order</a>
+                                <a href="user-account.php"" class="text-white">Your Order</a>
                             </li>
                             <li>
-                                <a href="#!" class="text-white">Your Adresses</a>
-                            </li>
-                            <li>
-                                <a href="#!" class="text-white">Your Lists</a>
+                                <a href="user-account.php"" class="text-white">Your Lists</a>
                             </li>
                         </ul>
                     </div>
@@ -144,15 +141,16 @@
 </body>
 
 <script type="text/javascript" src="../js/entry.js"></script>
-
 <!-- Main javascript codes -->
 <script type="text/javascript" src="../js/main.js"></script>
-
 <!-- Jquery -->
 <script type="text/javascript" src="../js/jquery.js"></script>
 
-<!-- MDB -->
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+<script
+  type="text/javascript"
+  src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.5.0/mdb.min.js"
+></script>
+
 <!-- JavaScript Bundle with Popper -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
 

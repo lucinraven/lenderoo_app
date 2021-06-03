@@ -437,7 +437,7 @@ body {
 .add-cart-page .row .col-md-9 .cart-item {
   margin-top: 10px;
   padding: 5px;
-  height: 150px;
+  height: 170px;
   width: 100%;
   border-bottom: solid;
   border-width: thin;
@@ -463,42 +463,49 @@ body {
   background-color: darkgray;
 }
 
-.add-cart-page .row .col-md-9 .cart-item .middle-content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: start;
-      -ms-flex-align: start;
-          align-items: flex-start;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-}
-
-.add-cart-page .row .col-md-9 .cart-item .middle-content h2 {
-  font-size: 18px;
-  font-family: "Poppins", sans-serif;
-}
-
-.add-cart-page .row .col-md-9 .cart-item .middle-content p {
-  font-size: 14px;
-  font-family: "Poppins", sans-serif;
-}
-
 .add-cart-page .row .col-md-9 .cart-item .right-content {
+  padding: 10px;
+}
+
+.add-cart-page .row .col-md-9 .cart-item .right-header {
+  height: 40%;
+  width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+}
+
+.add-cart-page .row .col-md-9 .cart-item .right-header h2 {
+  margin-bottom: 0;
+  margin-right: 30px;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+.add-cart-page .row .col-md-9 .cart-item .right-body {
+  height: 60%;
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.add-cart-page .row .col-md-9 .cart-item .right-body p {
+  display: inline-block;
+  margin-bottom: 0;
+  margin-right: 30px;
   font-size: 14px;
   font-family: "Poppins", sans-serif;
 }
@@ -1101,21 +1108,16 @@ body {
 }
 
 .payment-method-page {
-  height: 100vh;
+  height: auto;
   width: 100%;
-  padding: 20px 0 100px 0;
+  padding: 20px 0 150px 0;
   background: #f2f3f4;
 }
 
-.payment-method-page .row {
+.payment-method-page .payment-content {
+  padding: 0 0 15px 0;
   margin: 10px 0;
   width: 100%;
-}
-
-.payment-method-page .col-md-9 {
-  height: auto;
-  margin: 0;
-  padding: 0 0 15px 0;
   border: solid;
   border-width: thin;
   border-color: #d1d1d1;
@@ -1124,38 +1126,30 @@ body {
           box-shadow: 2px 2px 15px 1px #d1d1d1;
 }
 
-.payment-method-page .col-md-9 h1 {
+.payment-method-page h1 {
   font-size: 24px;
   margin: 20px 0 20px 20px;
 }
 
-.payment-method-page .col-md-9 .payment-card-item {
+.payment-method-page .payment-card-item {
   height: auto;
   width: 100%;
   margin: 10px 0;
   background-color: #FFFFFF;
 }
 
-.payment-method-page .col-md-9 .payment-card-item .card-header label {
-  padding-left: 15px;
+.payment-method-page .payment-card-item .card-header h3 {
+  padding-left: 5px;
   font-size: 16px;
   font-family: "Poppins", sans-serif;
 }
 
-.payment-method-page .col-md-9 .payment-card-item .card-header label:hover {
-  cursor: pointer;
-}
-
-.payment-method-page .col-md-9 .payment-card-item .collapse {
-  padding: 5px;
-}
-
-.payment-method-page .col-md-9 .payment-card-item .card-body {
-  height: 300px;
+.payment-method-page .payment-card-item .card-body {
+  height: auto;
   width: 100%;
 }
 
-.payment-method-page .col-md-9 .payment-card-item .card-body .col-2 {
+.payment-method-page .payment-card-item .card-body .col-2 {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1167,49 +1161,30 @@ body {
           align-items: center;
 }
 
-.payment-method-page .col-md-9 .payment-card-item .card-body .col-2 label {
+.payment-method-page .payment-card-item .card-body .col-2 label {
   display: block;
   margin: 0 auto;
   font-size: 16px;
   font-family: "Poppins", sans-serif;
 }
 
-.payment-method-page .col-md-9 .payment-card-item .card-body input {
+.payment-method-page .payment-card-item .card-body input {
+  display: block;
   margin: 10px 0;
   padding-left: 5px;
   height: 30px;
-  width: 100%;
+  width: 80%;
   border-style: solid;
   border-color: #d1d1d1;
   outline: none;
 }
 
-.payment-method-page .col-md-3 {
-  height: auto;
-}
-
-.payment-method-page .col-md-3 .summary-content {
-  border: solid;
-  height: auto;
-  border-width: thin;
-  border-color: #d1d1d1;
-  background-color: #FFFFFF;
-  -webkit-box-shadow: 2px 2px 15px 1px #d1d1d1;
-          box-shadow: 2px 2px 15px 1px #d1d1d1;
-}
-
-.payment-method-page .col-md-3 .summary-content p {
-  margin: 10px 0 10px 15px;
-  font-size: 16px;
-  font-family: "Poppins", sans-serif;
-}
-
-.payment-method-page .col-md-3 .summary-content .summary-footer {
+.payment-method-page .summary-footer {
   width: 100%;
 }
 
-.payment-method-page .col-md-3 .summary-content .summary-footer .btn {
-  width: 100%;
+.payment-method-page .summary-footer .btn {
+  width: 200px;
   margin-top: 10px;
   float: right;
   background-color: #DD9857;
@@ -1220,7 +1195,7 @@ body {
   color: #FFFFFF;
 }
 
-.payment-method-page .col-md-3 .summary-content .summary-footer .btn:hover {
+.payment-method-page .summary-footer .btn:hover {
   background-color: #ecaf75;
 }
 
@@ -1570,15 +1545,15 @@ h1 {
   font-family: "Poppins", sans-serif;
 }
 
-.account-pg-ctn .row .col-md-9 .accInfo .col-md-5, .account-pg-ctn .row .col-md-9 .lendOutgoing .col-md-5, .account-pg-ctn .row .col-md-9 .lendAd .col-md-5, .account-pg-ctn .row .col-md-9 .lendRequest .col-md-5, .account-pg-ctn .row .col-md-9 .lendTerm .col-md-5 {
+.account-pg-ctn .row .col-md-9 .accInfo .col-md-8, .account-pg-ctn .row .col-md-9 .lendOutgoing .col-md-8, .account-pg-ctn .row .col-md-9 .lendAd .col-md-8, .account-pg-ctn .row .col-md-9 .lendRequest .col-md-8, .account-pg-ctn .row .col-md-9 .lendTerm .col-md-8 {
   margin: 0 25px;
 }
 
-.account-pg-ctn .row .col-md-9 .accInfo .col-md-5 form, .account-pg-ctn .row .col-md-9 .lendOutgoing .col-md-5 form, .account-pg-ctn .row .col-md-9 .lendAd .col-md-5 form, .account-pg-ctn .row .col-md-9 .lendRequest .col-md-5 form, .account-pg-ctn .row .col-md-9 .lendTerm .col-md-5 form {
+.account-pg-ctn .row .col-md-9 .accInfo .col-md-8 form, .account-pg-ctn .row .col-md-9 .lendOutgoing .col-md-8 form, .account-pg-ctn .row .col-md-9 .lendAd .col-md-8 form, .account-pg-ctn .row .col-md-9 .lendRequest .col-md-8 form, .account-pg-ctn .row .col-md-9 .lendTerm .col-md-8 form {
   margin: 30px 0;
 }
 
-.account-pg-ctn .row .col-md-9 .accInfo .col-md-5 .form-header, .account-pg-ctn .row .col-md-9 .lendOutgoing .col-md-5 .form-header, .account-pg-ctn .row .col-md-9 .lendAd .col-md-5 .form-header, .account-pg-ctn .row .col-md-9 .lendRequest .col-md-5 .form-header, .account-pg-ctn .row .col-md-9 .lendTerm .col-md-5 .form-header {
+.account-pg-ctn .row .col-md-9 .accInfo .col-md-8 .form-header, .account-pg-ctn .row .col-md-9 .lendOutgoing .col-md-8 .form-header, .account-pg-ctn .row .col-md-9 .lendAd .col-md-8 .form-header, .account-pg-ctn .row .col-md-9 .lendRequest .col-md-8 .form-header, .account-pg-ctn .row .col-md-9 .lendTerm .col-md-8 .form-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1590,31 +1565,50 @@ h1 {
           align-items: center;
 }
 
-.account-pg-ctn .row .col-md-9 .accInfo .col-md-5 .form-header i, .account-pg-ctn .row .col-md-9 .lendOutgoing .col-md-5 .form-header i, .account-pg-ctn .row .col-md-9 .lendAd .col-md-5 .form-header i, .account-pg-ctn .row .col-md-9 .lendRequest .col-md-5 .form-header i, .account-pg-ctn .row .col-md-9 .lendTerm .col-md-5 .form-header i {
+.account-pg-ctn .row .col-md-9 .accInfo .col-md-8 .form-header i, .account-pg-ctn .row .col-md-9 .lendOutgoing .col-md-8 .form-header i, .account-pg-ctn .row .col-md-9 .lendAd .col-md-8 .form-header i, .account-pg-ctn .row .col-md-9 .lendRequest .col-md-8 .form-header i, .account-pg-ctn .row .col-md-9 .lendTerm .col-md-8 .form-header i {
   font-size: 16px;
 }
 
-.account-pg-ctn .row .col-md-9 .accInfo .col-md-5 .form-header i:hover, .account-pg-ctn .row .col-md-9 .lendOutgoing .col-md-5 .form-header i:hover, .account-pg-ctn .row .col-md-9 .lendAd .col-md-5 .form-header i:hover, .account-pg-ctn .row .col-md-9 .lendRequest .col-md-5 .form-header i:hover, .account-pg-ctn .row .col-md-9 .lendTerm .col-md-5 .form-header i:hover {
+.account-pg-ctn .row .col-md-9 .accInfo .col-md-8 .form-header i:hover, .account-pg-ctn .row .col-md-9 .lendOutgoing .col-md-8 .form-header i:hover, .account-pg-ctn .row .col-md-9 .lendAd .col-md-8 .form-header i:hover, .account-pg-ctn .row .col-md-9 .lendRequest .col-md-8 .form-header i:hover, .account-pg-ctn .row .col-md-9 .lendTerm .col-md-8 .form-header i:hover {
   cursor: pointer;
 }
 
-.account-pg-ctn .row .col-md-9 .accInfo .col-md-5 .row, .account-pg-ctn .row .col-md-9 .lendOutgoing .col-md-5 .row, .account-pg-ctn .row .col-md-9 .lendAd .col-md-5 .row, .account-pg-ctn .row .col-md-9 .lendRequest .col-md-5 .row, .account-pg-ctn .row .col-md-9 .lendTerm .col-md-5 .row {
+.account-pg-ctn .row .col-md-9 .accInfo .col-md-8 .row, .account-pg-ctn .row .col-md-9 .lendOutgoing .col-md-8 .row, .account-pg-ctn .row .col-md-9 .lendAd .col-md-8 .row, .account-pg-ctn .row .col-md-9 .lendRequest .col-md-8 .row, .account-pg-ctn .row .col-md-9 .lendTerm .col-md-8 .row {
   margin: 15px 0;
 }
 
-.account-pg-ctn .row .col-md-9 .accInfo .col-md-5 label, .account-pg-ctn .row .col-md-9 .lendOutgoing .col-md-5 label, .account-pg-ctn .row .col-md-9 .lendAd .col-md-5 label, .account-pg-ctn .row .col-md-9 .lendRequest .col-md-5 label, .account-pg-ctn .row .col-md-9 .lendTerm .col-md-5 label {
+.account-pg-ctn .row .col-md-9 .accInfo .col-md-8 label, .account-pg-ctn .row .col-md-9 .lendOutgoing .col-md-8 label, .account-pg-ctn .row .col-md-9 .lendAd .col-md-8 label, .account-pg-ctn .row .col-md-9 .lendRequest .col-md-8 label, .account-pg-ctn .row .col-md-9 .lendTerm .col-md-8 label {
   padding: 0;
   font-size: 16px;
   font-family: "Poppins", sans-serif;
 }
 
-.account-pg-ctn .row .col-md-9 .accInfo .col-md-5 input, .account-pg-ctn .row .col-md-9 .lendOutgoing .col-md-5 input, .account-pg-ctn .row .col-md-9 .lendAd .col-md-5 input, .account-pg-ctn .row .col-md-9 .lendRequest .col-md-5 input, .account-pg-ctn .row .col-md-9 .lendTerm .col-md-5 input {
+.account-pg-ctn .row .col-md-9 .accInfo .col-md-8 input, .account-pg-ctn .row .col-md-9 .lendOutgoing .col-md-8 input, .account-pg-ctn .row .col-md-9 .lendAd .col-md-8 input, .account-pg-ctn .row .col-md-9 .lendRequest .col-md-8 input, .account-pg-ctn .row .col-md-9 .lendTerm .col-md-8 input {
   height: 25px;
   width: 300px;
   border: solid;
   border-width: thin;
   font-family: "Poppins", sans-serif;
   color: #000000;
+}
+
+.account-pg-ctn .row .col-md-9 .accInfo .col-md-8 h3, .account-pg-ctn .row .col-md-9 .lendOutgoing .col-md-8 h3, .account-pg-ctn .row .col-md-9 .lendAd .col-md-8 h3, .account-pg-ctn .row .col-md-9 .lendRequest .col-md-8 h3, .account-pg-ctn .row .col-md-9 .lendTerm .col-md-8 h3 {
+  font-family: "Poppins", sans-serif;
+  color: #DD9857;
+  margin-bottom: 9px;
+}
+
+.account-pg-ctn .row .col-md-9 .accInfo .col-md-8 p, .account-pg-ctn .row .col-md-9 .lendOutgoing .col-md-8 p, .account-pg-ctn .row .col-md-9 .lendAd .col-md-8 p, .account-pg-ctn .row .col-md-9 .lendRequest .col-md-8 p, .account-pg-ctn .row .col-md-9 .lendTerm .col-md-8 p {
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  margin-bottom: 30px;
+}
+
+.account-pg-ctn .row .col-md-9 .accInfo .col-md-8 .btn, .account-pg-ctn .row .col-md-9 .lendOutgoing .col-md-8 .btn, .account-pg-ctn .row .col-md-9 .lendAd .col-md-8 .btn, .account-pg-ctn .row .col-md-9 .lendRequest .col-md-8 .btn, .account-pg-ctn .row .col-md-9 .lendTerm .col-md-8 .btn {
+  background-color: #DD9857;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
 }
 
 .account-pg-ctn .row .col-md-9 .accOrdrs {

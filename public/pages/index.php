@@ -10,6 +10,11 @@
 
 include '../includes/header.php';
 
+$sql = "SELECT product_id, product_name,product_title, price FROM `product` LIMIT 12"; //remove product_title, and add product_names in DB
+$stmt = $con->prepare($sql);
+$stmt->execute();
+$result = $stmt->get_result();
+
 ?>
 
 <!---START OF CAROUSEL -->
@@ -140,11 +145,6 @@ include '../includes/header.php';
       <div class="row">
         <h1>Browse</h1>
         <?php
-        $sql = "SELECT product_id, product_name,product_title, price FROM `product` LIMIT 12"; //remove product_title, and add product_names in DB
-        $stmt = $con->prepare($sql);
-        $stmt->execute();
-        $result = $stmt->get_result();
-
         while ($row = $result->fetch_assoc()) {
           echo '<a class="view-item" href="../pages/view-items.php?prod_id=' . $row['product_id'] . '">
                     <img src="" alt="" />

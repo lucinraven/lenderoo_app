@@ -26,7 +26,6 @@ include '../../private/includes/handler/accountHandler.php';
                     <ul>
                         <li><button class="tab-btn tablink" onclick="openTab(event, 'accInfo')">Account Information</button></li>
                         <li><button class="tab-btn tablink" onclick="openTab(event, 'accOrdrs')">Your Orders</button></li>
-                        <li><button class="tab-btn tablink" onclick="openTab(event, 'accLend')">Become a Lender</button></li>
                     </ul>
                 </div>
 
@@ -49,7 +48,7 @@ include '../../private/includes/handler/accountHandler.php';
                 <div id="accInfo" class="accInfo acc-tabs">
                     <h1>Account Information</h1>
                     <div class="row">
-                        <div class="col-md-5">
+                        <div class="col-md-8">
                             <form action="">
                                 <div class="form-header">
                                     <i class="fas fa-edit"></i>
@@ -81,7 +80,9 @@ include '../../private/includes/handler/accountHandler.php';
                             </form>
 
                             <form method='post'>
-                                <button type='submit' name='becomeLender'>Become a Lender</button>
+                                <h3>Do you want to be come a lender?</h3>
+                                <p>Click this button to earn extra income by renting your item for a price! Lender Central will be available to you and start adding your items to be posted on the website.</p>
+                                <button class="btn btn-primary" type='submit' name='becomeLender'>Become a Lender</button>
                             </form>
                         </div>
                     </div>
