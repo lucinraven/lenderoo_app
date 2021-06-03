@@ -26,6 +26,7 @@ include '../../private/includes/handler/accountHandler.php';
                     <ul>
                         <li><button class="tab-btn tablink" onclick="openTab(event, 'accInfo')">Account Information</button></li>
                         <li><button class="tab-btn tablink" onclick="openTab(event, 'accOrdrs')">Your Orders</button></li>
+
                     </ul>
                 </div>
 
@@ -164,10 +165,6 @@ include '../../private/includes/handler/accountHandler.php';
                     </div>
                 </div>
 
-                <div id="accLender" class="accLender acc-tabs" style="display: none;">
-                    <h1>Testing 4</h1>
-                </div>
-
                 <!-- Lender Central Inventory -->
                 <div id="lendInventory" class="lendInventory acc-tabs" style="display: none;">
                 <div class="content-header">
@@ -176,7 +173,9 @@ include '../../private/includes/handler/accountHandler.php';
 
                     <div class="content-body">
                         <?php
-                        $sql = "SELECT * FROM `product`"; //remove product_title, and add product_names in DB
+                        $user_id = $_SESSION['user_id'];
+
+                        $sql = "SELECT * FROM `product` WHERE lender_id = $user_id"; //remove product_title, and add product_names in DB
                         $stmt = $con->prepare($sql);
                         $stmt->execute();
                         $result = $stmt->get_result();
@@ -190,8 +189,7 @@ include '../../private/includes/handler/accountHandler.php';
 
                                 <div class="right-content">
                                     <div class="right-header">
-                                        <h3>Heading</h3>
-                                        <p>Status</p>
+                                        <h3>'.$row['product_title'].' </h3>
                                     </div>
                                     <div class="right-body">
                                         <div class="row">
@@ -214,7 +212,7 @@ include '../../private/includes/handler/accountHandler.php';
 
                                             <div class="col-md-6">
                                                 <label for="">Pricing:</label>
-                                                <p>10 Dhs / Day</p>
+                                                <p>'.$row['price'].' dhs</p>
                                             </div>
                                         </div>
                                     </div>
