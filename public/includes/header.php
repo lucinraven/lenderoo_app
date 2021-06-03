@@ -67,15 +67,18 @@ require '../../private/config/config.php'
                 <li class="option"><a href="../pages/account-tabs.php"><i class="fas fa-bookmark"></i></a></li>
                 <li class="option"><a href="../pages/inbox-messenger.php"><i class="fas fa-inbox"></i></a></li>
                 <li class="option"><a href="../pages/add-cart.php"><i class="fas fa-shopping-cart"></i></a></li>
-                <?php if(isset($_SESSION['email'])){
-                    echo '<div class="dropdown">
-                    <button class="btn drop-btn">'. $_SESSION["email"] .'</button>
+
+                <?php if (isset($_SESSION['email'])) {
+                    echo '
+                    <div class="dropdown">
+                    <button class="btn drop-btn">' . $_SESSION["email"] . '</button>
                     <div class="dropdown-content">
                         <a href="user-account.php">My Account</a>
                         <a href="../includes/logout.php">Logout</a>
                     </div>
-                </div>'; } else {
-                    echo '<a href="authentication.php" class="btn btn-primary">Login or Sign Up</a>';
+                </div>';
+                } else {
+                    echo '<a href="authentication.php" class="btn btn-primary">Login</a>';
                 }
                 ?>
             </div>

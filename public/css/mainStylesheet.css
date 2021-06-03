@@ -141,6 +141,8 @@ body {
 
 .main-header .option a {
   color: #FFFFFFFF;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
 }
 
 .main-header .option a:hover {
@@ -605,14 +607,10 @@ body {
   position: absolute;
 }
 
-.authentication-page .left .h2 {
-  color: #FFFFFF;
-}
-
 .authentication-page .right {
   width: 50%;
   height: 100%;
-  background: #f9f9f9;
+  background: #2c3034;
   right: 0;
   position: absolute;
 }
@@ -637,28 +635,67 @@ body {
 }
 
 .authentication-page .content h2 {
-  color: #292929;
-  font-weight: 300;
+  color: #FFFFFF;
+  font-weight: 500;
   font-size: 35px;
   font-family: "Poppins", sans-serif;
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
-.authentication-page .content form {
+.authentication-page .content .form-container {
   width: 60%;
 }
 
-.authentication-page .content .btn-div {
-  width: 60%;
-  margin-top: 15px;
+.authentication-page .content .form-container form {
+  width: 100%;
+}
+
+.authentication-page .content .form-container label {
+  color: #FFFFFF;
+  font-family: "Poppins", sans-serif;
+}
+
+.authentication-page .content .form-container input {
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+}
+
+.authentication-page .content .form-container .btn {
+  display: block;
+  margin: 30px auto;
+  padding: 10px 0;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  font-family: "Poppins", sans-serif;
+  background: #DD9857;
+  text-transform: capitalize;
+}
+
+.authentication-page .forgot-password-ctn .btn {
+  display: block;
+  width: 100%;
+  text-transform: capitalize;
+  outline: none;
+  background: none;
+  border: none;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+}
+
+.authentication-page .forgot-password-ctn .btn:hover {
+  background: #363a3d;
+  -webkit-box-shadow: none;
+          box-shadow: none;
 }
 
 .authentication-page button {
   background: #DD9857;
   padding: 10px 16px;
   width: auto;
-  font-weight: 600;
-  text-transform: uppercase;
+  font-weight: 300;
+  text-transform: capitalize;
   font-size: 14px;
   color: #fff;
   line-height: 16px;
@@ -668,7 +705,6 @@ body {
           box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
   border: 0;
   outline: 0;
-  margin: 15px 15px 15px 0;
   -webkit-transition: all 0.25s;
   transition: all 0.25s;
 }
@@ -681,23 +717,23 @@ body {
 
 .authentication-page .off {
   background: none;
-  color: #03a9f4;
+  color: none;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
 .authentication-page .right .off:hover {
-  background: #eee;
-  color: #03a9f4;
+  background: #363a3d;
+  color: none;
   -webkit-box-shadow: none;
           box-shadow: none;
 }
 
 .authentication-page .left .off:hover {
+  background: #363a3d;
+  color: none;
   -webkit-box-shadow: none;
           box-shadow: none;
-  color: #03a9f4;
-  background: #363a3d;
 }
 
 /* End Login-Register */

@@ -59,14 +59,10 @@
     position: absolute;
   }
 
-  .left .h2 {
-    color: $heading-color;
-  }
-
   .right {
     width: 50%;
     height: 100%;
-    background: #f9f9f9;
+    background: #2c3034;
     right: 0;
     position: absolute;
   }
@@ -81,20 +77,58 @@
     align-items: center;
 
     h2 {
-      color: $sub-heading-color;
-      font-weight: 300;
+      color: $heading-color;
+      font-weight: 500;
       font-size: 35px;
       font-family: $font-family;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
 
-    form {
+    .form-container {
       width: 60%;
-    }
 
-    .btn-div {
-      width: 60%;
-      margin-top: 15px;
+      form {
+        width: 100%;
+      }
+
+      label {
+        color: $heading-color;
+        font-family: $font-family;
+      }
+
+      input {
+        font-size: 16px;
+        font-weight: 500;
+        font-family: $font-family;
+      }
+
+      .btn {
+        display: block;
+        margin: 30px auto;
+        padding: 10px 0;
+        width: 100%;
+        font-size: 16px;
+        font-weight: 500;
+        font-family: $font-family;
+        background: $primary;
+        text-transform: capitalize;
+      }
+    }
+  }
+
+  .forgot-password-ctn {
+    .btn {
+      display: block;
+      width: 100%;
+      text-transform: capitalize;
+      outline: none;
+      background: none;
+      border: none;
+      box-shadow: none;
+    }
+    .btn:hover {
+      background: #363a3d;
+      box-shadow: none;
     }
   }
 
@@ -102,8 +136,8 @@
     background: $primary;
     padding: 10px 16px;
     width: auto;
-    font-weight: 600;
-    text-transform: uppercase;
+    font-weight: 300;
+    text-transform: capitalize;
     font-size: 14px;
     color: #fff;
     line-height: 16px;
@@ -112,7 +146,6 @@
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1), 0 3px 6px rgba(0, 0, 0, 0.1);
     border: 0;
     outline: 0;
-    margin: 15px 15px 15px 0;
     transition: all 0.25s;
   }
 
@@ -123,19 +156,19 @@
 
   .off {
     background: none;
-    color: #03a9f4;
+    color: none;
     box-shadow: none;
   }
 
   .right .off:hover {
-    background: #eee;
-    color: #03a9f4;
+    background: #363a3d;
+    color: none;
     box-shadow: none;
   }
   .left .off:hover {
-    box-shadow: none;
-    color: #03a9f4;
     background: #363a3d;
+    color: none;
+    box-shadow: none;
   }
 }
 /* End Login-Register */
