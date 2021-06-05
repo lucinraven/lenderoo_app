@@ -6,8 +6,8 @@ if(isset($_POST['daterange']) && isset($_POST['delivery-method'])){
     $user_id = $_SESSION['user_id'];
 
     $dateRange = explode('-',$_POST['daterange']);
-    $dateDeliver = $dateRange[0];
-    $dateReturn = $dateRange[1];
+    $dateDeliver = date('Y-m-d', strtotime($dateRange[0]));
+    $dateReturn = date('Y-m-d', strtotime($dateRange[1]));
 
     $deliverMethod = $_POST['delivery-method'];
 

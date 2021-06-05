@@ -12,11 +12,16 @@ include '../includes/header.php';
         $_SESSION['priceFrom'] = $_GET['priceFrom'];
         $_SESSION['priceTo'] = $_GET['priceTo'];
     }
-    if(isset($_GET['condition'])){
+    else if(isset($_GET['condition'])){
         $_SESSION['conditionId'] = $_GET['condition'];
     }
-    if(isset($_GET['category'])){
+    else if(isset($_GET['category'])){
         $_SESSION['categoryId'] = $_GET['category'];
+    } else {
+        unset($_SESSION['priceFrom']);
+        unset($_SESSION['priceTo']);
+        unset($_SESSION['conditionId']);
+        unset($_SESSION['categoryId']);
     }
 
     $sql = "SELECT product_title,product_name,price FROM `product` WHERE 1";
@@ -66,8 +71,8 @@ include '../includes/header.php';
                         foreach ($stmt->get_result() as $row){
                     ?>
                             <ul>
-                                <li><?php echo'<a href="./browser.php?category='.$row['id'].'">'.$row['category_name'].'</a>' ?></li>
-                            </ul>
+                                <li><?php echo'<a '; if (isset($_SESSION['categoryId']) && $_SESSION['categoryId'] == $row['id']) echo 'class="selected"'; echo ' href="./browser.php?category='.$row['id'].'">'.$row['category_name'].'</a>' ?></li>
+                        </ul>
                     <?php
                         }
                     ?>
@@ -76,11 +81,11 @@ include '../includes/header.php';
                 <div class="price-filter">
                     <h1>Price</h1>
                     <ul>
-                        <li><a href="./browser.php?priceFrom=0&priceTo=25">Up to 25 Aed</a></li>
-                        <li><a href="./browser.php?priceFrom=25&priceTo=50">25 to 50 Aed</a></li>
-                        <li><a href="./browser.php?priceFrom=50&priceTo=100">50 to 100 Aed</a></li>
-                        <li><a href="./browser.php?priceFrom=100&priceTo=350">100 to 350 Aed</a></li>
-                        <li><a href="./browser.php?priceFrom=350&priceTo=700">350 to 700 Aed</a></li>
+                        <li><a <?php if( isset($_SESSION['priceFrom']) && $_SESSION['priceTo'] && $_SESSION['priceFrom'] == 0 && $_SESSION['priceTo'] == 25 ) echo 'class="selected"' ?> href="./browser.php?priceFrom=0&priceTo=25">Up to 25 Aed</a></li>
+                        <li><a <?php if( isset($_SESSION['priceFrom']) && $_SESSION['priceTo'] && $_SESSION['priceFrom'] == 25 && $_SESSION['priceTo'] == 50 ) echo 'class="selected"' ?> href="./browser.php?priceFrom=25&priceTo=50">25 to 50 Aed</a></li>
+                        <li><a <?php if( isset($_SESSION['priceFrom']) && $_SESSION['priceTo'] && $_SESSION['priceFrom'] == 50 && $_SESSION['priceTo'] == 100 ) echo 'class="selected"' ?> href="./browser.php?priceFrom=50&priceTo=100">50 to 100 Aed</a></li>
+                        <li><a <?php if( isset($_SESSION['priceFrom']) && $_SESSION['priceTo'] && $_SESSION['priceFrom'] == 100 && $_SESSION['priceTo'] == 350 ) echo 'class="selected"' ?> href="./browser.php?priceFrom=100&priceTo=350">100 to 350 Aed</a></li>
+                        <li><a <?php if( isset($_SESSION['priceFrom']) && $_SESSION['priceTo'] && $_SESSION['priceFrom'] == 350 && $_SESSION['priceTo'] == 700 ) echo 'class="selected"' ?> href="./browser.php?priceFrom=350&priceTo=700">350 to 700 Aed</a></li>
                     </ul>
                 </div>
                 <div class="condition-filter">
@@ -92,7 +97,7 @@ include '../includes/header.php';
                         foreach ($stmt->get_result() as $row){
                     ?>
                             <ul>
-                                <li><?php echo'<a href="./browser.php?category='.$row['id'].'">'.$row['condition_name'].'</a>' ?></li>
+                                <li><?php echo'<a'; if (isset($_SESSION['conditionId']) && $_SESSION['conditionId'] == $row['id']) echo ' class="selected"'; echo ' href="./browser.php?condition='.$row['id'].'">'.$row['condition_name'].'</a>' ?></li>
                             </ul>
                     <?php
                         }

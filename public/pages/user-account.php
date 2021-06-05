@@ -91,7 +91,7 @@ $user_id = $_SESSION['user_id'];
                     </div>
                 </div>
 
-                <div id="accOrdrs" class="accOrdrs acc-tabs" style="display: block;">
+                <div id="accOrdrs" class="accOrdrs acc-tabs" style="display: hidden;">
                     <div class="content-header">
                         <h1>Your Orders</h1>
                     </div>
@@ -103,8 +103,14 @@ $user_id = $_SESSION['user_id'];
                         $stmt->bind_param('i',$user_id);
                         $stmt->execute();
                         $result = $stmt->get_result();
+                        
+
+                        
 
                         while ($row = $result->fetch_assoc()) {
+                            $dateDiff=date_diff(date_create($row['delivery_date']),date_create($row['return_date']));
+                            
+
                             echo
                             '<a class="card-item" href="view-information-order.php">
                                 <div class="left-content">
@@ -132,7 +138,7 @@ $user_id = $_SESSION['user_id'];
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label for="">Leasing Duration:</label>
-                                                <p>10 Days</p>
+                                                <p>'.$dateDiff->format("%a days").'</p>
                                             </div>
 
                                             <div class="col-md-6">

@@ -788,6 +788,10 @@ body {
   color: #DD9857;
 }
 
+.browser-page-ctn .col-md-2 .selected {
+  color: #DD9857;
+}
+
 .browser-page-ctn .col-md-10 {
   padding: 0;
   background: #FFFFFF;
