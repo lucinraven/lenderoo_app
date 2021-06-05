@@ -109,8 +109,6 @@ $row = $result->fetch_assoc()
                                     <input class="btn btn-primary" type="submit" name="add-cart" value="Add Cart">
                                     <input type="hidden" name="product_id" value="<?php echo $row['product_id']?>">
                                 </form>
-                               
-                                <a class="btn btn-primary" href="review-checkout.php">Rent now</a>
                             </div>
                         </div>
                     </div>

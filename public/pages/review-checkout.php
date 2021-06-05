@@ -7,7 +7,9 @@
  * Time: 4:32 pm
  */
 include '../includes/header.php';
-require '../../private/includes/form_handler/confirmOrderForm.php';
+
+
+
 
 ?>
 

@@ -17,9 +17,19 @@ include '../includes/header.php';
             <div class="col-md-2">
                 <div class="category-filter">
                     <h1>Category</h1>
-                    <ul>
-
-                    </ul>
+                    <?php 
+                        $sql = "SELECT category_name FROM category";
+                        $stmt = $con->prepare($sql);
+                        $stmt->execute();
+                        $array = [];
+                        foreach ($stmt->get_result() as $row){
+                    ?>
+                            <ul>
+                                <li><?php echo'<button>'.$row['category_name'].'</button>' ?></li>
+                            </ul>
+                    <?php
+                        }
+                    ?>
                 </div>
 
                 <div class="price-filter">
@@ -33,22 +43,20 @@ include '../includes/header.php';
                         <li><a href="#">Test</a></li>
                     </ul>
                 </div>
-                <div class="duration-filter">
-                    <h1>Days</h1>
-                    <ul>
-                        <li><a href="#">Outdoor</a></li>
-                        <li><a href="#">Camping</a></li>
-                    </ul>
-                </div>
                 <div class="condition-filter">
-                    <h1>Condition</h1>
-                    <ul>
-                        <li><a href="#">New</a></li>
-                        <li><a href="#">Very Good</a></li>
-                        <li><a href="#">Good</a></li>
-                        <li><a href="#">Acceptable</a></li>
-                        <li><a href="#">Refurbished</a></li>
-                    </ul>
+                    <h1>Category</h1>
+                    <?php 
+                        $sql = "SELECT condition_name FROM product_condition";
+                        $stmt = $con->prepare($sql);
+                        $stmt->execute();   
+                        foreach ($stmt->get_result() as $row){
+                    ?>
+                            <ul>
+                                <li><?php echo'<button>'.$row['condition_name'].'</button>' ?></li>
+                            </ul>
+                    <?php
+                        }
+                    ?>
                 </div>
             </div>
 
