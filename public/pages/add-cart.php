@@ -37,13 +37,13 @@ if (isset($_POST['product_id'])) {
 
     $cartRows = $cartRes->fetch_assoc();
     $cart_id = $cartRows['cart_id'];
-
-    $sql = "SELECT cp.id FROM cart_products cp INNER JOIN cart c ON c.cart_id = cp.cart_id WHERE cp.product_id = ? AND c.user_id = ? LIMIT 1 ";
+    echo $cart_id;
+    $sql = "SELECT cp.id FROM cart_products cp INNER JOIN cart c ON c.cart_id = cp.cart_id WHERE cp.product_id = ? AND c.user_id = ? AND cp.cart_id = $cart_id LIMIT 1 ";
     $stmt = $con->prepare($sql);
     $stmt->bind_param("ii", $product_id, $user_id);
     $stmt->execute();
     $cartProdRes = $stmt->get_result();
-
+    echo $cartProdRes->num_rows;
     if ($cartProdRes->num_rows > 0) { //existing product item in cart
         $cartProdRows = $cartProdRes->fetch_assoc();
         $cartProdId = $cartProdRows['id'];

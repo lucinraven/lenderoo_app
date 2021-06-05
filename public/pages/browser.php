@@ -7,7 +7,46 @@
  */
 
 include '../includes/header.php';
+    
+    if(isset($_GET['priceFrom']) && isset($_GET['priceTo']) ){
+        $_SESSION['priceFrom'] = $_GET['priceFrom'];
+        $_SESSION['priceTo'] = $_GET['priceTo'];
+    }
+    if(isset($_GET['condition'])){
+        $_SESSION['conditionId'] = $_GET['condition'];
+    }
+    if(isset($_GET['category'])){
+        $_SESSION['categoryId'] = $_GET['category'];
+    }
 
+    $sql = "SELECT product_title,product_name,price FROM `product` WHERE 1";
+    $where = "";
+
+    $bindType = "";
+    $bindArray = [];
+    if(isset($_SESSION['priceFrom']) && isset($_SESSION['priceTo']) ){
+        $bindType .= 'dd';
+        $where .= " AND price BETWEEN ? AND ?";
+        array_push($bindArray,$_SESSION['priceFrom'],$_SESSION['priceTo']);
+
+    }
+    if(isset($_SESSION['conditionId'])){
+        $bindType .= 'i';
+        $where .= " AND condition_id = ?";
+        array_push($bindArray,$_SESSION['conditionId']);
+    }
+    if(isset($_SESSION['categoryId'])){
+        $bindType .= 'i';
+        $where .= " AND category_id = ?";
+        array_push($bindArray,$_SESSION['categoryId']);
+    }
+
+    $stmt = $con->prepare($sql . $where);
+    if(count($bindArray) > 0) $stmt->bind_param($bindType,...$bindArray);
+    $stmt->execute();
+
+    $result = $stmt->get_result();
+    
 ?>
 
 <div class="browser-page-ctn">
@@ -18,14 +57,16 @@ include '../includes/header.php';
                 <div class="category-filter">
                     <h1>Category</h1>
                     <?php 
-                        $sql = "SELECT category_name FROM category";
+                        $sql = "SELECT id,category_name FROM category";
+
+
                         $stmt = $con->prepare($sql);
                         $stmt->execute();
                         $array = [];
                         foreach ($stmt->get_result() as $row){
                     ?>
                             <ul>
-                                <li><?php echo'<button>'.$row['category_name'].'</button>' ?></li>
+                                <li><?php echo'<a href="./browser.php?category='.$row['id'].'">'.$row['category_name'].'</a>' ?></li>
                             </ul>
                     <?php
                         }
@@ -35,24 +76,23 @@ include '../includes/header.php';
                 <div class="price-filter">
                     <h1>Price</h1>
                     <ul>
-                        <li><a href="#">Up to 25 Aed</a></li>
-                        <li><a href="#">25 to 50 Aed</a></li>
-                        <li><a href="#">50 to 100 Aed</a></li>
-                        <li><a href="#">100 to 350 Aed</a></li>
-                        <li><a href="#">350 to 700 Aed</a></li>
-                        <li><a href="#">Test</a></li>
+                        <li><a href="./browser.php?priceFrom=0&priceTo=25">Up to 25 Aed</a></li>
+                        <li><a href="./browser.php?priceFrom=25&priceTo=50">25 to 50 Aed</a></li>
+                        <li><a href="./browser.php?priceFrom=50&priceTo=100">50 to 100 Aed</a></li>
+                        <li><a href="./browser.php?priceFrom=100&priceTo=350">100 to 350 Aed</a></li>
+                        <li><a href="./browser.php?priceFrom=350&priceTo=700">350 to 700 Aed</a></li>
                     </ul>
                 </div>
                 <div class="condition-filter">
                     <h1>Category</h1>
                     <?php 
-                        $sql = "SELECT condition_name FROM product_condition";
+                        $sql = "SELECT id,condition_name FROM product_condition";
                         $stmt = $con->prepare($sql);
                         $stmt->execute();   
                         foreach ($stmt->get_result() as $row){
                     ?>
                             <ul>
-                                <li><?php echo'<button>'.$row['condition_name'].'</button>' ?></li>
+                                <li><?php echo'<a href="./browser.php?category='.$row['id'].'">'.$row['condition_name'].'</a>' ?></li>
                             </ul>
                     <?php
                         }
@@ -64,96 +104,20 @@ include '../includes/header.php';
                 <h1>Popular Items</h1>
                 <div class="item-showcase">
                     <!-- Product Widget Showcase-->
-                    <div class="item-widget">
+                    <?php 
+
+                    while($row = $result->fetch_assoc())
+                    
+                    echo '<div class="item-widget">
                         <img src="" alt="">
 
-                        <h2 class="item-heading">Title</h2>
-                        <h2 class="price-heading">50 AED/Day</h2>
-                    </div>
+                        <h2 class="item-heading">'.$row['product_title'].'</h2>
+                        <h2 class="price-heading">'.$row['price'].' AED/Day</h2>
+                    </div>';
 
-                    <div class="item-widget">
-                        <img src="" alt="">
+                    ?>
 
-                        <h2 class="item-heading">Title</h2>
-                        <h2 class="price-heading">50 AED/Day</h2>
-                    </div>
 
-                    <div class="item-widget">
-                        <img src="" alt="">
-
-                        <h2 class="item-heading">Title</h2>
-                        <h2 class="price-heading">50 AED/Day</h2>
-                    </div>
-
-                    <div class="item-widget">
-                        <img src="" alt="">
-
-                        <h2 class="item-heading">Title</h2>
-                        <h2 class="price-heading">50 AED/Day</h2>
-                    </div>
-
-                    <div class="item-widget">
-                        <img src="" alt="">
-
-                        <h2 class="item-heading">Title</h2>
-                        <h2 class="price-heading">50 AED/Day</h2>
-                    </div>
-
-                    <div class="item-widget">
-                        <img src="" alt="">
-
-                        <h2 class="item-heading">Title</h2>
-                        <h2 class="price-heading">50 AED/Day</h2>
-                    </div>
-
-                    <div class="item-widget">
-                        <img src="" alt="">
-
-                        <h2 class="item-heading">Title</h2>
-                        <h2 class="price-heading">50 AED/Day</h2>
-                    </div>
-
-                    <div class="item-widget">
-                        <img src="" alt="">
-
-                        <h2 class="item-heading">Title</h2>
-                        <h2 class="price-heading">50 AED/Day</h2>
-                    </div>
-
-                    <div class="item-widget">
-                        <img src="" alt="">
-
-                        <h2 class="item-heading">Title</h2>
-                        <h2 class="price-heading">50 AED/Day</h2>
-                    </div>
-
-                    <div class="item-widget">
-                        <img src="" alt="">
-
-                        <h2 class="item-heading">Title</h2>
-                        <h2 class="price-heading">50 AED/Day</h2>
-                    </div>
-
-                    <div class="item-widget">
-                        <img src="" alt="">
-
-                        <h2 class="item-heading">Title</h2>
-                        <h2 class="price-heading">50 AED/Day</h2>
-                    </div>
-
-                    <div class="item-widget">
-                        <img src="" alt="">
-
-                        <h2 class="item-heading">Title</h2>
-                        <h2 class="price-heading">50 AED/Day</h2>
-                    </div>
-
-                    <div class="item-widget">
-                        <img src="" alt="">
-
-                        <h2 class="item-heading">Title</h2>
-                        <h2 class="price-heading">50 AED/Day</h2>
-                    </div>
 
                     <!-- filling gaps or spaces on row with empty child divs -->
                     <div class="filling-empty-space-childs"></div>

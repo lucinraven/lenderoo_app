@@ -13,6 +13,8 @@ include '../../private/includes/form_handler/accountForm.php';
 include '../../private/includes/form_handler/addItems.php';
 include '../../private/includes/handler/accountHandler.php';
 
+$user_id = $_SESSION['user_id'];
+
 ?>
 
 <div class="account-pg-ctn">
@@ -89,15 +91,16 @@ include '../../private/includes/handler/accountHandler.php';
                     </div>
                 </div>
 
-                <div id="accOrdrs" class="accOrdrs acc-tabs" style="display: none;">
+                <div id="accOrdrs" class="accOrdrs acc-tabs" style="display: block;">
                     <div class="content-header">
                         <h1>Your Orders</h1>
                     </div>
 
                     <div class="content-body">
                         <?php
-                        $sql = "SELECT * FROM `product`"; //remove product_title, and add product_names in DB
+                        $sql = "SELECT o.order_id, o.created_at, o.delivery_date, o.return_date, o.status, o.total_price FROM orders o INNER JOIN cart ON cart.cart_id = o.cart_id WHERE cart.user_id = ?"; //remove product_title, and add product_names in DB
                         $stmt = $con->prepare($sql);
+                        $stmt->bind_param('i',$user_id);
                         $stmt->execute();
                         $result = $stmt->get_result();
 
@@ -110,19 +113,19 @@ include '../../private/includes/handler/accountHandler.php';
 
                                 <div class="right-content">
                                     <div class="right-header">
-                                        <h3>Heading</h3>
-                                        <p>Status</p>
+                                        <h3>Order #'.$row['order_id'].'</h3>
+                                        <p>'.$row['status'].'</p>
                                     </div>
                                     <div class="right-body">
                                         <div class="row">
                                             <div class="col-md-6">
                                                 <label for="">Date Ordered:</label>
-                                                <p>30/21/21</p>
+                                                <p>'.$row['created_at'].'</p>
                                             </div>
 
                                             <div class="col-md-6">
                                                 <label for="">Date of Return:</label>
-                                                <p>30/21/21</p>
+                                                <p>'.$row['return_date'].'</p>
                                             </div>
                                         </div>
 
@@ -134,7 +137,7 @@ include '../../private/includes/handler/accountHandler.php';
 
                                             <div class="col-md-6">
                                                 <label for="">Pricing:</label>
-                                                <p>10 Dhs / Day</p>
+                                                <p>'.$row['total_price'].' Dhs / Day</p>
                                             </div>
                                         </div>
                                     </div>

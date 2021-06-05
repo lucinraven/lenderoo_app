@@ -40,8 +40,8 @@ include '../includes/header.php';
                         <div class="content col-md-3">
                             <h1>Delivery Method</h1>
                             <select name="delivery-method" id="delivery-method">
-                                <option value="volvo">Pick up from lender</option>
-                                <option value="saab">Delivered by lender</option>
+                                <option value="Pick up from lender">Pick up from lender</option>
+                                <option value="Delivered by lender">Delivered by lender</option>
                             </select>
                         </div>
 
