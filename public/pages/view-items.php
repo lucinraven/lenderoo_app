@@ -22,7 +22,7 @@ $stmt->bind_param("i", $_GET['prod_id']);
 $stmt->execute();
 
 $result = $stmt->get_result();
-$row = $result->fetch_assoc()
+$row = $result->fetch_assoc();
 ?>
 <div class="view-item-page">
     <!-- View item header -->
@@ -114,9 +114,9 @@ $row = $result->fetch_assoc()
 
                             <div class="right-bottom">
 
-                                <form action="input-messenger.php" method="POST">
-                                    <input class="btn btn-primary" type="submit" name="add-cart" value="Cart">
-                                    <input type="hidden" name="product_id" value="<?php echo $row['lender_id'] ?>">
+                                <form action="inbox-messenger.php" method="POST">
+                                    <input class="btn btn-primary" type="submit" name="add-cart" value="Inquire Information">
+                                    <input type="hidden" name="lender_id" value="<?php echo $row['lender_id'] ?>">
                                 </form>
 
                                 <?php
