@@ -53,16 +53,16 @@ require '../../private/config/config.php'
                 <li><a href="../pages/browser.php">Browse by Product</a></li>
             </div>
 
-            <div class="nav-center">
+            <form class="nav-center"  action="../pages/browser.php" method="POST">
                 <div class="form-outline text-white">
-                    <input type="search" id="form1" class="form-control" />
+                    <input type="search" id="form1" name="searchStr" class="form-control" />
                     <label class="form-label" for="form1">Search</label>
                 </div>
 
-                <button type="button" class="btn btn-primary">
+                <button type="submit" class="btn btn-primary">
                     <i class="fas fa-search"></i>
                 </button>
-            </div>
+            </form>
 
             <div class="nav-right">
                 <li class="option"><a href="../pages/account-tabs.php"><i class="fas fa-bookmark"></i></a></li>

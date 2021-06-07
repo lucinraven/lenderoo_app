@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 5.1.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 07, 2021 at 05:20 PM
--- Server version: 10.4.14-MariaDB
--- PHP Version: 7.4.10
+-- Generation Time: Jun 07, 2021 at 06:44 PM
+-- Server version: 10.4.19-MariaDB
+-- PHP Version: 7.3.28
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -203,8 +203,8 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `product_title`, `product_name`, `description`, `age`, `technicalDesc`, `price`, `category_id`, `condition_id`, `status`, `click_counter`, `lender_id`, `max_lend_duration`) VALUES
-(1, 'Selling 6 person tent', 'Coleman cabin tent', 'The best tent', '0-1 month', 'Weight: 13kg,Capacity: 6 person', 10.5, 1, 3, 'Available', 12, 1, 15),
-(2, 'Renting outdoor grill for a reasonable price', 'Imperial home non-stick grill pan', 'Nonstick pan that uses a state of the art materials. highly durable and can be easily cleaned.', 'Brand New', 'Weight: 5kg,', 15, 9, 3, 'Available', 1, 1, 30);
+(1, 'Selling 6 person tent', 'Coleman cabin tent', 'The best tent', '0-1 month', 'Weight: 13kg,Capacity: 6 person', 10.5, 1, 3, 'Available', 30, 1, 15),
+(2, 'Renting outdoor grill for a reasonable price', 'Imperial home non-stick grill pan', 'Nonstick pan that uses a state of the art materials. highly durable and can be easily cleaned.', 'Brand New', 'Weight: 5kg,', 15, 9, 3, 'Available', 34, 1, 30);
 
 -- --------------------------------------------------------
 
@@ -250,6 +250,26 @@ INSERT INTO `product_image` (`image_id`, `source`, `product_id`) VALUES
 (3, 'brooke-lark-DKOVgaayXXY-unsplash.jpg', 1),
 (4, 'brooke-lark-HlNcigvUi4Q-unsplash.jpg', 1),
 (5, '71ydrdh37al-sl1500--500x500.jpg', 2);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `product_reviews`
+--
+
+CREATE TABLE `product_reviews` (
+  `id` int(11) NOT NULL,
+  `review` varchar(255) DEFAULT NULL,
+  `user_id` int(11) DEFAULT NULL,
+  `product_id` int(11) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `product_reviews`
+--
+
+INSERT INTO `product_reviews` (`id`, `review`, `user_id`, `product_id`) VALUES
+(1, 'Renting outdoor grill for lovely couples like ga. rent for 10 days and you will have 10 days dating with ga. non stick pan so ga will like it. i love ga', NULL, 2);
 
 -- --------------------------------------------------------
 
@@ -407,6 +427,12 @@ ALTER TABLE `product_image`
   ADD KEY `product_id` (`product_id`);
 
 --
+-- Indexes for table `product_reviews`
+--
+ALTER TABLE `product_reviews`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indexes for table `rate`
 --
 ALTER TABLE `rate`
@@ -509,6 +535,12 @@ ALTER TABLE `product_condition`
 --
 ALTER TABLE `product_image`
   MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `product_reviews`
+--
+ALTER TABLE `product_reviews`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `rate`

@@ -8,6 +8,13 @@
  */
 include '../includes/header.php';
 
+if(isset($_POST['post-review'])){
+    $sql = "INSERT INTO product_reviews VALUES ('', ? , ? , ?)";
+    $stmt = $con->prepare($sql);
+    $stmt->bind_param("sii",$_POST['post-review'], $_SESSION['user_id'], $_GET['prod_id']);
+    $stmt->execute();
+}
+
 // Number of times the product with a specific id is clicked and updates the click counter database column in mysql.
 if (isset($_GET['prod_id'])) {
     $sql = "UPDATE product SET click_counter = click_counter + 1 WHERE product_id = ?";
@@ -200,64 +207,32 @@ $row = $result->fetch_assoc();
             </div>
             <div class="customer-review-ctn">
                 <h1>Customer Review</h1>
-                <div class="post-review">
-                    <h5>John Doe</p>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <p>Heading</p>
-                            </div>
-                            <div class="col-md-4">
-                                <p>stars starts stars</p>
-                            </div>
-                        </div>
-                        <p class="comment">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit, dolorem doloribus? Nulla aut error consequuntur non nisi odit accusantium veniam, cumque ad. Unde cum quisquam provident quos dolor et optio.</p>
-                </div>
 
-                <div class="post-review">
-                    <h5>John Doe</p>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <p>Heading</p>
-                            </div>
-                            <div class="col-md-4">
-                                <p>stars starts stars</p>
-                            </div>
-                        </div>
-                        <p class="comment">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit, dolorem doloribus? Nulla aut error consequuntur non nisi odit accusantium veniam, cumque ad. Unde cum quisquam provident quos dolor et optio.</p>
-                </div>
+                <?php
+                $sql = "SELECT u.user_id, u.firstName, u.lastName, pr.review FROM product_reviews pr LEFT JOIN users u ON pr.user_id = u.user_id INNER JOIN product p ON pr.product_id = p.product_id WHERE pr.product_id = ? GROUP BY pr.id";
+                $stmt = $con->prepare($sql);
+                $stmt->bind_param("i", $_GET['prod_id']);
+                $stmt->execute();
 
-                <div class="post-review">
-                    <h5>John Doe</p>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <p>Heading</p>
-                            </div>
-                            <div class="col-md-4">
-                                <p>stars starts stars</p>
-                            </div>
-                        </div>
-                        <p class="comment">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit, dolorem doloribus? Nulla aut error consequuntur non nisi odit accusantium veniam, cumque ad. Unde cum quisquam provident quos dolor et optio.</p>
-                </div>
+                $result = $stmt->get_result();
+                while($row = $result->fetch_assoc()){
+                    echo '<div class="post-review">
+                        <h5>'; echo ($row['user_id'] != null ) ? $row['firstName'].' '.$row['lastName'] : "Guest"; echo '</p>
+                            <p class="comment">'.$row['review'].'</p>
+                    </div>';
+                }
 
-                <div class="post-review">
-                    <h5>John Doe</p>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <p>Heading</p>
-                            </div>
-                            <div class="col-md-4">
-                                <p>stars starts stars</p>
-                            </div>
-                        </div>
-                        <p class="comment">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit, dolorem doloribus? Nulla aut error consequuntur non nisi odit accusantium veniam, cumque ad. Unde cum quisquam provident quos dolor et optio.</p>
-                </div>
+                
+                
+                ?>
+                
+
 
                 <div class="post-review-ctn">
                     <h1>Write a review</h1>
-                    <form action="">
+                    <form method="POST" action="./view-items.php?prod_id=<?php echo $_GET['prod_id']; ?>">
                         <textarea name="post-review" id="" cols="30" rows="10"></textarea>
-
-                        <input class="btn" type="button" value="Post">
+                        <input class="btn" type="submit" value="Post">
                     </form>
                 </div>
             </div>
