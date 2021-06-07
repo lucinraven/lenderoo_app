@@ -108,11 +108,18 @@ include '../includes/header.php';
 
         while ($featured_row = $result->fetch_assoc()) {
           echo '<a class="view-item" href="../pages/view-items.php?prod_id=' . $featured_row['product_id'] . '">
-                    <img src="" alt="" />
+            <div class="card-content-image">
+              <img src="" alt="" />
+            </div>
 
-                    <h2>' . $featured_row['product_title'] . '</h2>
-                    <p>' . $featured_row['price'] . ' Aed/Day</p>
-                  </a>';
+            <div class="card-content-body">
+              <h2>' . $featured_row['product_title'] . '</h2>
+            </div>
+
+            <div class="card-content-footer">
+              <p>' . $featured_row['price'] . ' Aed/Day</p>
+            </div>  
+          </a>';
         };
         ?>
 
@@ -120,7 +127,7 @@ include '../includes/header.php';
         <div class="filling-empty-space-childs"></div>
         <div class="filling-empty-space-childs"></div>
         <div class="filling-empty-space-childs"></div>
-        
+
       </div>
 
       <!-- Showcased Row -->
@@ -134,11 +141,18 @@ include '../includes/header.php';
 
         while ($row = $result->fetch_assoc()) {
           echo '<a class="view-item" href="../pages/view-items.php?prod_id=' . $row['product_id'] . '">
-                    <img src="" alt="" />
+            <div class="card-content-image">
+              <img src="" alt="" />
+            </div>
 
-                    <h2>' . $row['product_title'] . '</h2>
-                    <p>' . $row['price'] . ' Aed/Day</p>
-                  </a>';
+            <div class="card-content-body">
+              <h2>' . $row['product_title'] . '</h2>
+            </div>
+
+            <div class="card-content-footer">
+              <p>' . $row['price'] . ' Aed/Day</p>
+            </div>  
+          </a>';
         };
         ?>
 

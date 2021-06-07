@@ -1252,7 +1252,7 @@ body {
 .index-pg-body .container-lg .row .view-item {
   margin: 10px auto;
   padding: 10px;
-  height: auto;
+  height: 260px;
   width: 190px;
   background-color: #f2f3f4;
   border: solid;
@@ -1260,21 +1260,35 @@ body {
   border-color: #d1d1d1;
 }
 
-.index-pg-body .container-lg .row .view-item img {
-  display: block;
-  height: 120px;
+.index-pg-body .container-lg .row .view-item .card-content-image {
+  height: 50%;
+  width: 100%;
+}
+
+.index-pg-body .container-lg .row .view-item .card-content-image img {
+  height: 100%;
   width: 100%;
   background-color: #DD9857;
 }
 
-.index-pg-body .container-lg .row .view-item h2 {
-  margin-top: 10px;
-  font-size: 16px;
+.index-pg-body .container-lg .row .view-item .card-content-body {
+  height: 40%;
+}
+
+.index-pg-body .container-lg .row .view-item .card-content-body h2 {
+  padding-top: 10px;
+  font-size: 15px;
   font-size: "Poppins", sans-serif;
   color: #DD9857;
 }
 
-.index-pg-body .container-lg .row .view-item p {
+.index-pg-body .container-lg .row .view-item .card-content-footer {
+  height: 10%;
+  width: 100%;
+}
+
+.index-pg-body .container-lg .row .view-item .card-content-footer p {
+  margin: 0;
   font-size: 14px;
   font-size: "Poppins", sans-serif;
   color: #000000;

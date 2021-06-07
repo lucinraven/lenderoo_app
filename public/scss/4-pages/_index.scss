@@ -7,7 +7,7 @@
         width: auto;
         padding: 5px 0 5px 0;
 
-        .items-showcase{
+        .items-showcase {
             width: auto;
             margin: 0 auto;
         }
@@ -19,7 +19,7 @@
             border-color: #d1d1d1;
             background-color: $main-bg-color;
             display: flex;
-            flex-wrap: wrap; 
+            flex-wrap: wrap;
             justify-content: space-around;
 
             h1 {
@@ -32,41 +32,55 @@
                 border-color: #d1d1d1;
             }
 
-            .view-item{
+            .view-item {
                 margin: 10px auto;
                 padding: 10px;
-                height: auto;
+                height: 260px;
                 width: 190px;
                 background-color: $secondary-bg-color;
                 border: solid;
                 border-width: thin;
                 border-color: #d1d1d1;
 
-                img {
-                    display: block;
-                    height: 120px;
+                .card-content-image {
+                    height: 50%;
                     width: 100%;
-                    background-color: $primary;
+
+                    img {
+                        height: 100%;
+                        width: 100%;
+                        background-color: $primary;
+                    }
                 }
 
-                h2 {
-                    margin-top: 10px;
-                    font-size: 16px;
-                    font-size: $font-family;
-                    color: $primary;
+                .card-content-body{
+                    height: 40%;
+
+                    h2 {
+                        padding-top: 10px;
+                        font-size: 15px;
+                        font-size: $font-family;
+                        color: $primary;
+                    }
                 }
 
-                p {
-                    font-size: 14px;
-                    font-size: $font-family;
-                    color: #000000;
+                .card-content-footer{
+                    height: 10%;
+                    width: 100%;
+
+                    p {
+                        margin: 0;
+                        font-size: 14px;
+                        font-size: $font-family;
+                        color: #000000;
+                    }
                 }
             }
 
             .filling-empty-space-childs {
                 margin: 10px auto;
-                width: 190px; 
-                height: 0; 
+                width: 190px;
+                height: 0;
             }
         }
     }
