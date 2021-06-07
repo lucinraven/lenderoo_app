@@ -1,224 +1,169 @@
 <?php
 
 /** 
- * User: Raven Lucin <lucinraven@gmail.com>  
- *       Zaira Mundo <zairajune@gmail.com>
- * Date: 5/9/2021
- * Time: 12:54 AM
+ * User: Zaira Mundo <zairajune@gmail.com> 
+ * Date: 4/23/2021
+ * Time: 11:36 PM
  */
+
 include '../includes/header.php';
 
-// Number of times the product with a specific id is clicked and updates the click counter database column in mysql.
-if (isset($_GET['prod_id'])) {
-    $sql = "UPDATE product SET click_counter = click_counter + 1 WHERE product_id = ?";
-    $stmt = $con->prepare($sql);
-    $stmt->bind_param("i", $_GET['prod_id']);
-    $stmt->execute();
+if (isset($_GET['priceFrom']) && isset($_GET['priceTo'])) {
+    $_SESSION['priceFrom'] = $_GET['priceFrom'];
+    $_SESSION['priceTo'] = $_GET['priceTo'];
+} else if (isset($_GET['condition'])) {
+    $_SESSION['conditionId'] = $_GET['condition'];
+} else if (isset($_GET['category'])) {
+    $_SESSION['categoryId'] = $_GET['category'];
+} else {
+    unset($_SESSION['priceFrom']);
+    unset($_SESSION['priceTo']);
+    unset($_SESSION['conditionId']);
+    unset($_SESSION['categoryId']);
 }
 
-$sql = "SELECT * FROM `product` p LEFT JOIN users u ON p.lender_id = u.user_id WHERE product_id = ?";
-$stmt = $con->prepare($sql);
-$stmt->bind_param("i", $_GET['prod_id']);
+$sql = "SELECT product_id, product_title,product_name,price FROM `product` WHERE 1";
+$where = "";
+
+$bindType = "";
+$bindArray = [];
+if (isset($_SESSION['priceFrom']) && isset($_SESSION['priceTo'])) {
+    $bindType .= 'dd';
+    $where .= " AND price BETWEEN ? AND ?";
+    array_push($bindArray, $_SESSION['priceFrom'], $_SESSION['priceTo']);
+}
+if (isset($_SESSION['conditionId'])) {
+    $bindType .= 'i';
+    $where .= " AND condition_id = ?";
+    array_push($bindArray, $_SESSION['conditionId']);
+}
+if (isset($_SESSION['categoryId'])) {
+    $bindType .= 'i';
+    $where .= " AND category_id = ?";
+    array_push($bindArray, $_SESSION['categoryId']);
+}
+
+$stmt = $con->prepare($sql . $where);
+if (count($bindArray) > 0) $stmt->bind_param($bindType, ...$bindArray);
 $stmt->execute();
 
 $result = $stmt->get_result();
-$row = $result->fetch_assoc()
+
 ?>
-<div class="view-item-page">
-    <!-- View item header -->
-    <div class="view-item-head">
-        <div class="overlay">
-            <div class="container-lg">
-                <div class="row">
-                    <div class="col-md-3">
-                        <div class="left-info-top row">
-                            <div class="left-header">
-                                <h1><?php echo $row['product_title']; ?></h1>
-                            </div>
 
-                            <div class="left-body">
-                                <ul>
-                                    <li>
-                                        <p>Age: <?php echo $row['age']; ?></p>
-                                    </li>
-                                    <li>
-                                        <?php
-                                        $query = $con->prepare("SELECT condition_name FROM product_condition WHERE id=?");
-                                        $query->bind_param("i", $row['condition_id']);
-                                        $query->execute();
-
-                                        $conditionResult = $query->get_result();
-                                        $conditionRow = $conditionResult->fetch_assoc();
-                                        ?>
-                                        <p>Condition: <?php echo $conditionRow['condition_name']; ?></p>
-                                    </li>
-                                    <li>
-                                        <p>Review:</p>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="left-bottom">
+<div class="browser-page-ctn">
+    <div class="container">
+        <div class="browser-body row">
+            <!-- SideNav -->
+            <div class="col-md-2">
+                <div class="category-filter">
+                    <h1>Category</h1>
+                    <?php
+                    $sql = "SELECT id,category_name FROM category";
 
 
-                            </div>
-                        </div>
-                    </div>
+                    $stmt = $con->prepare($sql);
+                    $stmt->execute();
+                    $array = [];
+                    foreach ($stmt->get_result() as $row) {
+                    ?>
+                        <ul>
+                            <li><?php echo '<a ';
+                                if (isset($_SESSION['categoryId']) && $_SESSION['categoryId'] == $row['id']) echo 'class="selected"';
+                                echo ' href="./browser.php?category=' . $row['id'] . '">' . $row['category_name'] . '</a>' ?></li>
+                        </ul>
+                    <?php
+                    }
+                    ?>
+                </div>
 
-                    <div class="col-md-5">
+                <div class="price-filter">
+                    <h1>Price</h1>
+                    <ul>
+                        <li><a <?php if (isset($_SESSION['priceFrom']) && $_SESSION['priceTo'] && $_SESSION['priceFrom'] == 0 && $_SESSION['priceTo'] == 25) echo 'class="selected"' ?> href="./browser.php?priceFrom=0&priceTo=25">Up to 25 Aed</a></li>
+                        <li><a <?php if (isset($_SESSION['priceFrom']) && $_SESSION['priceTo'] && $_SESSION['priceFrom'] == 25 && $_SESSION['priceTo'] == 50) echo 'class="selected"' ?> href="./browser.php?priceFrom=25&priceTo=50">25 to 50 Aed</a></li>
+                        <li><a <?php if (isset($_SESSION['priceFrom']) && $_SESSION['priceTo'] && $_SESSION['priceFrom'] == 50 && $_SESSION['priceTo'] == 100) echo 'class="selected"' ?> href="./browser.php?priceFrom=50&priceTo=100">50 to 100 Aed</a></li>
+                        <li><a <?php if (isset($_SESSION['priceFrom']) && $_SESSION['priceTo'] && $_SESSION['priceFrom'] == 100 && $_SESSION['priceTo'] == 350) echo 'class="selected"' ?> href="./browser.php?priceFrom=100&priceTo=350">100 to 350 Aed</a></li>
+                        <li><a <?php if (isset($_SESSION['priceFrom']) && $_SESSION['priceTo'] && $_SESSION['priceFrom'] == 350 && $_SESSION['priceTo'] == 700) echo 'class="selected"' ?> href="./browser.php?priceFrom=350&priceTo=700">350 to 700 Aed</a></li>
+                    </ul>
+                </div>
+                <div class="condition-filter">
+                    <h1>Category</h1>
+                    <?php
+                    $sql = "SELECT id,condition_name FROM product_condition";
+                    $stmt = $con->prepare($sql);
+                    $stmt->execute();
+                    foreach ($stmt->get_result() as $row) {
+                    ?>
+                        <ul>
+                            <li><?php echo '<a';
+                                if (isset($_SESSION['conditionId']) && $_SESSION['conditionId'] == $row['id']) echo ' class="selected"';
+                                echo ' href="./browser.php?condition=' . $row['id'] . '">' . $row['condition_name'] . '</a>' ?></li>
+                        </ul>
+                    <?php
+                    }
+                    ?>
+                </div>
+            </div>
+
+            <div class="col-md-10">
+                <div class="content-header">
+                    <h1>Popular Items</h1>
+                </div>
+
+                <div class="content-body">
+                    <div class="item-showcase">
+                        <!-- Product Widget Showcase-->
                         <?php
-                        $imageQuery = $con->prepare("SELECT * FROM product_image WHERE product_id=?");
-                        $imageQuery->bind_param("i", $row['product_id']);
-                        $imageQuery->execute();
 
-                        $imageResult = $imageQuery->get_result();
-                        $imageRow = $imageResult->fetch_assoc();
+                        while ($row = $result->fetch_assoc()) {
+
+
+                            $imageQuery = $con->prepare("SELECT * FROM product_image WHERE product_id=?");
+                            $imageQuery->bind_param("i", $row['product_id']);
+                            $imageQuery->execute();
+
+                            $imageResult = $imageQuery->get_result();
+                            $imageRow = $imageResult->fetch_assoc();
+
+                            echo '<div class="item-widget">
+                                <a class="view-item" href="../pages/view-items.php?prod_id=' . $row['product_id'] . '">
+                                    <img src="../images/'.$imageRow['source'].'" alt="'.$imageRow['source'].'"  />
+                                    <h2 class="item-heading">' . $row['product_title'] . '</h2>
+                                    <h2 class="price-heading">' . $row['price'] . ' AED/Day</h2>
+                                </a>
+                            </div>';
+                        };
 
                         ?>
-                        <div class="img-main-ctn">
-                            <img src="../images/<?php echo $imageRow['source']; ?>" alt="<?php echo $imageRow['source']; ?>" class="main-img" id="mainImage" />
-                        </div>
-                        <div class="img-showcase-ctn row">
-
-                            <?php
-                            foreach ($imageResult as $rowImage) {
-                                echo '<div class="image-card">
-                                <img style="height:100%; width:auto;" src="../images/' . $rowImage['source'] . '" alt="' . $rowImage['source'] . '" onclick="imageFunction(this)">
-                                </div>';
-                            }
-                            ?>
-                        </div>
-                        <script>
-                            function imageFunction(images) {
-                                var fullImg = document.getElementById('mainImage');
-                                fullImg.src = images.src;
-                            }
-                        </script>
-                    </div>
-
-                    <div class="col-md-3">
-                        <div class="right-info-top row">
-                            <div class="right-header">
-                                <h1>5 PHP / Day</h1>
-                            </div>
-                            <div class="right-body">
-                                <ul>
-                                    <li>
-                                        <p>Leaser Information: <?php echo $row['firstName'] . " " . $row['lastName']; ?></p>
-                                    </li>
-                                    <li>
-                                        <p>Address: <?php echo $row['address'] ?></p>
-                                    </li>
-                                </ul>
-                            </div>
-
-                            <div class="right-bottom">
-                                <a class="btn btn-primary" href="inbox-messenger.php">Inquire Lender</a>
-
-                                <form action="account-tabs.php" method="POST">
-                                    <input class="btn btn-primary" type="submit" name="add-bookmark" value="Bookmark">
-                                    <input type="hidden" name="product_id" value="<?php echo $row['product_id'] ?>">
-                                </form>
-
-                                <form action="add-cart.php" method="POST">
-                                    <input class="btn btn-primary" type="submit" name="add-bookmark" value="Bookmark">
-                                    <input type="hidden" name="product_id" value="<?php echo $row['product_id'] ?>">
-                                </form>
-                            </div>
-                        </div>
+                        <!-- filling gaps or spaces on row with empty child divs -->
+                        <div class="filling-empty-space-childs"></div>
+                        <div class="filling-empty-space-childs"></div>
+                        <div class="filling-empty-space-childs"></div>
                     </div>
                 </div>
-            </div>
-        </div>
-    </div>
 
-    <div class="container-lg">
-        <!-- View item body -->
-        <div class="view-item-body">
-            <div class="desc-scrip-ctn">
-                <div class="description">
-                    <h1>Description</h1>
-                    <p><?php echo $row['description']; ?></p>
+                <!-- content body footer -->
+                <div class="pagination-footer ">
+                    <nav aria-label="Page navigation example ">
+                        <ul class="pagination justify-content-center ">
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                    <span aria-hidden="true">&laquo;</span>
+                                </a>
+                            </li>
+                            <li class="page-item"><a class="page-link" href="#">1</a></li>
+                            <li class="page-item"><a class="page-link" href="#">2</a></li>
+                            <li class="page-item"><a class="page-link" href="#">3</a></li>
+                            <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                    <span aria-hidden="true">&raquo;</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </nav>
                 </div>
 
-                <div class="spec-table">
-                    <h1>Technical Specification</h1>
-                    <table class="table">
-                        <tbody>
-                            <?php
-                            $tech = $row['technicalDesc'];
-                            $pieces = explode(",", $tech);
-
-                            foreach ($pieces as $value){
-                                echo'<tr>'.$value.'</tr> </br>';
-                            }
-                            ?>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-            <div class="customer-review-ctn">
-                <h1>Customer Review</h1>
-                <div class="post-review">
-                    <h5>John Doe</p>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <p>Heading</p>
-                            </div>
-                            <div class="col-md-4">
-                                <p>stars starts stars</p>
-                            </div>
-                        </div>
-                        <p class="comment">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit, dolorem doloribus? Nulla aut error consequuntur non nisi odit accusantium veniam, cumque ad. Unde cum quisquam provident quos dolor et optio.</p>
-                </div>
-
-                <div class="post-review">
-                    <h5>John Doe</p>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <p>Heading</p>
-                            </div>
-                            <div class="col-md-4">
-                                <p>stars starts stars</p>
-                            </div>
-                        </div>
-                        <p class="comment">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit, dolorem doloribus? Nulla aut error consequuntur non nisi odit accusantium veniam, cumque ad. Unde cum quisquam provident quos dolor et optio.</p>
-                </div>
-
-                <div class="post-review">
-                    <h5>John Doe</p>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <p>Heading</p>
-                            </div>
-                            <div class="col-md-4">
-                                <p>stars starts stars</p>
-                            </div>
-                        </div>
-                        <p class="comment">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit, dolorem doloribus? Nulla aut error consequuntur non nisi odit accusantium veniam, cumque ad. Unde cum quisquam provident quos dolor et optio.</p>
-                </div>
-
-                <div class="post-review">
-                    <h5>John Doe</p>
-                        <div class="row">
-                            <div class="col-md-2">
-                                <p>Heading</p>
-                            </div>
-                            <div class="col-md-4">
-                                <p>stars starts stars</p>
-                            </div>
-                        </div>
-                        <p class="comment">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sit, dolorem doloribus? Nulla aut error consequuntur non nisi odit accusantium veniam, cumque ad. Unde cum quisquam provident quos dolor et optio.</p>
-                </div>
-
-                <div class="post-review-ctn">
-                    <h1>Write a review</h1>
-                    <form action="">
-                        <textarea name="post-review" id="" cols="30" rows="10"></textarea>
-
-                        <input class="btn" type="button" value="Post">
-                    </form>
-                </div>
             </div>
         </div>
     </div>
