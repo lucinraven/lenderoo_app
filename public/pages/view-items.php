@@ -39,13 +39,18 @@ $row = $result->fetch_assoc()
                             <div class="left-body">
                                 <ul>
                                     <li>
-                                        <p>Overview:</p>
-                                    </li>
-                                    <li>
                                         <p>Age: <?php echo $row['age']; ?></p>
                                     </li>
                                     <li>
-                                        <p>Condition: <?php echo $row['condition_id']; ?></p>
+                                        <?php
+                                        $query = $con->prepare("SELECT condition_name FROM product_condition WHERE id=?");
+                                        $query->bind_param("i", $row['condition_id']);
+                                        $query->execute();
+
+                                        $conditionResult = $query->get_result();
+                                        $conditionRow = $conditionResult->fetch_assoc();
+                                        ?>
+                                        <p>Condition: <?php echo $conditionRow['condition_name']; ?></p>
                                     </li>
                                     <li>
                                         <p>Review:</p>
@@ -61,20 +66,34 @@ $row = $result->fetch_assoc()
                     </div>
 
                     <div class="col-md-5">
+                        <?php
+                        $imageQuery = $con->prepare("SELECT * FROM product_image WHERE product_id=?");
+                        $imageQuery->bind_param("i", $row['product_id']);
+                        $imageQuery->execute();
+
+                        $imageResult = $imageQuery->get_result();
+                        $imageRow = $imageResult->fetch_assoc();
+
+                        ?>
                         <div class="img-main-ctn">
-                            <img src="../images/daddy.jpg" alt="" class="main-img">
+                            <img src="../images/<?php echo $imageRow['source']; ?>" alt="<?php echo $imageRow['source']; ?>" class="main-img" id="mainImage" />
                         </div>
                         <div class="img-showcase-ctn row">
-                            <div class="image-card">
-                                <img src="" alt="">
-                            </div>
-                            <div class="image-card">
-                                <img src="" alt="">
-                            </div>
-                            <div class="image-card">
-                                <img src="" alt="">
-                            </div>
+
+                            <?php
+                            foreach ($imageResult as $rowImage) {
+                                echo '<div class="image-card">
+                                <img style="height:100%; width:auto;" src="../images/' . $rowImage['source'] . '" alt="' . $rowImage['source'] . '" onclick="imageFunction(this)">
+                                </div>';
+                            }
+                            ?>
                         </div>
+                        <script>
+                            function imageFunction(images) {
+                                var fullImg = document.getElementById('mainImage');
+                                fullImg.src = images.src;
+                            }
+                        </script>
                     </div>
 
                     <div class="col-md-3">
@@ -88,13 +107,7 @@ $row = $result->fetch_assoc()
                                         <p>Leaser Information: <?php echo $row['firstName'] . " " . $row['lastName']; ?></p>
                                     </li>
                                     <li>
-                                        <p>Company: Bahay ng poks</p>
-                                    </li>
-                                    <li>
                                         <p>Address: <?php echo $row['address'] ?></p>
-                                    </li>
-                                    <li>
-                                        <p>City: Iloilo</p>
                                     </li>
                                 </ul>
                             </div>
@@ -102,9 +115,14 @@ $row = $result->fetch_assoc()
                             <div class="right-bottom">
                                 <a class="btn btn-primary" href="inbox-messenger.php">Inquire Lender</a>
 
+                                <form action="account-tabs.php" method="POST">
+                                    <input class="btn btn-primary" type="submit" name="add-bookmark" value="Bookmark">
+                                    <input type="hidden" name="product_id" value="<?php echo $row['product_id'] ?>">
+                                </form>
+
                                 <form action="add-cart.php" method="POST">
-                                    <input class="btn btn-primary" type="submit" name="add-cart" value="Add Cart">
-                                    <input type="hidden" name="product_id" value="<?php echo $row['product_id']?>">
+                                    <input class="btn btn-primary" type="submit" name="add-bookmark" value="Bookmark">
+                                    <input type="hidden" name="product_id" value="<?php echo $row['product_id'] ?>">
                                 </form>
                             </div>
                         </div>
@@ -126,31 +144,15 @@ $row = $result->fetch_assoc()
                 <div class="spec-table">
                     <h1>Technical Specification</h1>
                     <table class="table">
-                        <thead>
-                            <th>Test</th>
-                            <th>Test</th>
-                        </thead>
                         <tbody>
-                            <tr>
-                                <td>Test</td>
-                                <td>Test</td>
-                            </tr>
-                            <tr>
-                                <td>Test</td>
-                                <td>Test</td>
-                            </tr>
-                            <tr>
-                                <td>Test</td>
-                                <td>Test</td>
-                            </tr>
-                            <tr>
-                                <td>Test</td>
-                                <td>Test</td>
-                            </tr>
-                            <tr>
-                                <td>Test</td>
-                                <td>Test</td>
-                            </tr>
+                            <?php
+                            $tech = $row['technicalDesc'];
+                            $pieces = explode(",", $tech);
+
+                            foreach ($pieces as $value){
+                                echo'<tr>'.$value.'</tr> </br>';
+                            }
+                            ?>
                         </tbody>
                     </table>
                 </div>

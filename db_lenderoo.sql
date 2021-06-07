@@ -191,6 +191,7 @@ CREATE TABLE `product` (
 INSERT INTO `product` (`product_id`, `product_title`, `product_name`, `description`, `age`, `technicalDesc`, `price`, `category_id`, `condition_id`, `status`, `click_counter`, `lender_id`, `max_lend_duration`) VALUES
 (1, 'Selling 6 person tent', 'Coleman cabin tent', 'The best tent', '0-1 month', 'Weight: 13kg,Capacity: 6 person', 10.5, 1, 3, 'Available', 1, 1, 15);
 
+
 -- --------------------------------------------------------
 
 --

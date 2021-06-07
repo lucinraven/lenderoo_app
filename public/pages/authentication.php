@@ -7,7 +7,10 @@
  * Time: 11:36 PM
  */
 
+if (isset($_SESSION['email'])) {
 
+    header("Location: ../pages/index.php");
+}
 $error_array = array(); //Holds error messages
 
 require '../../private/config/config.php';

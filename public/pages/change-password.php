@@ -2,6 +2,11 @@
 //VARIABLE: error array
 $error_array = array();
 
+if (isset($_SESSION['email'])) {
+
+    header("Location: ../pages/index.php");
+}
+
 //INCLUDE: config(database)
 require '../../private/config/config.php';
 require '../../private/includes/form_handler/changePasswordForm.php';

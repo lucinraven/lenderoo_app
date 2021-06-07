@@ -29,6 +29,10 @@ if (isset($_POST['accountEdit'])) {
     $accountContact = strip_tags($_POST['accountContact']); //Remove html tags
     $accountContact = str_replace(' ', '', $accountContact); //remove spaces
 
+    //Contact
+    $accountAddress = strip_tags($_POST['accountAddress']); //Remove html tags
+    $accountAddress = str_replace(' ', '', $accountAddress); //remove spaces
+
     //Password
     $accountPassword = strip_tags($_POST['accountPassword']); //Remove html tags
     $accountPassword = str_replace(' ', '', $accountPassword); //remove spaces
@@ -54,8 +58,8 @@ if (isset($_POST['accountEdit'])) {
 
     if (empty($error_array)) {
 
-        $query = $con->prepare("UPDATE users SET firstName=?, lastName=?, email=?, contact=? WHERE user_id=?");
-        $query->bind_param("ssssi", $accountFirst, $accountLast, $accountEmail, $accountContact, $user_id);
+        $query = $con->prepare("UPDATE users SET firstName=?, lastName=?, email=?, contact=?, address=? WHERE user_id=?");
+        $query->bind_param("sssssi", $accountFirst, $accountLast, $accountEmail, $accountContact, $accountAddress, $user_id);
         $query->execute();
     }
 }

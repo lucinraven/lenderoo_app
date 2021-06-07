@@ -88,6 +88,10 @@ include '../../private/includes/form_handler/addItems.php';
                                     <input type="text" name="accountContact" value="<?php echo $row['contact']; ?>">
                                 </div>
                                 <div class="row">
+                                    <label for="itemName">Address</label>
+                                    <input type="text" name="accountAddress" value="<?php echo $row['address']; ?>">
+                                </div>
+                                <div class="row">
                                     <label for="itemName">Password</label>
                                     <input type="password" name="accountPassword" value="">
                                 </div>
@@ -121,7 +125,6 @@ include '../../private/includes/form_handler/addItems.php';
 
                         while ($row = $result->fetch_assoc()) {
                             $dateDiff = date_diff(date_create($row['delivery_date']), date_create($row['return_date']));
-
 
                             echo
                             '<a class="card-item" href="view-information-order.php">
@@ -202,10 +205,18 @@ include '../../private/includes/form_handler/addItems.php';
                         $result = $stmt->get_result();
 
                         while ($row = $result->fetch_assoc()) {
+
+                            $query = $con->prepare("SELECT * FROM product_image WHERE product_id=?");
+                            $query->bind_param("i", $row['product_id']);
+                            $query->execute();
+
+                            $imageResult = $query->get_result();
+                            $imageRow = $imageResult->fetch_assoc();
+                            
                             echo
                             '<a class="card-item" href="view-items.php">
                                 <div class="left-content">
-                                    <img src="" alt="">
+                                    <img src="../images/'.$imageRow['source'].'" alt="'.$imageRow['source'].'">
                                 </div>
 
                                 <div class="right-content">
@@ -290,6 +301,21 @@ include '../../private/includes/form_handler/addItems.php';
                                         <div class="row">
                                             <label for="itemName">Item Name</label>
                                             <input class="add-input-styling" type="text" name="itemName">
+                                        </div>
+
+                                        <div class="row">
+                                            <label for="cagetory">Category</label>
+                                            <select name="itemCategory">
+                                                <option value="1">Camping</option>
+                                                <option value="2">Outdoor</option>
+                                                <option value="3">Indoor</option>
+                                                <option value="4">Fishing</option>
+                                                <option value="5">Hardware</option>
+                                                <option value="6">Hiking</option>
+                                                <option value="7">Sailing</option>
+                                                <option value="8">Boating</option>
+                                                <option value="9">Cooking</option>
+                                            </select>
                                         </div>
 
                                         <div class="row">

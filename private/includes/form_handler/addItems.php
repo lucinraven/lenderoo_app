@@ -32,7 +32,8 @@ if (isset($_POST['addItem'])) {
     $itemDescription = ucfirst(strtolower($itemDescription)); //Uppercase first letter
 
     //Item Field
-    $itemField = $_POST['itemField']; 
+    $itemField = $_POST['itemField'];
+    $itemField = implode( ',', $itemField );
 
     $user = $_SESSION['email'];
 
@@ -44,8 +45,8 @@ if (isset($_POST['addItem'])) {
     $result = $e_check->get_result();
     $userId = $result->fetch_assoc();
 
-    $product_query = $con->prepare("INSERT INTO product VALUES ('', ?, ?, ?, ?, ?, '', ?, ?, ?, 'Available', '', ?, ?)");
-    $product_query->bind_param("sssssdiiii", $title, $itemName, $itemDescription, $itemBrand, $itemAge, $itemPrice, $category, $itemCondition, $userId, $itemDuration);
+    $product_query = $con->prepare("INSERT INTO product VALUES ('', ?, ?, ?, ?, ?, ?, ?, ?, 'Available', '', ?, ?)");
+    $product_query->bind_param("sssssdiiii", $title, $itemName, $itemDescription, $itemAge, $itemField, $itemPrice, $category, $itemCondition, $userId, $itemDuration);
     $product_query->execute();
 
     // File upload configuration 
@@ -56,10 +57,6 @@ if (isset($_POST['addItem'])) {
     $fileNames = array_filter($_FILES['itemImage']['name']);
 
     $last_id = $con->insert_id;
-
-    foreach ($itemField as $key => $value){
-        $save = "UPDATE product SET technicalDesc='".$value."' WHERE product_id=".$last_id."";
-    };
 
     if (!empty($fileNames)) {
         foreach ($_FILES['itemImage']['name'] as $key => $val) {
