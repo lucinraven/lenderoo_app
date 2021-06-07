@@ -42,13 +42,10 @@ $row = $result->fetch_assoc()
                                         <p>Overview:</p>
                                     </li>
                                     <li>
-                                        <p>Brand: <?php echo $row['brand']; ?></p>
-                                    </li>
-                                    <li>
                                         <p>Age: <?php echo $row['age']; ?></p>
                                     </li>
                                     <li>
-                                        <p>Condition: <?php echo $row['pr_condition']; ?></p>
+                                        <p>Condition: <?php echo $row['condition_id']; ?></p>
                                     </li>
                                     <li>
                                         <p>Review:</p>

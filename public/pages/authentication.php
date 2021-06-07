@@ -7,7 +7,7 @@
  * Time: 11:36 PM
  */
 
- 
+
 $error_array = array(); //Holds error messages
 
 require '../../private/config/config.php';
@@ -175,9 +175,13 @@ if (isset($_POST['signupBtn'])) {
                             <form method='post'>
                                 <!-- Email input -->
                                 <div class="form-outline mb-4">
-                                    <input type="email" name="signin_email" class="form-control <?php if(in_array('errorInput', $error_array)){ echo 'is-invalid'; } ?>" />
+                                    <input type="email" name="signin_email" class="form-control <?php if (in_array('errorInput', $error_array)) {
+                                                                                                    echo 'is-invalid';
+                                                                                                } ?>" />
                                     <label class="form-label">Email address</label>
-                                    <?php if(in_array('errorInput', $error_array)){ echo '<div class="invalid-feedback">Incorrect Email or Password</div>'; } ?>
+                                    <?php if (in_array('errorInput', $error_array)) {
+                                        echo '<div class="invalid-feedback">Incorrect Email or Password</div>';
+                                    } ?>
                                 </div>
                                 <!-- Password input -->
                                 <div class="form-outline mb-4">
@@ -189,10 +193,11 @@ if (isset($_POST['signupBtn'])) {
                             </form>
                         </div>
 
+                        <!-- Forgot password button -->
                         <div class="forgot-password-ctn">
                             <button type="button" class="btn btn-primary" data-mdb-toggle="modal" data-mdb-target="#exampleModal"> Forgot Password </button>
 
-                            <!-- Modal -->
+                            <!-- Forgot password modal -->
                             <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
@@ -201,17 +206,15 @@ if (isset($_POST['signupBtn'])) {
                                             <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"><i class="fas fa-times"></i></button>
                                         </div>
                                         <div class="modal-body">Please enter the email address for your account. A verication code will be sent to you. Once you have recieved
-                                            the verification code. You will be able to choose a new password for your password.</div>
+                                            the verification code. You will be able to change your password.</div>
                                         <form method='post'>
                                             <div class="form-outline mb-4">
                                                 <input type="text" class="form-control" name="forgot-email" />
                                                 <label class="form-label">Email Address</label>
-                                                
                                             </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Cancel </button>
-                                                <input type="submit" class="btn btn-primary" name="resetpassword" value="Reset Password" />
-                                            </div>
+
+                                            <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Cancel </button>
+                                            <input type="submit" class="btn btn-primary" name="resetpassword" value="Reset Password" />
                                         </form>
                                     </div>
                                 </div>

@@ -27,7 +27,6 @@ include '../../private/includes/form_handler/addItems.php';
                     <ul>
                         <li><button class="tab-btn tablink" onclick="openTab(event, 'accInfo')">Account Information</button></li>
                         <li><button class="tab-btn tablink" onclick="openTab(event, 'accOrdrs')">Your Orders</button></li>
-
                     </ul>
                 </div>
 
@@ -47,8 +46,6 @@ include '../../private/includes/form_handler/addItems.php';
                         <ul>
                             <li><a class="tab-btn" data-mdb-toggle="modal" href="#addItem" role="button">Add Item</a></li>
                             <li><button class="tab-btn tablink" onclick="openTab(event, \'lendInventory\')">Inventory</button></li>
-                            <li><button class="tab-btn tablink" onclick="openTab(event, \'lendOutgoing\')">Outgoing Items</button></li>
-                            <li><button class="tab-btn tablink" onclick="openTab(event, \'lendTerms\')">Terms & Condition</button></li>
                         </ul>
                     </div>';
                 } ?>
@@ -246,63 +243,21 @@ include '../../private/includes/form_handler/addItems.php';
                         ?>
                     </div>
                 </div>
-
-                <!-- Lender Central Outgoing -->
-                <div id="lendOutgoing" class="lendOutgoing acc-tabs" style="display: none;">
-                    <h1>Outgoing</h1>
-                    <table class="outgoing-table">
-                        <thead>
-                            <tr class='clickable-row' data-href='view-items.php'>
-                                <th>Item Image</th>
-                                <th>Order Id</th>
-                                <th>Name</th>
-                                <th>Date Leased</th>
-                                <th>Return Date</th>
-                                <th>Leased By</th>
-                                <th>Mobile</th>
-                                <th>Email</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td></td>
-                                <td>030303</td>
-                                <td>Tool</td>
-                                <td>03/15/21</td>
-                                <td>03/25/21</td>
-                                <td>John Dale</td>
-                                <td>055-232322</td>
-                                <td>johndale@gmai.com</td>
-                                <td>Delivered</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div id="lendTerms" class="lendTerm acc-tabs" style="display: none;">
-                    <h1>Terms & Condition</h1>
-                </div>
             </div>
 
-            <!-- First modal dialog -->
+            <!-- modal dialog -->
             <div class="addItem modal fade" id="addItem" aria-hidden="true" aria-labelledby="exampleModalToggleLabel1" tabindex="-1">
-                <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+                <div class="modal-dialog modal-md modal-dialog-scrollable modal-dialog-centered">
 
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
                         </div>
-
                         <!-- Adding Category Icons -->
-                        <div class="modal-body">
-                            <!-- Tabs navs -->
-                            <ul class="nav nav-tabs mb-3" id="addItems" role="tablist">
+                        <div class="modal-body m-0">
+                            <ul class="nav nav-tabs d-flex justify-content-center" id="addItems" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link active" id="addItemsCategory" data-mdb-toggle="tab" href="#addItems-category" role="tab" aria-controls="addItems-category" aria-selected="true">Tab 1</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="addItemsTitle" data-mdb-toggle="tab" href="#addItems-title" role="tab" aria-controls="addItems-title" aria-selected="false">Tab 2</a>
+                                    <a class="nav-link active" id="addItemsTitle" data-mdb-toggle="tab" href="#addItems-title" role="tab" aria-controls="addItems-title" aria-selected="true">Tab 2</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link" id="addItemsDetail" data-mdb-toggle="tab" href="#addItems-detail" role="tab" aria-controls="addItems-detail" aria-selected="false">Tab 3</a>
@@ -314,38 +269,19 @@ include '../../private/includes/form_handler/addItems.php';
                                     <a class="nav-link" id="addItemsConfirm" data-mdb-toggle="tab" href="#addItems-confirm" role="tab" aria-controls="addItems-confirm" aria-selected="false">Tab 3</a>
                                 </li>
                             </ul>
-                            <!-- Tabs navs -->
 
+                            <!-- Tabs navs -->
                             <form action="user-account.php" method="post" enctype="multipart/form-data">
                                 <!-- Tabs content -->
                                 <div class="tab-content" id="addItems-content">
-                                    <div class="tab-pane fade show active" id="addItems-category" role="tabpanel" aria-labelledby="addItemsCategory">
-                                        <div class="row">
-                                            <label for="cagetory">Category</label>
-                                            <select name="itemCategory">
-                                                <option value="1">Camping</option>
-                                                <option value="2">Outdoor</option>
-                                                <option value="3">Indoor</option>
-                                                <option value="4">Fishing</option>
-                                                <option value="5">Hardware</option>
-                                                <option value="6">Hiking</option>
-                                                <option value="7">Sailing</option>
-                                                <option value="8">Boating</option>
-                                                <option value="9">Cooking</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="addItems-title" role="tabpanel" aria-labelledby="addItemsTitle">
+                                    <div class="tab-pane fade show active" id="addItems-title" role="tabpanel" aria-labelledby="addItemsTitle">
                                         <!-- Adding Title description -->
-                                        <div class="modal-body">
-                                            <h1>First, enter a short title to describe your listing</h1>
-                                            <p>Make your title informative and attractive.</p>
-                                            <input type="text" name="itemTitle" placeholder="e.g. 6 person Tent for Rent">
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button class="btn btn-primary" data-mdb-target="#addDscrpt" data-mdb-toggle="modal" data-mdb-dismiss="modal">Continue</button>
-                                        </div>
+                                        <h1>First, enter a short title to describe your listing</h1>
+                                        <p>Make your title informative and attractive.</p>
+
+                                        <input class="add-input-styling" type="text" name="itemTitle" placeholder="e.g. 6 person Tent for Rent">
                                     </div>
+
                                     <div class="tab-pane fade" id="addItems-detail" role="tabpanel" aria-labelledby="addItemsDetail">
                                         <!-- Adding Item Information and Description-->
                                         <h1>You're almost there!</h1>
@@ -369,6 +305,21 @@ include '../../private/includes/form_handler/addItems.php';
                                         <div class="row">
                                             <label for="brand">Leasing Duraiton</label>
                                             <input type="number" id="itemDuration" name="itemDuration" min="1" max="30">
+                                        </div>
+
+                                        <div class="row">
+                                            <label for="cagetory">Category</label>
+                                            <select name="itemCategory">
+                                                <option value="1">Camping</option>
+                                                <option value="2">Outdoor</option>
+                                                <option value="3">Indoor</option>
+                                                <option value="4">Fishing</option>
+                                                <option value="5">Hardware</option>
+                                                <option value="6">Hiking</option>
+                                                <option value="7">Sailing</option>
+                                                <option value="8">Boating</option>
+                                                <option value="9">Cooking</option>
+                                            </select>
                                         </div>
 
                                         <div class="row">
