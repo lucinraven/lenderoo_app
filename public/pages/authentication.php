@@ -100,10 +100,9 @@ if (isset($_POST['signupBtn'])) {
             </div>
 
             <div class="nav-right">
-                <li class="option"><a href="../pages/account-tabs.php"><i class="fas fa-bell"></i></a></li>
-                <li class="option"><a href="../pages/account-tabs.php"><i class="fas fa-bookmark"></i></a></li>
-                <li class="option"><a href="../pages/inbox-messenger.php"><i class="fas fa-inbox"></i></a></li>
-                <li class="option"><a href="../pages/add-cart.php"><i class="fas fa-shopping-cart"></i></a></li>
+                <li class="option"><a href=""><i class="fas fa-bookmark"></i></a></li>
+                <li class="option"><a href=""><i class="fas fa-inbox"></i></a></li>
+                <li class="option"><a href=""><i class="fas fa-shopping-cart"></i></a></li>
                 <?php
                 if (isset($_SESSION['email'])) {
                     echo '<li class="option"><a href="../pages/user-account.php">User Account</a></li>';
