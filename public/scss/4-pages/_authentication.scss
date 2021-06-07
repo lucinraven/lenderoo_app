@@ -130,6 +130,19 @@
       background: #363a3d;
       box-shadow: none;
     }
+
+    form{
+      padding: 0 20px;
+
+      .btn{
+        margin-bottom: 10px;
+        background: $primary;
+        font-size: 16px;
+      }
+      .btn:hover{
+        background: #f5b46a;
+      }
+    }
   }
 
   button {

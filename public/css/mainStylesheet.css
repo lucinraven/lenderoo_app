@@ -690,6 +690,20 @@ body {
           box-shadow: none;
 }
 
+.authentication-page .forgot-password-ctn form {
+  padding: 0 20px;
+}
+
+.authentication-page .forgot-password-ctn form .btn {
+  margin-bottom: 10px;
+  background: #DD9857;
+  font-size: 16px;
+}
+
+.authentication-page .forgot-password-ctn form .btn:hover {
+  background: #f5b46a;
+}
+
 .authentication-page button {
   background: #DD9857;
   padding: 10px 16px;
@@ -788,16 +802,26 @@ body {
   color: #DD9857;
 }
 
-.browser-page-ctn .col-md-2 .selected {
-  color: #DD9857;
-}
-
 .browser-page-ctn .col-md-10 {
   padding: 0;
   background: #FFFFFF;
 }
 
-.browser-page-ctn .col-md-10 .item-showcase {
+.browser-page-ctn .col-md-10 .content-header {
+  padding: 0 15px;
+}
+
+.browser-page-ctn .col-md-10 .content-header h1 {
+  font-size: 24px;
+  font-family: "Poppins", sans-serif;
+}
+
+.browser-page-ctn .col-md-10 .content-body {
+  height: 100vh;
+}
+
+.browser-page-ctn .col-md-10 .content-body .item-showcase {
+  height: auto;
   margin: 0 auto;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -807,12 +831,6 @@ body {
           justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
-}
-
-.browser-page-ctn .col-md-10 h1 {
-  margin: 15px;
-  font-size: 24px;
-  font-family: "Poppins", sans-serif;
 }
 
 .browser-page-ctn .col-md-10 .item-widget {
@@ -1623,28 +1641,28 @@ h1 {
   background: #FFFFFF;
 }
 
-.account-pg-ctn .row .col-md-9 .accInfo, .account-pg-ctn .row .col-md-9 .lendOutgoing, .account-pg-ctn .row .col-md-9 .lendAd, .account-pg-ctn .row .col-md-9 .lendRequest, .account-pg-ctn .row .col-md-9 .lendTerm {
+.account-pg-ctn .row .col-md-9 .accInfo {
   height: auto;
   width: 100%;
   padding: 15px;
 }
 
-.account-pg-ctn .row .col-md-9 .accInfo h1, .account-pg-ctn .row .col-md-9 .lendOutgoing h1, .account-pg-ctn .row .col-md-9 .lendAd h1, .account-pg-ctn .row .col-md-9 .lendRequest h1, .account-pg-ctn .row .col-md-9 .lendTerm h1 {
+.account-pg-ctn .row .col-md-9 .accInfo h1 {
   margin: 0;
   padding: 10px;
   font-size: 24px;
   font-family: "Poppins", sans-serif;
 }
 
-.account-pg-ctn .row .col-md-9 .accInfo .col-md-8, .account-pg-ctn .row .col-md-9 .lendOutgoing .col-md-8, .account-pg-ctn .row .col-md-9 .lendAd .col-md-8, .account-pg-ctn .row .col-md-9 .lendRequest .col-md-8, .account-pg-ctn .row .col-md-9 .lendTerm .col-md-8 {
+.account-pg-ctn .row .col-md-9 .accInfo .col-md-8 {
   margin: 0 25px;
 }
 
-.account-pg-ctn .row .col-md-9 .accInfo .col-md-8 form, .account-pg-ctn .row .col-md-9 .lendOutgoing .col-md-8 form, .account-pg-ctn .row .col-md-9 .lendAd .col-md-8 form, .account-pg-ctn .row .col-md-9 .lendRequest .col-md-8 form, .account-pg-ctn .row .col-md-9 .lendTerm .col-md-8 form {
+.account-pg-ctn .row .col-md-9 .accInfo .col-md-8 form {
   margin: 30px 0;
 }
 
-.account-pg-ctn .row .col-md-9 .accInfo .col-md-8 .form-header, .account-pg-ctn .row .col-md-9 .lendOutgoing .col-md-8 .form-header, .account-pg-ctn .row .col-md-9 .lendAd .col-md-8 .form-header, .account-pg-ctn .row .col-md-9 .lendRequest .col-md-8 .form-header, .account-pg-ctn .row .col-md-9 .lendTerm .col-md-8 .form-header {
+.account-pg-ctn .row .col-md-9 .accInfo .col-md-8 .form-header {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1656,25 +1674,25 @@ h1 {
           align-items: center;
 }
 
-.account-pg-ctn .row .col-md-9 .accInfo .col-md-8 .form-header i, .account-pg-ctn .row .col-md-9 .lendOutgoing .col-md-8 .form-header i, .account-pg-ctn .row .col-md-9 .lendAd .col-md-8 .form-header i, .account-pg-ctn .row .col-md-9 .lendRequest .col-md-8 .form-header i, .account-pg-ctn .row .col-md-9 .lendTerm .col-md-8 .form-header i {
+.account-pg-ctn .row .col-md-9 .accInfo .col-md-8 .form-header i {
   font-size: 16px;
 }
 
-.account-pg-ctn .row .col-md-9 .accInfo .col-md-8 .form-header i:hover, .account-pg-ctn .row .col-md-9 .lendOutgoing .col-md-8 .form-header i:hover, .account-pg-ctn .row .col-md-9 .lendAd .col-md-8 .form-header i:hover, .account-pg-ctn .row .col-md-9 .lendRequest .col-md-8 .form-header i:hover, .account-pg-ctn .row .col-md-9 .lendTerm .col-md-8 .form-header i:hover {
+.account-pg-ctn .row .col-md-9 .accInfo .col-md-8 .form-header i:hover {
   cursor: pointer;
 }
 
-.account-pg-ctn .row .col-md-9 .accInfo .col-md-8 .row, .account-pg-ctn .row .col-md-9 .lendOutgoing .col-md-8 .row, .account-pg-ctn .row .col-md-9 .lendAd .col-md-8 .row, .account-pg-ctn .row .col-md-9 .lendRequest .col-md-8 .row, .account-pg-ctn .row .col-md-9 .lendTerm .col-md-8 .row {
+.account-pg-ctn .row .col-md-9 .accInfo .col-md-8 .row {
   margin: 15px 0;
 }
 
-.account-pg-ctn .row .col-md-9 .accInfo .col-md-8 label, .account-pg-ctn .row .col-md-9 .lendOutgoing .col-md-8 label, .account-pg-ctn .row .col-md-9 .lendAd .col-md-8 label, .account-pg-ctn .row .col-md-9 .lendRequest .col-md-8 label, .account-pg-ctn .row .col-md-9 .lendTerm .col-md-8 label {
+.account-pg-ctn .row .col-md-9 .accInfo .col-md-8 label {
   padding: 0;
   font-size: 16px;
   font-family: "Poppins", sans-serif;
 }
 
-.account-pg-ctn .row .col-md-9 .accInfo .col-md-8 input, .account-pg-ctn .row .col-md-9 .lendOutgoing .col-md-8 input, .account-pg-ctn .row .col-md-9 .lendAd .col-md-8 input, .account-pg-ctn .row .col-md-9 .lendRequest .col-md-8 input, .account-pg-ctn .row .col-md-9 .lendTerm .col-md-8 input {
+.account-pg-ctn .row .col-md-9 .accInfo .col-md-8 input {
   height: 25px;
   width: 300px;
   border: solid;
@@ -1683,19 +1701,19 @@ h1 {
   color: #000000;
 }
 
-.account-pg-ctn .row .col-md-9 .accInfo .col-md-8 h3, .account-pg-ctn .row .col-md-9 .lendOutgoing .col-md-8 h3, .account-pg-ctn .row .col-md-9 .lendAd .col-md-8 h3, .account-pg-ctn .row .col-md-9 .lendRequest .col-md-8 h3, .account-pg-ctn .row .col-md-9 .lendTerm .col-md-8 h3 {
+.account-pg-ctn .row .col-md-9 .accInfo .col-md-8 h3 {
   font-family: "Poppins", sans-serif;
   color: #DD9857;
   margin-bottom: 9px;
 }
 
-.account-pg-ctn .row .col-md-9 .accInfo .col-md-8 p, .account-pg-ctn .row .col-md-9 .lendOutgoing .col-md-8 p, .account-pg-ctn .row .col-md-9 .lendAd .col-md-8 p, .account-pg-ctn .row .col-md-9 .lendRequest .col-md-8 p, .account-pg-ctn .row .col-md-9 .lendTerm .col-md-8 p {
+.account-pg-ctn .row .col-md-9 .accInfo .col-md-8 p {
   font-size: 16px;
   font-family: "Poppins", sans-serif;
   margin-bottom: 30px;
 }
 
-.account-pg-ctn .row .col-md-9 .accInfo .col-md-8 .btn, .account-pg-ctn .row .col-md-9 .lendOutgoing .col-md-8 .btn, .account-pg-ctn .row .col-md-9 .lendAd .col-md-8 .btn, .account-pg-ctn .row .col-md-9 .lendRequest .col-md-8 .btn, .account-pg-ctn .row .col-md-9 .lendTerm .col-md-8 .btn {
+.account-pg-ctn .row .col-md-9 .accInfo .col-md-8 .btn {
   background-color: #DD9857;
   font-size: 16px;
   font-family: "Poppins", sans-serif;
@@ -1900,27 +1918,60 @@ h1 {
   margin: 0;
 }
 
-.account-pg-ctn .row .col-md-9 .lendOutgoing .outgoing-table {
-  height: auto;
-  width: 100%;
-  margin: 20px 0 20px 0;
+.account-pg-ctn .row .addItem .tab-content {
+  height: 100%;
+  padding: 10px 15px 10px 15px;
 }
 
-.account-pg-ctn .row .col-md-9 .lendOutgoing th,
-.account-pg-ctn .row .col-md-9 .lendOutgoing td {
-  text-align: center;
-  border: 1px solid #ddd;
-  padding: 8px;
+.account-pg-ctn .row .addItem .tab-pane {
+  padding: 30px 0;
+}
+
+.account-pg-ctn .row .addItem h1 {
+  margin-bottom: 15px;
   font-family: "Poppins", sans-serif;
 }
 
-.account-pg-ctn .row .col-md-9 .lendOutgoing tr:nth-child(even) {
-  background-color: #f2f2f2;
+.account-pg-ctn .row .addItem p {
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
 }
 
-.account-pg-ctn .row .col-md-9 .lendOutgoing tr:hover {
-  cursor: pointer;
-  background-color: #ddd;
+.account-pg-ctn .row .addItem label {
+  padding: 0;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+}
+
+.account-pg-ctn .row .addItem .add-input-styling, .account-pg-ctn .row .addItem textarea {
+  padding-left: 5px;
+  height: 30px;
+  width: 100%;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  outline: none;
+  border: solid;
+  border-radius: 5px;
+  border-width: 2px;
+  border-color: #DD9857;
+}
+
+.account-pg-ctn .row .addItem textarea {
+  padding-top: 5px;
+  height: 100px;
+}
+
+.account-pg-ctn .row .addItem .btn {
+  margin: 0;
+  padding: 0;
+  height: 35px;
+  width: 100%;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
+  background: #DD9857;
 }
 
 .view-order-page {

@@ -51,17 +51,24 @@
     padding: 0;
     background: $main-bg-color;
 
-    .item-showcase{
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
+    .content-header {
+      padding: 0 15px; 
+      h1 {
+        font-size: 24px;
+        font-family: $font-family;
+      }
     }
 
-    h1 {
-      margin: 15px;
-      font-size: 24px;
-      font-family: $font-family;
+    .content-body {
+      height: 100vh;
+
+      .item-showcase {
+        height: auto;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
     }
 
     .item-widget {
@@ -90,8 +97,8 @@
     .filling-empty-space-childs {
       margin: 10px auto;
       padding: 5px 10px;
-      width: 200px; 
-      height: 0; 
+      width: 200px;
+      height: 0;
     }
   }
 }

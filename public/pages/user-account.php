@@ -27,7 +27,6 @@ include '../../private/includes/form_handler/addItems.php';
                     <ul>
                         <li><button class="tab-btn tablink" onclick="openTab(event, 'accInfo')">Account Information</button></li>
                         <li><button class="tab-btn tablink" onclick="openTab(event, 'accOrdrs')">Your Orders</button></li>
-
                     </ul>
                 </div>
 
@@ -257,45 +256,43 @@ include '../../private/includes/form_handler/addItems.php';
                 </div>
             </div>
 
-            <!-- First modal dialog -->
+            <!-- modal dialog -->
             <div class="addItem modal fade" id="addItem" aria-hidden="true" aria-labelledby="exampleModalToggleLabel1" tabindex="-1">
-                <div class="modal-dialog modal-lg modal-dialog-scrollable modal-dialog-centered">
+                <div class="modal-dialog modal-md modal-dialog-scrollable modal-dialog-centered">
 
                     <div class="modal-content">
                         <div class="modal-header">
                             <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
                         </div>
-
                         <!-- Adding Category Icons -->
-                        <div class="modal-body">
-                            <!-- Tabs navs -->
-                            <ul class="nav nav-tabs mb-3" id="addItems" role="tablist">
+                        <div class="modal-body m-0">
+                            <ul class="nav nav-tabs d-flex justify-content-center" id="addItems" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link active" id="addItemsTitle" data-mdb-toggle="tab" href="#addItems-title" role="tab" aria-controls="addItems-title" aria-selected="true">Product Title</a>
+                                    <a class="nav-link active" id="addItemsTitle" data-mdb-toggle="tab" href="#addItems-title" role="tab" aria-controls="addItems-title" aria-selected="true">Step 1</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="addItemsDetail" data-mdb-toggle="tab" href="#addItems-detail" role="tab" aria-controls="addItems-detail" aria-selected="false">Product Details</a>
+                                    <a class="nav-link" id="addItemsDetail" data-mdb-toggle="tab" href="#addItems-detail" role="tab" aria-controls="addItems-detail" aria-selected="false">Step 2</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="addItemsSpec" data-mdb-toggle="tab" href="#addItems-spec" role="tab" aria-controls="addItems-spec" aria-selected="false">Product Technical Description</a>
+                                    <a class="nav-link" id="addItemsSpec" data-mdb-toggle="tab" href="#addItems-spec" role="tab" aria-controls="addItems-spec" aria-selected="false">Step 3</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="addItemsConfirm" data-mdb-toggle="tab" href="#addItems-confirm" role="tab" aria-controls="addItems-confirm" aria-selected="false">Submit</a>
+                                    <a class="nav-link" id="addItemsConfirm" data-mdb-toggle="tab" href="#addItems-confirm" role="tab" aria-controls="addItems-confirm" aria-selected="false">Step 4</a>
                                 </li>
                             </ul>
-                            <!-- Tabs navs -->
 
+                            <!-- Tabs navs -->
                             <form action="user-account.php" method="post" enctype="multipart/form-data">
                                 <!-- Tabs content -->
                                 <div class="tab-content" id="addItems-content">
                                     <div class="tab-pane fade show active" id="addItems-title" role="tabpanel" aria-labelledby="addItemsTitle">
                                         <!-- Adding Title description -->
-                                        <div class="modal-body">
-                                            <h1>First, enter a short title to describe your listing</h1>
-                                            <p>Make your title informative and attractive.</p>
-                                            <input type="text" name="itemTitle" placeholder="e.g. 6 person Tent for Rent">
-                                        </div>
+                                        <h1>First, enter a short title to describe your listing</h1>
+                                        <p>Make your title informative and attractive.</p>
+
+                                        <input class="add-input-styling" type="text" name="itemTitle" placeholder="e.g. 6 person Tent for Rent">
                                     </div>
+
                                     <div class="tab-pane fade" id="addItems-detail" role="tabpanel" aria-labelledby="addItemsDetail">
                                         <!-- Adding Item Information and Description-->
                                         <h1>You're almost there!</h1>
@@ -303,7 +300,7 @@ include '../../private/includes/form_handler/addItems.php';
                                         <!-- Start code for adding description form-->
                                         <div class="row">
                                             <label for="itemName">Item Name</label>
-                                            <input type="text" name="itemName">
+                                            <input class="add-input-styling" type="text" name="itemName">
                                         </div>
 
                                         <div class="row">
@@ -323,22 +320,37 @@ include '../../private/includes/form_handler/addItems.php';
 
                                         <div class="row">
                                             <label for="itemName">Upload Picture</label>
-                                            <input type="file" name="itemImage[]" multiple>
+                                            <input class="add-input-styling" type="file" name="itemImage[]" multiple>
                                         </div>
 
                                         <div class="row">
                                             <label for="itemName">Pricing/Day</label>
-                                            <input type="text" name="itemPrice">
+                                            <input class="add-input-styling" type="text" name="itemPrice">
                                         </div>
 
                                         <div class="row">
                                             <label for="brand">Leasing Duraiton</label>
-                                            <input type="number" id="itemDuration" name="itemDuration" min="1" max="30">
+                                            <input class="add-input-styling" type="number" id="itemDuration" name="itemDuration" min="1" max="30">
+                                        </div>
+
+                                        <div class="row">
+                                            <label for="cagetory">Category</label>
+                                            <select class="add-input-styling" name="itemCategory">
+                                                <option value="1">Camping</option>
+                                                <option value="2">Outdoor</option>
+                                                <option value="3">Indoor</option>
+                                                <option value="4">Fishing</option>
+                                                <option value="5">Hardware</option>
+                                                <option value="6">Hiking</option>
+                                                <option value="7">Sailing</option>
+                                                <option value="8">Boating</option>
+                                                <option value="9">Cooking</option>
+                                            </select>
                                         </div>
 
                                         <div class="row">
                                             <label for="age">Age</label>
-                                            <select name="itemAge" id="age">
+                                            <select class="add-input-styling " name="itemAge" id="age">
                                                 <option value="Brand New">Brand New</option>
                                                 <option value="0-1 month">0-1 month</option>
                                                 <option value="1-6 months">1-6 months</option>
@@ -352,7 +364,7 @@ include '../../private/includes/form_handler/addItems.php';
 
                                         <div class="row">
                                             <label for="condition">Condition</label>
-                                            <select name="itemCondition" id="condition">
+                                            <select class="add-input-styling" name="itemCondition" id="condition">
                                                 <option value="2">Never Used</option>
                                                 <option value="3">Excellent Condition</option>
                                                 <option value="4">Good Condition</option>
@@ -369,31 +381,23 @@ include '../../private/includes/form_handler/addItems.php';
                                     </div>
                                     <div class="tab-pane fade" id="addItems-spec" role="tabpanel" aria-labelledby="addItemsSpec">
                                         <!-- Start code for adding technical specification form-->
-                                        <div class="modal-body">
-                                            <h1>You're almost there!</h1>
-                                            <p>Please include much details and picture as possible, and set the right pricing per day and leasing duration.</p>
 
-                                            <div class="row" id="table-spec">
-                                                <div>
-                                                    <div class="col-md-6"><input type="text" class="form-control" name="itemField[]" placeholder="e.g. Weight: 1.3kg"></div>
-                                                    <div class="col-md-6"><input type="button" class="btn btn-warning" name="add" id="add" value="Add"></div>
-                                                </div>
+                                        <h1>You're almost there!</h1>
+                                        <p>Please include much details and picture as possible, and set the right pricing per day and leasing duration.</p>
+
+                                        <div class="row" id="table-spec">
+                                            <div class="row">
+                                                <div class="col-md-8"><input type="text" class="form-control" name="itemField[]" placeholder="e.g. Weight: 1.3kg"></div>
+
+                                                <div class="col-md-4"><input type="button" class="btn btn-primary" name="add" id="add" value="Add more"></div>
                                             </div>
                                         </div>
                                         <!-- End of code for adding technical specification form-->
                                     </div>
                                     <div class="tab-pane fade" id="addItems-confirm" role="tabpanel" aria-labelledby="addItemsConfirm">
-                                        <h1>The Item will be approve by the admin.</h1>
-                                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At mollitia molestias a amet, accusamus
-                                            corrupti id velit facilis consequuntur, suscipit omnis deserunt dignissimos? Asperiores provident a
-                                            autem iusto veniam velit!</p>
-                                        <p>Eligendi repudiandae porro nam quisquam enim culpa similique labore sequi deserunt id architecto
-                                            consectetur sapiente dolores, laudantium corrupti eaque fugiat possimus a ex, obcaecati minus eos
-                                            debitis facilis vitae. Aliquam.</p>
-                                        <p>Odio beatae minima vitae magnam earum minus fugit aliquid magni atque ducimus cumque quos dolores
-                                            repellendus veniam ipsum, ab obcaecati alias quisquam quasi repudiandae temporibus quo. Eos
-                                            accusantium dolorem fugit.</p>
-                                        <input type="submit" name="addItem" value="Submit">
+                                        <h1>Your product has been listed!</h1>
+                                        <p>To view your listed products in inventory, go to your my account and click the inventory tab.</p>
+                                        <input class="btn btn-primary" type="submit" name="addItem" value="Submit">
                                     </div>
                                     <!-- Tabs content -->
                                 </div>
@@ -413,7 +417,7 @@ include '../../private/includes/form_handler/addItems.php';
 
 <script type="text/javascript">
     $(document).ready(function() {
-        var html = '<div class="removeDiv"><div class="col-md-6"><input type="text" class="form-control" name="itemField[]" placeholder="e.g. Weight: 1.3kg"></div><div class="col-md-6"><input type="button" class="btn btn-warning" name="remove" id="remove" value="Remove"></div></div>';
+        var html = '<div class="removeDiv row"><div class="col-md-8"><input type="text" class="form-control" name="itemField[]" placeholder="add more technical specification"></div><div class="col-md-4"><input type="button" class="btn btn-primary" name="remove" id="remove" value="Remove"></div></div>';
 
         var x = 1;
         var max = 5;
@@ -434,6 +438,5 @@ include '../../private/includes/form_handler/addItems.php';
 <?php
 
 include '../includes/footer.php';
-
 
 ?>
