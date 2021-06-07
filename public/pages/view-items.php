@@ -99,7 +99,7 @@ $row = $result->fetch_assoc()
                     <div class="col-md-3">
                         <div class="right-info-top row">
                             <div class="right-header">
-                                <h1>5 PHP / Day</h1>
+                                <h1><?php echo $row['price']; ?> AED / Day</h1>
                             </div>
                             <div class="right-body">
                                 <ul>
@@ -113,15 +113,56 @@ $row = $result->fetch_assoc()
                             </div>
 
                             <div class="right-bottom">
-                                <a class="btn btn-primary" href="inbox-messenger.php">Inquire Lender</a>
 
-                                <form action="account-tabs.php" method="POST">
-                                    <input class="btn btn-primary" type="submit" name="add-bookmark" value="Bookmark">
-                                    <input type="hidden" name="product_id" value="<?php echo $row['product_id'] ?>">
+                                <form action="input-messenger.php" method="POST">
+                                    <input class="btn btn-primary" type="submit" name="add-cart" value="Cart">
+                                    <input type="hidden" name="product_id" value="<?php echo $row['lender_id'] ?>">
                                 </form>
 
+                                <?php
+
+                                $bookmark_check = $con->prepare("SELECT fav_id FROM fav WHERE product_id=? AND user_id=?");
+                                $bookmark_check->bind_param("ii", $row['product_id'], $_SESSION['user_id']);
+                                $bookmark_check->execute();
+
+                                $result = $bookmark_check->get_result();
+
+                                //Count the number of rows returned
+                                $num_rows = $result->num_rows;
+
+                                if ($num_rows == 1) {
+                                    echo '
+                                    <form action="" method="POST">
+                                        <input class="btn btn-primary" type="submit" name="remove-bookmark" value="Remove Bookmark">
+                                    </form>';
+
+                                    if (isset($_POST['remove-bookmark'])) {
+
+                                        $query = $con->prepare("DELETE FROM fav WHERE product_id=? AND user_id=?");
+                                        $query->bind_param("ii", $row['product_id'], $_SESSION['user_id']);
+                                        $query->execute();
+
+                                        header("refresh: 1;");
+                                    }
+                                } else {
+                                    echo '
+                                    <form action="" method="POST">
+                                        <input class="btn btn-primary" type="submit" name="add-bookmark" value="Bookmark">
+                                    </form>';
+
+                                    if (isset($_POST['add-bookmark'])) {
+
+                                        $query = $con->prepare("INSERT INTO fav VALUES('', ?, ?, NOW())");
+                                        $query->bind_param("ii", $row['product_id'], $_SESSION['user_id']);
+                                        $query->execute();
+
+                                        header("refresh: 1;");
+                                    }
+                                };
+                                ?>
+
                                 <form action="add-cart.php" method="POST">
-                                    <input class="btn btn-primary" type="submit" name="add-bookmark" value="Bookmark">
+                                    <input class="btn btn-primary" type="submit" name="add-cart" value="Cart">
                                     <input type="hidden" name="product_id" value="<?php echo $row['product_id'] ?>">
                                 </form>
                             </div>
@@ -149,8 +190,8 @@ $row = $result->fetch_assoc()
                             $tech = $row['technicalDesc'];
                             $pieces = explode(",", $tech);
 
-                            foreach ($pieces as $value){
-                                echo'<tr>'.$value.'</tr> </br>';
+                            foreach ($pieces as $value) {
+                                echo '<tr>' . $value . '</tr> </br>';
                             }
                             ?>
                         </tbody>

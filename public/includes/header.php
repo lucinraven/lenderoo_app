@@ -65,7 +65,6 @@ require '../../private/config/config.php'
             </div>
 
             <div class="nav-right">
-                <li class="option"><a href="../pages/account-tabs.php"><i class="fas fa-bell"></i></a></li>
                 <li class="option"><a href="../pages/account-tabs.php"><i class="fas fa-bookmark"></i></a></li>
                 <li class="option"><a href="../pages/inbox-messenger.php"><i class="fas fa-inbox"></i></a></li>
                 <li class="option"><a href="../pages/add-cart.php"><i class="fas fa-shopping-cart"></i></a></li>
