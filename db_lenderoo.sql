@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 07, 2021 at 10:26 AM
+-- Generation Time: Jun 07, 2021 at 10:40 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -173,7 +173,6 @@ CREATE TABLE `product` (
   `product_title` varchar(255) DEFAULT NULL,
   `product_name` varchar(255) DEFAULT NULL,
   `description` longtext DEFAULT NULL,
-  `brand` varchar(64) DEFAULT NULL,
   `age` varchar(30) DEFAULT NULL,
   `technicalDesc` varchar(255) DEFAULT NULL,
   `price` double DEFAULT NULL,
@@ -189,8 +188,8 @@ CREATE TABLE `product` (
 -- Dumping data for table `product`
 --
 
-INSERT INTO `product` (`product_id`, `product_title`, `product_name`, `description`, `brand`, `age`, `technicalDesc`, `price`, `category_id`, `condition_id`, `status`, `click_counter`, `lender_id`, `max_lend_duration`) VALUES
-(1, 'Selling 6 person tent', 'Coleman cabin tent', 'The best tent', NULL, '0-1 month', 'Weight: 13kg,Capacity: 6 person', 10.5, 1, 3, 'Available', 1, 1, 15);
+INSERT INTO `product` (`product_id`, `product_title`, `product_name`, `description`, `age`, `technicalDesc`, `price`, `category_id`, `condition_id`, `status`, `click_counter`, `lender_id`, `max_lend_duration`) VALUES
+(1, 'Selling 6 person tent', 'Coleman cabin tent', 'The best tent', '0-1 month', 'Weight: 13kg,Capacity: 6 person', 10.5, 1, 3, 'Available', 1, 1, 15);
 
 -- --------------------------------------------------------
 
