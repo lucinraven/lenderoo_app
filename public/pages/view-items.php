@@ -29,7 +29,7 @@ $stmt->bind_param("i", $_GET['prod_id']);
 $stmt->execute();
 
 $result = $stmt->get_result();
-$row = $result->fetch_assoc()
+$row = $result->fetch_assoc();
 ?>
 <div class="view-item-page">
     <!-- View item header -->
@@ -120,11 +120,19 @@ $row = $result->fetch_assoc()
                             </div>
 
                             <div class="right-bottom">
+<<<<<<< HEAD
                             
                                 <!-- <form action="input-messenger.php" method="POST">
                                     <input class="btn btn-primary" type="submit" name="add-cart" value="Not working">
                                     <input type="hidden" name="product_id" value="<?php echo $row['lender_id'] ?>">
                                 </form> -->
+=======
+
+                                <form action="inbox-messenger.php" method="POST">
+                                    <input class="btn btn-primary" type="submit" name="add-cart" value="Inquire Information">
+                                    <input type="hidden" name="lender_id" value="<?php echo $row['lender_id'] ?>">
+                                </form>
+>>>>>>> 6cb0ace2be4c27c0d6aa42c022c2b842d3c3bcb6
 
                                 <?php
                                 $bookmark_check = $con->prepare("SELECT fav_id FROM fav WHERE product_id=? AND user_id=?");

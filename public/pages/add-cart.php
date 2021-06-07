@@ -37,13 +37,13 @@ if (isset($_POST['product_id'])) {
 
     $cartRows = $cartRes->fetch_assoc();
     $cart_id = $cartRows['cart_id'];
-    echo $cart_id;
+
     $sql = "SELECT cp.id FROM cart_products cp INNER JOIN cart c ON c.cart_id = cp.cart_id WHERE cp.product_id = ? AND c.user_id = ? AND cp.cart_id = $cart_id LIMIT 1 ";
     $stmt = $con->prepare($sql);
     $stmt->bind_param("ii", $product_id, $user_id);
     $stmt->execute();
     $cartProdRes = $stmt->get_result();
-    echo $cartProdRes->num_rows;
+
     if ($cartProdRes->num_rows > 0) { //existing product item in cart
         $cartProdRows = $cartProdRes->fetch_assoc();
         $cartProdId = $cartProdRows['id'];
@@ -66,6 +66,25 @@ if (isset($_POST['product_id'])) {
 <!-- Cart page -->
 <div class="add-cart-page">
     <div class="container-lg">
+
+        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">...</div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
+                            Close
+                        </button>
+                        <button type="button" class="btn btn-primary">Save changes</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <div class="row">
             <div class="col-md-9">
                 <!-- Cart list header -->
@@ -81,25 +100,35 @@ if (isset($_POST['product_id'])) {
 
                 $productInCartRes = $stmt->get_result();
                 while ($productInCartRows = $productInCartRes->fetch_assoc()) {
+
+                    $imageQuery = $con->prepare("SELECT * FROM product_image WHERE product_id=?");
+                    $imageQuery->bind_param("i", $productInCartRows['product_id']);
+                    $imageQuery->execute();
+
+                    $imageResult = $imageQuery->get_result();
+                    $imageRow = $imageResult->fetch_assoc();
+
                     echo '
                     <!-- Cart list body container-->
                     <div class="cart-list">
                         <!-- Cart item -->
                         <div class="cart-item row">
-                            <div class="left-content col-md-4">
-                                <img src="" alt="">
-                            </div>
-    
-                            <div class="right-content col-md-8">
-                                <div class="right-header">
-                                    <h2>' . $productInCartRows['product_title'] . '</h2>
+                            <a href="../pages/view-items.php?prod_id=' . $productInCartRows['product_id'] . '" target="_blank">
+                                <div class="left-content col-md-4">
+                                    <img src="../images/' . $imageRow['source'] . '" alt="' . $imageRow['source'] . '"  />
                                 </div>
+        
+                                <div class="right-content col-md-8">
+                                    <div class="right-header">
+                                        <h2>' . $productInCartRows['product_title'] . '</h2>
+                                    </div>
 
-                                <div class="right-body">
-                                    <p>' . $productInCartRows['quantity'] . ' Qty</p>
-                                    <p>' . $productInCartRows['price'] . ' AED/Day</p>
+                                    <div class="right-body">
+                                        <p>' . $productInCartRows['quantity'] . ' Qty</p>
+                                        <p>' . $productInCartRows['price'] . ' AED/Day</p>
+                                    </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
                     </div>';
                 }
@@ -119,6 +148,10 @@ if (isset($_POST['product_id'])) {
 
                 </div>
             </div>
+
+
+
+
         </div>
     </div>
 </div>
