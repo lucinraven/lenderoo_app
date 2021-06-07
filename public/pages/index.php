@@ -9,12 +9,6 @@
  */
 
 include '../includes/header.php';
-
-$sql = "SELECT product_id, product_name,product_title, price FROM `product` LIMIT 12"; //remove product_title, and add product_names in DB
-$stmt = $con->prepare($sql);
-$stmt->execute();
-$result = $stmt->get_result();
-
 ?>
 
 <!---START OF CAROUSEL -->
@@ -106,45 +100,38 @@ $result = $stmt->get_result();
       <div class="row">
         <h1>Featured</h1>
         <!-- Product Widget Showcase-->
-        <a class="view-item" href="../pages/view-items.php">
-          <img src="" alt="" />
+        <?php
+        $sql = "SELECT * FROM `product` ORDER BY click_counter DESC"; //remove product_title, and add product_names in DB
+        $stmt = $con->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->get_result();
 
-          <h2>Title</h2>
-          <p>50 Aed/Day</p>
-        </a>
+        while ($featured_row = $result->fetch_assoc()) {
+          echo '<a class="view-item" href="../pages/view-items.php?prod_id=' . $featured_row['product_id'] . '">
+                    <img src="" alt="" />
 
-        <a class="view-item" href="../pages/view-items.php">
-          <img src="" alt="" />
+                    <h2>' . $featured_row['product_title'] . '</h2>
+                    <p>' . $featured_row['price'] . ' Aed/Day</p>
+                  </a>';
+        };
+        ?>
 
-          <h2>Title</h2>
-          <p>50 Aed/Day</p>
-        </a>
-
-        <a class="view-item" href="../pages/view-items.php">
-          <img src="" alt="" />
-
-          <h2>Title</h2>
-          <p>50 Aed/Day</p>
-        </a>
-
-        <a class="view-item" href="../pages/view-items.php">
-          <img src="" alt="" />
-
-          <h2>Title</h2>
-          <p>50 Aed/Day</p>
-        </a>
-        <a class="view-item" href="../pages/view-items.php">
-          <img src="" alt="" />
-
-          <h2>Title</h2>
-          <p>50 Aed/Day</p>
-        </a>
+        <!-- filling gaps or spaces on row with empty child divs -->
+        <div class="filling-empty-space-childs"></div>
+        <div class="filling-empty-space-childs"></div>
+        <div class="filling-empty-space-childs"></div>
+        
       </div>
 
       <!-- Showcased Row -->
       <div class="row">
         <h1>Browse</h1>
         <?php
+        $sql = "SELECT product_id, product_name,product_title, price FROM `product` LIMIT 12"; //remove product_title, and add product_names in DB
+        $stmt = $con->prepare($sql);
+        $stmt->execute();
+        $result = $stmt->get_result();
+
         while ($row = $result->fetch_assoc()) {
           echo '<a class="view-item" href="../pages/view-items.php?prod_id=' . $row['product_id'] . '">
                     <img src="" alt="" />

@@ -304,21 +304,6 @@ include '../../private/includes/form_handler/addItems.php';
                                         </div>
 
                                         <div class="row">
-                                            <label for="cagetory">Category</label>
-                                            <select name="itemCategory">
-                                                <option value="1">Camping</option>
-                                                <option value="2">Outdoor</option>
-                                                <option value="3">Indoor</option>
-                                                <option value="4">Fishing</option>
-                                                <option value="5">Hardware</option>
-                                                <option value="6">Hiking</option>
-                                                <option value="7">Sailing</option>
-                                                <option value="8">Boating</option>
-                                                <option value="9">Cooking</option>
-                                            </select>
-                                        </div>
-
-                                        <div class="row">
                                             <label for="itemName">Upload Picture</label>
                                             <input class="add-input-styling" type="file" name="itemImage[]" multiple>
                                         </div>
@@ -395,9 +380,9 @@ include '../../private/includes/form_handler/addItems.php';
                                         <!-- End of code for adding technical specification form-->
                                     </div>
                                     <div class="tab-pane fade" id="addItems-confirm" role="tabpanel" aria-labelledby="addItemsConfirm">
-                                        <h1>Your product has been listed!</h1>
+                                        <h1>Last step! Click confirm to list your item.</h1>
                                         <p>To view your listed products in inventory, go to your my account and click the inventory tab.</p>
-                                        <input class="btn btn-primary" type="submit" name="addItem" value="Submit">
+                                        <input class="btn btn-primary" type="submit" name="addItem" value="Confirm">
                                     </div>
                                     <!-- Tabs content -->
                                 </div>
