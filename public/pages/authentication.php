@@ -7,17 +7,15 @@
  * Time: 11:36 PM
  */
 
-/**
- * TODO: Forgot Password
- * TODO: Change Password
- * TODO: Add Cookie
- */
+ 
+$error_array = array(); //Holds error messages
 
 require '../../private/config/config.php';
+require '../../private/includes/api/PHPMailer/PHPMailerAutoload.php';
+require '../../private/includes/classes/Mail.php';
 require '../../private/includes/form_handler/signinForm.php';
 require '../../private/includes/form_handler/signupForm.php';
 require '../../private/includes/form_handler/forgotPasswordForm.php';
-require '../../private/includes/form_handler/changePasswordForm.php';
 
 if (isset($_POST['signupBtn'])) {
     echo "
@@ -128,7 +126,7 @@ if (isset($_POST['signupBtn'])) {
                         <h2 class="left-heading">Sign Up</h2>
 
                         <div class="form-container">
-                            <form method='post' action='authentication.php'>
+                            <form method='post'>
                                 <!-- FirstName input -->
                                 <div class="form-outline mb-4">
                                     <input type="text" name="signup_firstName" class="form-control" />
@@ -177,8 +175,9 @@ if (isset($_POST['signupBtn'])) {
                             <form method='post'>
                                 <!-- Email input -->
                                 <div class="form-outline mb-4">
-                                    <input type="email" name="signin_email" class="form-control" />
+                                    <input type="email" name="signin_email" class="form-control <?php if(in_array('errorInput', $error_array)){ echo 'is-invalid'; } ?>" />
                                     <label class="form-label">Email address</label>
+                                    <?php if(in_array('errorInput', $error_array)){ echo '<div class="invalid-feedback">Incorrect Email or Password</div>'; } ?>
                                 </div>
                                 <!-- Password input -->
                                 <div class="form-outline mb-4">
@@ -205,12 +204,13 @@ if (isset($_POST['signupBtn'])) {
                                             the verification code. You will be able to choose a new password for your password.</div>
                                         <form method='post'>
                                             <div class="form-outline mb-4">
-                                                <input type="text" class="form-control" />
+                                                <input type="text" class="form-control" name="forgot-email" />
                                                 <label class="form-label">Email Address</label>
+                                                
                                             </div>
                                             <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Close </button>
-                                                <button type="button" class="btn btn-primary">Reset Password</button>
+                                                <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">Cancel </button>
+                                                <input type="submit" class="btn btn-primary" name="resetpassword" value="Reset Password" />
                                             </div>
                                         </form>
                                     </div>

@@ -79,7 +79,18 @@ if (isset($_POST['signupBtn'])) {
 		$query->execute();
 
 		$_SESSION['email'] = $email;
-		header("Location: /");
+
+		$user_check = $con->prepare("SELECT user_id FROM users WHERE email=?");
+		$user_check->bind_param("s", $email);
+		$user_check->execute();
+
+		$result = $user_check->get_result();
+		$row = $result->fetch_assoc();
+		$user_id = $row['user_id'];
+		
+		$_SESSION['user_id'] = $user_id;
+
+		header("Location: index.php");
 		exit();
 	}
 }

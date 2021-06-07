@@ -1,5 +1,4 @@
 <?php
-require ('../../../vendor/autoload.php');
 class Mail
 {
         public static function sendMail($subject, $body, $address)
@@ -11,7 +10,7 @@ class Mail
                 $mail->Host = 'smtp.gmail.com';
                 $mail->Port = '465';
                 $mail->isHTML();
-                $mail->Username = 'connect.socialmail@gmail.com';
+                $mail->Username = 'lenderoo.service@gmail.com';
                 $mail->Password = '368276b2fb0439a3';
                 $mail->SetFrom('no-reply@neighbor.org');
                 $mail->Subject = $subject;
@@ -27,3 +26,5 @@ class Mail
                 return $mail;
         }
 }
+
+?>
