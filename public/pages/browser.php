@@ -8,6 +8,7 @@
 
 include '../includes/header.php';
 
+
 if (isset($_GET['priceFrom']) && isset($_GET['priceTo'])) {
     $_SESSION['priceFrom'] = $_GET['priceFrom'];
     $_SESSION['priceTo'] = $_GET['priceTo'];
@@ -22,8 +23,20 @@ if (isset($_GET['priceFrom']) && isset($_GET['priceTo'])) {
     unset($_SESSION['categoryId']);
 }
 
-$sql = "SELECT product_id, product_title,product_name,price FROM `product` WHERE 1";
+$sql = "SELECT product_id, product_title,product_name,price FROM `product` INNER JOIN category ON product.category_id = category.id WHERE 1";
 $where = "";
+
+
+if(isset($_POST['searchStr'])){
+    unset($_SESSION['priceFrom']);
+    unset($_SESSION['priceTo']);
+    unset($_SESSION['conditionId']);
+    unset($_SESSION['categoryId']);
+    
+    $searchStr = $_POST['searchStr'];
+
+    $where = " AND (product_title LIKE '%".$searchStr."%' OR product_name LIKE '%".$searchStr."%' OR category_name LIKE '%".$searchStr."%')";
+}
 
 $bindType = "";
 $bindArray = [];

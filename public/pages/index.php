@@ -102,21 +102,16 @@ include '../includes/header.php';
         <h1>Featured</h1>
         <!-- Product Widget Showcase-->
         <?php
-        $sql = "SELECT * FROM `product` ORDER BY click_counter DESC"; //remove product_title, and add product_names in DB
+        $sql = "SELECT * FROM `product` LEFT JOIN product_image ON product.product_id = product_image.product_id GROUP BY product.product_id ORDER BY click_counter DESC LIMIT 5"; //remove product_title, and add product_names in DB
         $stmt = $con->prepare($sql);
         $stmt->execute();
         $result = $stmt->get_result();
 
         while ($featured_row = $result->fetch_assoc()) {
-          $imageQuery = $con->prepare("SELECT * FROM product_image WHERE product_id=?");
-          $imageQuery->bind_param("i", $featured_row['product_id']);
-          $imageQuery->execute();
 
-          $imageResult = $imageQuery->get_result();
-          $imageRow = $imageResult->fetch_assoc();
           echo '<a class="view-item" href="../pages/view-items.php?prod_id=' . $featured_row['product_id'] . '">
             <div class="card-content-image">
-              <img src="../images/'.$imageRow['source'].'" alt="'.$imageRow['source'].'"  />
+              <img src="../images/'.$featured_row['source'].'" alt="'.$featured_row['source'].'"  />
             </div>
 
             <div class="card-content-body">
@@ -139,22 +134,16 @@ include '../includes/header.php';
       <div class="row">
         <h1>Browse</h1>
         <?php
-        $sql = "SELECT product_id, product_name,product_title, price FROM `product` LIMIT 12"; //remove product_title, and add product_names in DB
+        $sql = "SELECT product.product_id, product_name,product_title, price, source FROM `product` LEFT JOIN product_image ON product.product_id = product_image.product_id GROUP BY product.product_id LIMIT 12"; //remove product_title, and add product_names in DB
         $stmt = $con->prepare($sql);
         $stmt->execute();
         $result = $stmt->get_result();
 
         while ($row = $result->fetch_assoc()) {
-          $imageQuery = $con->prepare("SELECT * FROM product_image WHERE product_id=?");
-          $imageQuery->bind_param("i", $row['product_id']);
-          $imageQuery->execute();
-
-          $imageResult = $imageQuery->get_result();
-          $imageRow = $imageResult->fetch_assoc();
 
           echo '<a class="view-item" href="../pages/view-items.php?prod_id=' . $row['product_id'] . '">
               <div class="card-content-image">
-                  <img src="../images/'.$imageRow['source'].'" alt="'.$imageRow['source'].'"  />
+                  <img src="../images/'.$row['source'].'" alt="'.$row['source'].'"  />
                </div>
 
               <div class="card-content-body">
