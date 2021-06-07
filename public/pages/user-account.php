@@ -299,19 +299,16 @@ include '../../private/includes/form_handler/addItems.php';
                             <!-- Tabs navs -->
                             <ul class="nav nav-tabs mb-3" id="addItems" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link active" id="addItemsCategory" data-mdb-toggle="tab" href="#addItems-category" role="tab" aria-controls="addItems-category" aria-selected="true">Tab 1</a>
+                                    <a class="nav-link active" id="addItemsTitle" data-mdb-toggle="tab" href="#addItems-title" role="tab" aria-controls="addItems-title" aria-selected="false">Product Title</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="addItemsTitle" data-mdb-toggle="tab" href="#addItems-title" role="tab" aria-controls="addItems-title" aria-selected="false">Tab 2</a>
+                                    <a class="nav-link" id="addItemsDetail" data-mdb-toggle="tab" href="#addItems-detail" role="tab" aria-controls="addItems-detail" aria-selected="false">Product Details</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="addItemsDetail" data-mdb-toggle="tab" href="#addItems-detail" role="tab" aria-controls="addItems-detail" aria-selected="false">Tab 3</a>
+                                    <a class="nav-link" id="addItemsSpec" data-mdb-toggle="tab" href="#addItems-spec" role="tab" aria-controls="addItems-spec" aria-selected="false">Product Technical Description</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="addItemsSpec" data-mdb-toggle="tab" href="#addItems-spec" role="tab" aria-controls="addItems-spec" aria-selected="false">Tab 3</a>
-                                </li>
-                                <li class="nav-item" role="presentation">
-                                    <a class="nav-link" id="addItemsConfirm" data-mdb-toggle="tab" href="#addItems-confirm" role="tab" aria-controls="addItems-confirm" aria-selected="false">Tab 3</a>
+                                    <a class="nav-link" id="addItemsConfirm" data-mdb-toggle="tab" href="#addItems-confirm" role="tab" aria-controls="addItems-confirm" aria-selected="false">Submit</a>
                                 </li>
                             </ul>
                             <!-- Tabs navs -->
@@ -319,23 +316,7 @@ include '../../private/includes/form_handler/addItems.php';
                             <form action="user-account.php" method="post" enctype="multipart/form-data">
                                 <!-- Tabs content -->
                                 <div class="tab-content" id="addItems-content">
-                                    <div class="tab-pane fade show active" id="addItems-category" role="tabpanel" aria-labelledby="addItemsCategory">
-                                        <div class="row">
-                                            <label for="cagetory">Category</label>
-                                            <select name="itemCategory">
-                                                <option value="1">Camping</option>
-                                                <option value="2">Outdoor</option>
-                                                <option value="3">Indoor</option>
-                                                <option value="4">Fishing</option>
-                                                <option value="5">Hardware</option>
-                                                <option value="6">Hiking</option>
-                                                <option value="7">Sailing</option>
-                                                <option value="8">Boating</option>
-                                                <option value="9">Cooking</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="tab-pane fade" id="addItems-title" role="tabpanel" aria-labelledby="addItemsTitle">
+                                    <div class="tab-pane fade active" id="addItems-title" role="tabpanel" aria-labelledby="addItemsTitle">
                                         <!-- Adding Title description -->
                                         <div class="modal-body">
                                             <h1>First, enter a short title to describe your listing</h1>
@@ -354,6 +335,21 @@ include '../../private/includes/form_handler/addItems.php';
                                         <div class="row">
                                             <label for="itemName">Item Name</label>
                                             <input type="text" name="itemName">
+                                        </div>
+
+                                        <div class="row">
+                                            <label for="cagetory">Category</label>
+                                            <select name="itemCategory">
+                                                <option value="1">Camping</option>
+                                                <option value="2">Outdoor</option>
+                                                <option value="3">Indoor</option>
+                                                <option value="4">Fishing</option>
+                                                <option value="5">Hardware</option>
+                                                <option value="6">Hiking</option>
+                                                <option value="7">Sailing</option>
+                                                <option value="8">Boating</option>
+                                                <option value="9">Cooking</option>
+                                            </select>
                                         </div>
 
                                         <div class="row">

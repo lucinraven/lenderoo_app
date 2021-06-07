@@ -45,8 +45,8 @@ if (isset($_POST['addItem'])) {
     $result = $e_check->get_result();
     $userId = $result->fetch_assoc();
 
-    $product_query = $con->prepare("INSERT INTO product VALUES ('', ?, ?, ?, ?, ?, ?, ?, ?, ?, 'Available', '', ?, ?)");
-    $product_query->bind_param("ssssssdiiii", $title, $itemName, $itemDescription, $itemBrand, $itemAge, $itemField, $itemPrice, $category, $itemCondition, $userId, $itemDuration);
+    $product_query = $con->prepare("INSERT INTO product VALUES ('', ?, ?, ?, ?, ?, ?, ?, ?, 'Available', '', ?, ?)");
+    $product_query->bind_param("sssssdiiii", $title, $itemName, $itemDescription, $itemAge, $itemField, $itemPrice, $category, $itemCondition, $userId, $itemDuration);
     $product_query->execute();
 
     // File upload configuration 
