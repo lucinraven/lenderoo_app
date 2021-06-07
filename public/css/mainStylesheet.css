@@ -439,7 +439,7 @@ body {
 .add-cart-page .row .col-md-9 .cart-item {
   margin-top: 10px;
   padding: 5px;
-  height: 170px;
+  height: auto;
   width: 100%;
   border-bottom: solid;
   border-width: thin;
@@ -460,9 +460,12 @@ body {
 }
 
 .add-cart-page .row .col-md-9 .cart-item .left-content img, .add-cart-page .row .col-md-9 .cart-item .view-order-page .order-details .col-md-8 .content-body .right-content img, .view-order-page .order-details .col-md-8 .content-body .add-cart-page .row .col-md-9 .cart-item .right-content img, .add-cart-page .row .col-md-9 .cart-item .view-outgoing-page .order-details .col-md-8 .content-body .right-content img, .view-outgoing-page .order-details .col-md-8 .content-body .add-cart-page .row .col-md-9 .cart-item .right-content img {
-  height: 100%;
+  height: 180px;
   width: 100%;
   background-color: darkgray;
+  border: solid;
+  border-width: 2px;
+  border-color: #d1d1d1;
 }
 
 .add-cart-page .row .col-md-9 .cart-item .right-content {
@@ -1876,7 +1879,7 @@ h1 {
 .account-pg-ctn .row .col-md-9 .lendInventory .card-item {
   margin: 10px 0;
   display: block;
-  height: 170px;
+  height: 200px;
   width: 100%;
   background: #FFFFFF;
   border: solid;
@@ -2356,9 +2359,17 @@ h1 {
 .view-item-page .view-item-head .col-md-5 .img-showcase-ctn .image-card {
   height: 90px;
   width: 100px;
-  margin: 5px;
   display: block;
   background-color: #DD9857;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .view-item-page .view-item-head .left-info-top {
@@ -2383,7 +2394,7 @@ h1 {
 .view-item-page .view-item-head .left-info-top .left-header h1 {
   margin: 0;
   padding: 0 5px;
-  font-size: 18px;
+  font-size: 24px;
   font-family: "Poppins", sans-serif;
   color: #FFFFFF;
 }
@@ -2391,6 +2402,19 @@ h1 {
 .view-item-page .view-item-head .left-info-top .left-body {
   height: 50%;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 .view-item-page .view-item-head .left-info-top .left-body ul {
@@ -2445,6 +2469,15 @@ h1 {
 .view-item-page .view-item-head .right-info-top .right-body {
   height: 50%;
   width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .view-item-page .view-item-head .right-info-top .right-body ul {
@@ -2456,11 +2489,14 @@ h1 {
   list-style-type: none;
 }
 
-.view-item-page .view-item-head .right-info-top .right-body p {
-  margin-bottom: 12px;
+.view-item-page .view-item-head .right-info-top .right-body .btn {
+  margin-bottom: 20px;
+  height: 40px;
+  width: 180px;
+  background-color: #DD9857;
   font-size: 16px;
   font-family: "Poppins", sans-serif;
-  color: #FFFFFF;
+  text-transform: capitalize;
 }
 
 .view-item-page .view-item-head .right-info-top .right-bottom {
@@ -2483,15 +2519,6 @@ h1 {
           flex-direction: column;
 }
 
-.view-item-page .view-item-head .right-info-top .right-bottom .btn {
-  height: 40px;
-  width: 180px;
-  background-color: #DD9857;
-  font-size: 16px;
-  font-family: "Poppins", sans-serif;
-  text-transform: capitalize;
-}
-
 .view-item-page .container-lg {
   height: auto;
   padding: 0 50px;
@@ -2510,6 +2537,7 @@ h1 {
 .view-item-page .container-lg .desc-scrip-ctn h1 {
   font-size: 24px;
   font-family: "Poppins", sans-serif;
+  color: #DD9857;
 }
 
 .view-item-page .container-lg .desc-scrip-ctn p {
@@ -2546,12 +2574,17 @@ h1 {
 }
 
 .view-item-page .container-lg .customer-review-ctn .post-review {
-  margin: 50px 0;
+  padding: 15px;
+  margin: 15px 0;
+  border: solid;
+  border-width: thin;
+  border-color: #d1d1d1;
 }
 
 .view-item-page .container-lg .customer-review-ctn h1 {
   font-size: 24px;
   font-family: "Poppins", sans-serif;
+  color: #DD9857;
 }
 
 .view-item-page .container-lg .customer-review-ctn h5 {

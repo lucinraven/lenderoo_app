@@ -32,11 +32,6 @@ $result = $query->get_result();
                         Favorites
                     </button>
                 </li>
-                <li class="nav-item" role="presentation">
-                    <button class="nav-link" id="contact-tab0" data-mdb-toggle="tab" data-mdb-target="#contact0" type="button" role="tab" aria-controls="contact" aria-selected="false">
-                        Searches
-                    </button>
-                </li>
             </ul>
 
             <!-- Tab pages content -->
@@ -46,7 +41,7 @@ $result = $query->get_result();
                 <div class="tab-pane fade show active" id="profile0" role="tabpanel" aria-labelledby="profile-tab0">
                     <!-- Tab view page body -->
                     <div class="tab-header">
-                        <h1>Favorites</h1>
+                        <h1>Your Favorite Products</h1>
                     </div>
 
                     <!-- Tab view page body -->
@@ -99,32 +94,6 @@ $result = $query->get_result();
                         </div>
                     </div>
                 </div>
-
-                <div class="tab-pane fade" id="contact0" role="tabpanel" aria-labelledby="contact-tab0">
-                    <div class="tab-header">
-                        <h1>Search</h1>
-                    </div>
-                    <!-- Tab view page body -->
-                    <div class="tab-body">
-                        <div class="notification-item row">
-                            <div class="left-content col-md-1">
-                                <img src="" alt="">
-                            </div>
-
-                            <div class="right-content col-md-10">
-                                <h2>Heading</h2>
-                                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio explicabo, modi quae officiis quis at aliquid iste.</p>
-                            </div>
-
-                            <div class="delete-btn col-md-1">
-                                <i class="fas fa-circle"></i>
-                                <i class="fas fa-circle"></i>
-                                <i class="fas fa-circle"></i>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </div>
 

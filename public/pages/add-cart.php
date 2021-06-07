@@ -113,22 +113,20 @@ if (isset($_POST['product_id'])) {
                     <div class="cart-list">
                         <!-- Cart item -->
                         <div class="cart-item row">
-                            <a href="../pages/view-items.php?prod_id=' . $productInCartRows['product_id'] . '" target="_blank">
-                                <div class="left-content col-md-4">
-                                    <img src="../images/' . $imageRow['source'] . '" alt="' . $imageRow['source'] . '"  />
-                                </div>
+                            <div class="left-content col-md-4">
+                                 <img src="../images/' . $imageRow['source'] . '" alt="' . $imageRow['source'] . '"  />
+                            </div>
         
-                                <div class="right-content col-md-8">
-                                    <div class="right-header">
-                                        <h2>' . $productInCartRows['product_title'] . '</h2>
-                                    </div>
-
-                                    <div class="right-body">
-                                        <p>' . $productInCartRows['quantity'] . ' Qty</p>
-                                        <p>' . $productInCartRows['price'] . ' AED/Day</p>
-                                    </div>
+                            <div class="right-content col-md-8">
+                                <div class="right-header">
+                                    <h2>' . $productInCartRows['product_title'] . '</h2>
                                 </div>
-                            </a>
+
+                                <div class="right-body">
+                                    <p>' . $productInCartRows['quantity'] . ' Qty</p>
+                                    <p>' . $productInCartRows['price'] . ' AED/Day</p>
+                                </div>
+                            </div>
                         </div>
                     </div>';
                 }

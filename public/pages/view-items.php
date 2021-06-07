@@ -8,10 +8,10 @@
  */
 include '../includes/header.php';
 
-if(isset($_POST['post-review'])){
+if (isset($_POST['post-review'])) {
     $sql = "INSERT INTO product_reviews VALUES ('', ? , ? , ?)";
     $stmt = $con->prepare($sql);
-    $stmt->bind_param("sii",$_POST['post-review'], $_SESSION['user_id'], $_GET['prod_id']);
+    $stmt->bind_param("sii", $_POST['post-review'], $_SESSION['user_id'], $_GET['prod_id']);
     $stmt->execute();
 }
 
@@ -60,7 +60,10 @@ $row = $result->fetch_assoc();
                                         <p>Condition: <?php echo $conditionRow['condition_name']; ?></p>
                                     </li>
                                     <li>
-                                        <p>Review:</p>
+                                        <p>Leaser Information: <?php echo $row['firstName'] . " " . $row['lastName']; ?></p>
+                                    </li>
+                                    <li>
+                                        <p>Address: <?php echo $row['address'] ?></p>
                                     </li>
                                 </ul>
                             </div>
@@ -111,74 +114,68 @@ $row = $result->fetch_assoc();
                             <div class="right-body">
                                 <ul>
                                     <li>
-                                        <p>Leaser Information: <?php echo $row['firstName'] . " " . $row['lastName']; ?></p>
+                                        <form action="inbox-messenger.php" method="POST">
+                                            <input class="btn btn-primary" type="submit" name="add-cart" value="Inquire Information">
+                                            <input type="hidden" name="lender_id" value="<?php echo $row['lender_id'] ?>">
+                                        </form>
                                     </li>
                                     <li>
-                                        <p>Address: <?php echo $row['address'] ?></p>
-                                    </li>
-                                </ul>
-                            </div>
+                                        <?php
+                                        $bookmark_check = $con->prepare("SELECT fav_id FROM fav WHERE product_id=? AND user_id=?");
+                                        $bookmark_check->bind_param("ii", $row['product_id'], $_SESSION['user_id']);
+                                        $bookmark_check->execute();
 
-                            <div class="right-bottom">
-<<<<<<< HEAD
-                            
-                                <!-- <form action="input-messenger.php" method="POST">
-                                    <input class="btn btn-primary" type="submit" name="add-cart" value="Not working">
-                                    <input type="hidden" name="product_id" value="<?php echo $row['lender_id'] ?>">
-                                </form> -->
-=======
+                                        $result = $bookmark_check->get_result();
 
-                                <form action="inbox-messenger.php" method="POST">
-                                    <input class="btn btn-primary" type="submit" name="add-cart" value="Inquire Information">
-                                    <input type="hidden" name="lender_id" value="<?php echo $row['lender_id'] ?>">
-                                </form>
->>>>>>> 6cb0ace2be4c27c0d6aa42c022c2b842d3c3bcb6
+                                        //Count the number of rows returned
+                                        $num_rows = $result->num_rows;
 
-                                <?php
-                                $bookmark_check = $con->prepare("SELECT fav_id FROM fav WHERE product_id=? AND user_id=?");
-                                $bookmark_check->bind_param("ii", $row['product_id'], $_SESSION['user_id']);
-                                $bookmark_check->execute();
-
-                                $result = $bookmark_check->get_result();
-
-                                //Count the number of rows returned
-                                $num_rows = $result->num_rows;
-
-                                if ($num_rows == 1) {
-                                    echo '
+                                        if ($num_rows == 1) {
+                                            echo '
                                     <form action="" method="POST">
                                         <input class="btn btn-primary" type="submit" name="remove-bookmark" value="Remove Bookmark">
                                     </form>';
 
-                                    if (isset($_POST['remove-bookmark'])) {
+                                            if (isset($_POST['remove-bookmark'])) {
 
-                                        $query = $con->prepare("DELETE FROM fav WHERE product_id=? AND user_id=?");
-                                        $query->bind_param("ii", $row['product_id'], $_SESSION['user_id']);
-                                        $query->execute();
+                                                $query = $con->prepare("DELETE FROM fav WHERE product_id=? AND user_id=?");
+                                                $query->bind_param("ii", $row['product_id'], $_SESSION['user_id']);
+                                                $query->execute();
 
-                                        header("refresh: 1;");
-                                    }
-                                } else {
-                                    echo '
+                                                header("refresh: 1;");
+                                            }
+                                        } else {
+                                            echo '
                                     <form action="" method="POST">
                                         <input class="btn btn-primary" type="submit" name="add-bookmark" value="Bookmark">
                                     </form>';
 
-                                    if (isset($_POST['add-bookmark'])) {
+                                            if (isset($_POST['add-bookmark'])) {
 
-                                        $query = $con->prepare("INSERT INTO fav VALUES('', ?, ?, NOW())");
-                                        $query->bind_param("ii", $row['product_id'], $_SESSION['user_id']);
-                                        $query->execute();
+                                                $query = $con->prepare("INSERT INTO fav VALUES('', ?, ?, NOW())");
+                                                $query->bind_param("ii", $row['product_id'], $_SESSION['user_id']);
+                                                $query->execute();
 
-                                        header("refresh: 1;");
-                                    }
-                                };
-                                ?>
+                                                header("refresh: 1;");
+                                            }
+                                        };
+                                        ?>
 
-                                <form action="add-cart.php" method="POST">
-                                    <input class="btn btn-primary" type="submit" name="add-cart" value="Cart">
-                                    <input type="hidden" name="product_id" value="<?php echo $row['product_id'] ?>">
-                                </form>
+                                    </li>
+                                    <li>
+                                        <form action="add-cart.php" method="POST">
+                                            <input class="btn btn-primary" type="submit" name="add-cart" value="Cart">
+                                            <input type="hidden" name="product_id" value="<?php echo $row['product_id'] ?>">
+                                        </form>
+                                    </li>
+
+                                </ul>
+                            </div>
+
+                            <div class="right-body">
+
+
+
                             </div>
                         </div>
                     </div>
@@ -222,17 +219,19 @@ $row = $result->fetch_assoc();
                 $stmt->execute();
 
                 $result = $stmt->get_result();
-                while($row = $result->fetch_assoc()){
+                while ($row = $result->fetch_assoc()) {
                     echo '<div class="post-review">
-                        <h5>'; echo ($row['user_id'] != null ) ? $row['firstName'].' '.$row['lastName'] : "Guest"; echo '</p>
-                            <p class="comment">'.$row['review'].'</p>
+                        <h5>';
+                    echo ($row['user_id'] != null) ? $row['firstName'] . ' ' . $row['lastName'] : "Guest";
+                    echo '</p>
+                            <p class="comment">' . $row['review'] . '</p>
                     </div>';
                 }
 
-                
-                
+
+
                 ?>
-                
+
 
 
                 <div class="post-review-ctn">
