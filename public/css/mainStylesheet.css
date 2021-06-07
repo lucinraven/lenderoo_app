@@ -1918,9 +1918,59 @@ h1 {
   margin: 0;
 }
 
-.account-pg-ctn .row .col-md-9 .addItem .modal-content {
+.account-pg-ctn .row .addItem .tab-content {
   height: 100%;
+  padding: 10px 15px 10px 15px;
+}
+
+.account-pg-ctn .row .addItem .tab-pane {
+  padding: 30px 0;
+}
+
+.account-pg-ctn .row .addItem h1 {
+  margin-bottom: 15px;
+  font-family: "Poppins", sans-serif;
+}
+
+.account-pg-ctn .row .addItem p {
+  margin-bottom: 15px;
+  text-align: center;
+  font-size: 16px;
+  font-family: "Poppins", sans-serif;
+}
+
+.account-pg-ctn .row .addItem label {
+  padding: 0;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+}
+
+.account-pg-ctn .row .addItem .add-input-styling, .account-pg-ctn .row .addItem textarea {
+  padding-left: 5px;
+  height: 30px;
   width: 100%;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  outline: none;
+  border: solid;
+  border-radius: 5px;
+  border-width: 2px;
+  border-color: #DD9857;
+}
+
+.account-pg-ctn .row .addItem textarea {
+  padding-top: 5px;
+  height: 100px;
+}
+
+.account-pg-ctn .row .addItem .btn {
+  margin: 0;
+  padding: 0;
+  height: 35px;
+  width: 100%;
+  font-size: 14px;
+  font-family: "Poppins", sans-serif;
+  text-transform: capitalize;
   background: #DD9857;
 }
 
