@@ -111,21 +111,19 @@ if (isset($_POST['product_id'])) {
                                 </div>
         
                                 <div class="right-content col-md-8">
-                                    <div class="right-header">
+                                    <div class="left-body">
                                         <h2>' . $productInCartRows['product_title'] . '</h2>
+
+                                        <p>' . $productInCartRows['price'] . ' AED/Day</p>
                                     </div>
 
                                     <div class="right-body">
-                                        <a href="../pages/view-items.php?prod_id=' . $productInCartRows['product_id'] . '" target="_blank">
-                                            <p>' . $productInCartRows['price'] . ' AED/Day</p>
-
-                                        </a>
                                         <form method="post">
                                             <div class="row">
                                             <label for="brand">Leasing Duraiton</label>
                                             <input class="add-input-styling" type="number" id="itemDuration" name="itemDuration" min="1" max="30" value="' . $productInCartRows['duration'] . '">
                                             </div>
-                                               <button type="submit" name="inputDuration">Submit</button>
+                                            <button class="btn btn-primary" type="submit" name="inputDuration">Submit</button>
                                         </form>
                                     </div>
                                 </div>

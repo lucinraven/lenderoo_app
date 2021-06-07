@@ -89,7 +89,6 @@ $result = $query->get_result();
                                     <button class="btn btn-primary" type="submit" name="remove-bookmark">Remove</button>
                                 </form>';
                             }
-
                             ?>
                         </div>
                     </div>

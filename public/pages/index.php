@@ -131,7 +131,7 @@ include '../includes/header.php';
       <div class="row">
         <h1>Browse</h1>
         <?php
-        $sql = "SELECT product.product_id, product_name,product_title, price, source FROM `product` LEFT JOIN product_image ON product.product_id = product_image.product_id GROUP BY product.product_id LIMIT 12"; //remove product_title, and add product_names in DB
+        $sql = "SELECT product.product_id, product_name,product_title, price, source FROM `product` LEFT JOIN product_image ON product.product_id = product_image.product_id GROUP BY product.product_id LIMIT 5"; //remove product_title, and add product_names in DB
         $stmt = $con->prepare($sql);
         $stmt->execute();
         $result = $stmt->get_result();
