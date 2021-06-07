@@ -48,16 +48,6 @@ if (count($bindArray) > 0) $stmt->bind_param($bindType, ...$bindArray);
 $stmt->execute();
 
 $result = $stmt->get_result();
-
-$imageQuery = $con->prepare("SELECT * FROM product_image WHERE product_id=?");
-$imageQuery->bind_param("i", $row['product_id']);
-$imageQuery->execute();
-
-$imageResult = $imageQuery->get_result();
-$imageRow = $imageResult->fetch_assoc();
-
-echo $imageRow['source'];
-
 ?>
 
 <div class="browser-page-ctn">
@@ -121,7 +111,14 @@ echo $imageRow['source'];
                     <!-- Product Widget Showcase-->
                     <?php
 
-                    while ($row = $result->fetch_assoc())
+                    while ($row = $result->fetch_assoc()) {
+
+                        $imageQuery = $con->prepare("SELECT * FROM product_image WHERE product_id=?");
+                        $imageQuery->bind_param("i", $row['product_id']);
+                        $imageQuery->execute();
+
+                        $imageResult = $imageQuery->get_result();
+                        $imageRow = $imageResult->fetch_assoc();
 
                         echo '<div class="item-widget">
                         <a class="view-item" href="../pages/view-items.php?prod_id=' . $row['product_id'] . '">
@@ -131,6 +128,7 @@ echo $imageRow['source'];
                             <h2 class="price-heading">' . $row['price'] . ' AED/Day</h2>
                         </a>
                     </div>';
+                    }
 
                     ?>
 
