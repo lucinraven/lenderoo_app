@@ -9,6 +9,7 @@
  */
 
 include '../includes/header.php';
+
 ?>
 
 <!---START OF CAROUSEL -->
@@ -107,9 +108,15 @@ include '../includes/header.php';
         $result = $stmt->get_result();
 
         while ($featured_row = $result->fetch_assoc()) {
+          $imageQuery = $con->prepare("SELECT * FROM product_image WHERE product_id=?");
+          $imageQuery->bind_param("i", $featured_row['product_id']);
+          $imageQuery->execute();
+
+          $imageResult = $imageQuery->get_result();
+          $imageRow = $imageResult->fetch_assoc();
           echo '<a class="view-item" href="../pages/view-items.php?prod_id=' . $featured_row['product_id'] . '">
             <div class="card-content-image">
-              <img src="" alt="" />
+              <img src="../images/'.$imageRow['source'].'" alt="'.$imageRow['source'].'"  />
             </div>
 
             <div class="card-content-body">
@@ -122,12 +129,10 @@ include '../includes/header.php';
           </a>';
         };
         ?>
-
         <!-- filling gaps or spaces on row with empty child divs -->
         <div class="filling-empty-space-childs"></div>
         <div class="filling-empty-space-childs"></div>
         <div class="filling-empty-space-childs"></div>
-
       </div>
 
       <!-- Showcased Row -->
@@ -140,19 +145,26 @@ include '../includes/header.php';
         $result = $stmt->get_result();
 
         while ($row = $result->fetch_assoc()) {
+          $imageQuery = $con->prepare("SELECT * FROM product_image WHERE product_id=?");
+          $imageQuery->bind_param("i", $row['product_id']);
+          $imageQuery->execute();
+
+          $imageResult = $imageQuery->get_result();
+          $imageRow = $imageResult->fetch_assoc();
+
           echo '<a class="view-item" href="../pages/view-items.php?prod_id=' . $row['product_id'] . '">
-            <div class="card-content-image">
-              <img src="" alt="" />
-            </div>
+              <div class="card-content-image">
+                  <img src="../images/'.$imageRow['source'].'" alt="'.$imageRow['source'].'"  />
+               </div>
 
-            <div class="card-content-body">
-              <h2>' . $row['product_title'] . '</h2>
-            </div>
+              <div class="card-content-body">
+                  <h2>' . $row['product_title'] . '</h2>
+              </div>
 
-            <div class="card-content-footer">
-              <p>' . $row['price'] . ' Aed/Day</p>
-            </div>  
-          </a>';
+              <div class="card-content-footer">
+                  <p>' . $row['price'] . ' Aed/Day</p>
+               </div>  
+            </a>';
         };
         ?>
 

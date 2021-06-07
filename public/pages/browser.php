@@ -117,8 +117,6 @@ $result = $stmt->get_result();
                         <?php
 
                         while ($row = $result->fetch_assoc()) {
-
-
                             $imageQuery = $con->prepare("SELECT * FROM product_image WHERE product_id=?");
                             $imageQuery->bind_param("i", $row['product_id']);
                             $imageQuery->execute();
@@ -126,13 +124,19 @@ $result = $stmt->get_result();
                             $imageResult = $imageQuery->get_result();
                             $imageRow = $imageResult->fetch_assoc();
 
-                            echo '<div class="item-widget">
-                                <a class="view-item" href="../pages/view-items.php?prod_id=' . $row['product_id'] . '">
+                            echo ' <a class="view-item" href="../pages/view-items.php?prod_id=' . $row['product_id'] . '">
+                                <div class="card-content-image">
                                     <img src="../images/'.$imageRow['source'].'" alt="'.$imageRow['source'].'"  />
-                                    <h2 class="item-heading">' . $row['product_title'] . '</h2>
-                                    <h2 class="price-heading">' . $row['price'] . ' AED/Day</h2>
-                                </a>
-                            </div>';
+                                </div>
+
+                                <div class="card-content-body">
+                                    <h2>' . $row['product_title'] . '</h2>
+                                </div>
+                
+                                <div class="card-content-footer">
+                                    <p>' . $row['price'] . ' AED/Day</p>
+                                </div>  
+                            </a>';
                         };
 
                         ?>

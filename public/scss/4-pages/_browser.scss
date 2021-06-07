@@ -52,7 +52,7 @@
     background: $main-bg-color;
 
     .content-header {
-      padding: 0 15px; 
+      padding: 0 15px;
       h1 {
         font-size: 24px;
         font-family: $font-family;
@@ -71,33 +71,54 @@
       }
     }
 
-    .item-widget {
-      height: auto;
-      margin: 10px auto;
-      padding: 5px 10px;
-      width: 200px;
-      background-color: $primary;
+    .view-item {
+      margin: 10px;
+      padding: 10px;
+      height: 260px;
+      width: 190px;
+      background-color: $secondary-bg-color;
+      border: solid;
+      border-width: thin;
+      border-color: #d1d1d1;
 
-      img {
-        height: 150px;
+      .card-content-image {
+        height: 50%;
         width: 100%;
-        margin: 10px 0;
+
+        img {
+          height: 100%;
+          width: 100%;
+          background-color: $primary;
+        }
       }
 
-      .item-heading {
-        font-size: 18px;
-        font-family: $font-family;
+      .card-content-body {
+        height: 40%;
+
+        h2 {
+          padding-top: 10px;
+          font-size: 15px;
+          font-size: $font-family;
+          color: $primary;
+        }
       }
-      .price-heading {
-        font-size: 16px;
-        font-family: $font-family;
+
+      .card-content-footer {
+        height: 10%;
+        width: 100%;
+
+        p {
+          margin: 0;
+          font-size: 14px;
+          font-size: $font-family;
+          color: #000000;
+        }
       }
     }
 
     .filling-empty-space-childs {
       margin: 10px auto;
-      padding: 5px 10px;
-      width: 200px;
+      width: 190px;
       height: 0;
     }
   }

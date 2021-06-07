@@ -833,34 +833,54 @@ body {
       flex-wrap: wrap;
 }
 
-.browser-page-ctn .col-md-10 .item-widget {
-  height: auto;
-  margin: 10px auto;
-  padding: 5px 10px;
-  width: 200px;
+.browser-page-ctn .col-md-10 .view-item {
+  margin: 10px;
+  padding: 10px;
+  height: 260px;
+  width: 190px;
+  background-color: #f2f3f4;
+  border: solid;
+  border-width: thin;
+  border-color: #d1d1d1;
+}
+
+.browser-page-ctn .col-md-10 .view-item .card-content-image {
+  height: 50%;
+  width: 100%;
+}
+
+.browser-page-ctn .col-md-10 .view-item .card-content-image img {
+  height: 100%;
+  width: 100%;
   background-color: #DD9857;
 }
 
-.browser-page-ctn .col-md-10 .item-widget img {
-  height: 150px;
+.browser-page-ctn .col-md-10 .view-item .card-content-body {
+  height: 40%;
+}
+
+.browser-page-ctn .col-md-10 .view-item .card-content-body h2 {
+  padding-top: 10px;
+  font-size: 15px;
+  font-size: "Poppins", sans-serif;
+  color: #DD9857;
+}
+
+.browser-page-ctn .col-md-10 .view-item .card-content-footer {
+  height: 10%;
   width: 100%;
-  margin: 10px 0;
 }
 
-.browser-page-ctn .col-md-10 .item-widget .item-heading {
-  font-size: 18px;
-  font-family: "Poppins", sans-serif;
-}
-
-.browser-page-ctn .col-md-10 .item-widget .price-heading {
-  font-size: 16px;
-  font-family: "Poppins", sans-serif;
+.browser-page-ctn .col-md-10 .view-item .card-content-footer p {
+  margin: 0;
+  font-size: 14px;
+  font-size: "Poppins", sans-serif;
+  color: #000000;
 }
 
 .browser-page-ctn .col-md-10 .filling-empty-space-childs {
   margin: 10px auto;
-  padding: 5px 10px;
-  width: 200px;
+  width: 190px;
   height: 0;
 }
 
