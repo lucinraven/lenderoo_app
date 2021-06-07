@@ -47,8 +47,6 @@ include '../../private/includes/form_handler/addItems.php';
                         <ul>
                             <li><a class="tab-btn" data-mdb-toggle="modal" href="#addItem" role="button">Add Item</a></li>
                             <li><button class="tab-btn tablink" onclick="openTab(event, \'lendInventory\')">Inventory</button></li>
-                            <li><button class="tab-btn tablink" onclick="openTab(event, \'lendOutgoing\')">Outgoing Items</button></li>
-                            <li><button class="tab-btn tablink" onclick="openTab(event, \'lendTerms\')">Terms & Condition</button></li>
                         </ul>
                     </div>';
                 } ?>
@@ -91,6 +89,10 @@ include '../../private/includes/form_handler/addItems.php';
                                     <input type="text" name="accountContact" value="<?php echo $row['contact']; ?>">
                                 </div>
                                 <div class="row">
+                                    <label for="itemName">Address</label>
+                                    <input type="text" name="accountAddress" value="<?php echo $row['address']; ?>">
+                                </div>
+                                <div class="row">
                                     <label for="itemName">Password</label>
                                     <input type="password" name="accountPassword" value="">
                                 </div>
@@ -124,7 +126,6 @@ include '../../private/includes/form_handler/addItems.php';
 
                         while ($row = $result->fetch_assoc()) {
                             $dateDiff = date_diff(date_create($row['delivery_date']), date_create($row['return_date']));
-
 
                             echo
                             '<a class="card-item" href="view-information-order.php">
@@ -205,10 +206,18 @@ include '../../private/includes/form_handler/addItems.php';
                         $result = $stmt->get_result();
 
                         while ($row = $result->fetch_assoc()) {
+
+                            $query = $con->prepare("SELECT * FROM product_image WHERE product_id=?");
+                            $query->bind_param("i", $row['product_id']);
+                            $query->execute();
+
+                            $imageResult = $query->get_result();
+                            $imageRow = $imageResult->fetch_assoc();
+                            
                             echo
                             '<a class="card-item" href="view-items.php">
                                 <div class="left-content">
-                                    <img src="" alt="">
+                                    <img src="../images/'.$imageRow['source'].'" alt="'.$imageRow['source'].'">
                                 </div>
 
                                 <div class="right-content">
@@ -246,43 +255,6 @@ include '../../private/includes/form_handler/addItems.php';
                         ?>
                     </div>
                 </div>
-
-                <!-- Lender Central Outgoing -->
-                <div id="lendOutgoing" class="lendOutgoing acc-tabs" style="display: none;">
-                    <h1>Outgoing</h1>
-                    <table class="outgoing-table">
-                        <thead>
-                            <tr class='clickable-row' data-href='view-items.php'>
-                                <th>Item Image</th>
-                                <th>Order Id</th>
-                                <th>Name</th>
-                                <th>Date Leased</th>
-                                <th>Return Date</th>
-                                <th>Leased By</th>
-                                <th>Mobile</th>
-                                <th>Email</th>
-                                <th>Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td></td>
-                                <td>030303</td>
-                                <td>Tool</td>
-                                <td>03/15/21</td>
-                                <td>03/25/21</td>
-                                <td>John Dale</td>
-                                <td>055-232322</td>
-                                <td>johndale@gmai.com</td>
-                                <td>Delivered</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-
-                <div id="lendTerms" class="lendTerm acc-tabs" style="display: none;">
-                    <h1>Terms & Condition</h1>
-                </div>
             </div>
 
             <!-- First modal dialog -->
@@ -299,7 +271,7 @@ include '../../private/includes/form_handler/addItems.php';
                             <!-- Tabs navs -->
                             <ul class="nav nav-tabs mb-3" id="addItems" role="tablist">
                                 <li class="nav-item" role="presentation">
-                                    <a class="nav-link active" id="addItemsTitle" data-mdb-toggle="tab" href="#addItems-title" role="tab" aria-controls="addItems-title" aria-selected="false">Product Title</a>
+                                    <a class="nav-link active" id="addItemsTitle" data-mdb-toggle="tab" href="#addItems-title" role="tab" aria-controls="addItems-title" aria-selected="true">Product Title</a>
                                 </li>
                                 <li class="nav-item" role="presentation">
                                     <a class="nav-link" id="addItemsDetail" data-mdb-toggle="tab" href="#addItems-detail" role="tab" aria-controls="addItems-detail" aria-selected="false">Product Details</a>
@@ -316,15 +288,12 @@ include '../../private/includes/form_handler/addItems.php';
                             <form action="user-account.php" method="post" enctype="multipart/form-data">
                                 <!-- Tabs content -->
                                 <div class="tab-content" id="addItems-content">
-                                    <div class="tab-pane fade active" id="addItems-title" role="tabpanel" aria-labelledby="addItemsTitle">
+                                    <div class="tab-pane fade show active" id="addItems-title" role="tabpanel" aria-labelledby="addItemsTitle">
                                         <!-- Adding Title description -->
                                         <div class="modal-body">
                                             <h1>First, enter a short title to describe your listing</h1>
                                             <p>Make your title informative and attractive.</p>
                                             <input type="text" name="itemTitle" placeholder="e.g. 6 person Tent for Rent">
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button class="btn btn-primary" data-mdb-target="#addDscrpt" data-mdb-toggle="modal" data-mdb-dismiss="modal">Continue</button>
                                         </div>
                                     </div>
                                     <div class="tab-pane fade" id="addItems-detail" role="tabpanel" aria-labelledby="addItemsDetail">
