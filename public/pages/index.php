@@ -37,8 +37,7 @@ include '../includes/header.php';
           </div>
 
           <div class="carousel-caption">
-            <h3 class="h3-responsive">First shop item</h3>
-            <p>First text</p>
+         
           </div>
         </div>
 
@@ -52,8 +51,7 @@ include '../includes/header.php';
           </div>
 
           <div class="carousel-caption">
-            <h3 class="h3-responsive">Second shop item</h3>
-            <p>Secondary text</p>
+           
           </div>
         </div>
 
@@ -67,8 +65,7 @@ include '../includes/header.php';
           </div>
 
           <div class="carousel-caption">
-            <h3 class="h3-responsive">Third shop item</h3>
-            <p>Third text</p>
+           
           </div>
         </div>
       </div>

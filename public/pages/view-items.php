@@ -120,14 +120,13 @@ $row = $result->fetch_assoc()
                             </div>
 
                             <div class="right-bottom">
-
-                                <form action="input-messenger.php" method="POST">
-                                    <input class="btn btn-primary" type="submit" name="add-cart" value="Cart">
+                            
+                                <!-- <form action="input-messenger.php" method="POST">
+                                    <input class="btn btn-primary" type="submit" name="add-cart" value="Not working">
                                     <input type="hidden" name="product_id" value="<?php echo $row['lender_id'] ?>">
-                                </form>
+                                </form> -->
 
                                 <?php
-
                                 $bookmark_check = $con->prepare("SELECT fav_id FROM fav WHERE product_id=? AND user_id=?");
                                 $bookmark_check->bind_param("ii", $row['product_id'], $_SESSION['user_id']);
                                 $bookmark_check->execute();

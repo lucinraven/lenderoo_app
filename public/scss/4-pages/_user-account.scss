@@ -22,7 +22,7 @@
 
         .col-md-3 {
             padding: 0;
-            height: 1000px;
+            height: auto;
             border-top: solid;
             border-left: solid;
             border-bottom: solid;
@@ -146,7 +146,7 @@
             }
 
             .accOrdrs {
-                height: 100%;
+                height: auto;
                 width: 100%;
                 padding: 15px 0 0 0;
 
@@ -159,6 +159,7 @@
 
                 .content-body {
                     padding: 20px;
+                    height: 100vh;
                     width: 100%;
                 }
 
@@ -246,7 +247,7 @@
 
             // Lender Central for Lenders and is hidden from regular user account.
             .lendInventory {
-                height: 100%;
+                height: auto;
                 width: 100%;
                 padding: 15px 0 0 0;
 
@@ -260,6 +261,7 @@
                 .content-body {
                     padding: 20px;
                     width: 100%;
+                    height: 100vh;
                 }
 
                 .card-item {

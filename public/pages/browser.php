@@ -73,8 +73,7 @@ $result = $stmt->get_result();
                     <h1>Category</h1>
                     <?php
                     $sql = "SELECT id,category_name FROM category";
-
-
+                    
                     $stmt = $con->prepare($sql);
                     $stmt->execute();
                     $array = [];
@@ -101,7 +100,7 @@ $result = $stmt->get_result();
                     </ul>
                 </div>
                 <div class="condition-filter">
-                    <h1>Category</h1>
+                    <h1>Condition</h1>
                     <?php
                     $sql = "SELECT id,condition_name FROM product_condition";
                     $stmt = $con->prepare($sql);

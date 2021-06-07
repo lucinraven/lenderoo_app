@@ -127,7 +127,7 @@ include '../../private/includes/form_handler/addItems.php';
                             $dateDiff = date_diff(date_create($row['delivery_date']), date_create($row['return_date']));
 
                             echo
-                            '<a class="card-item" href="view-information-order.php">
+                            '<a class="card-item" href="#">
                                 <div class="left-content">
                                     <img src="" alt="">
                                 </div>
@@ -205,7 +205,6 @@ include '../../private/includes/form_handler/addItems.php';
                         $result = $stmt->get_result();
 
                         while ($row = $result->fetch_assoc()) {
-
                             $query = $con->prepare("SELECT * FROM product_image WHERE product_id=?");
                             $query->bind_param("i", $row['product_id']);
                             $query->execute();
@@ -214,7 +213,7 @@ include '../../private/includes/form_handler/addItems.php';
                             $imageRow = $imageResult->fetch_assoc();
                             
                             echo
-                            '<a class="card-item" href="view-items.php">
+                            '<a class="card-item" href="view-items.php?prod_id='.$row['product_id'].'">
                                 <div class="left-content">
                                     <img src="../images/'.$imageRow['source'].'" alt="'.$imageRow['source'].'">
                                 </div>
@@ -254,6 +253,26 @@ include '../../private/includes/form_handler/addItems.php';
                         ?>
                     </div>
                 </div>
+                
+                <div class="pagination-footer ">
+                        <nav aria-label="Page navigation example ">
+                            <ul class="pagination justify-content-center ">
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
             </div>
 
             <!-- modal dialog -->
@@ -386,7 +405,6 @@ include '../../private/includes/form_handler/addItems.php';
                                     </div>
                                     <!-- Tabs content -->
                                 </div>
-
                             </form>
                         </div>
                         <!-- End of Code Category Icons -->

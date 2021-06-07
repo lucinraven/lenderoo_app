@@ -7,6 +7,10 @@
  * Time: 12:01 am
  */
 include '../includes/header.php';
+
+$sql = "SELECT delivery_date, payment_method, return_date, created_at FROM orders";
+    $stmt = $con->prepare($sql);
+    $stmt->execute();
 ?>
 
 <!-- View more order information -->
@@ -21,16 +25,30 @@ include '../includes/header.php';
                     </div>
 
                     <div class="content-body">
-                        <div class="left-content">
-                            <p>Order Id:</p>
-                            <p>Leased Duration:</p>
-                            <p>Date Ordered<:/p>
-                            <p>Return Date:</p>
-                        </div>
+                        <?php 
 
-                        <div class="right-content">
-                            <p>Delivered Date:</p>
-                        </div>
+                        $user_id = $_SESSION['user_id'];
+
+                        $sql = "SELECT * FROM cart INNER JOIN cart_products ON cart.id = cart_products.cart_id";
+                        $stmt = $con->prepare($sql);
+                        $stmt->execute();
+                        $result = $stmt->get_result();
+
+                        while($row = $result->fetch_assoc()){
+                            echo ' 
+                            
+                            <div class="left-content">
+                                <p>Ordered Date: '.$row['created_at'].' ?> </p>
+                                <p>Return Date: ' . $row['return_date'] . ' </p>
+                                <p>Delivery Method: ' . $row['payment_method'] . ' </p>
+                            </div>
+
+                            <div class="right-content">
+                                <p>Delivery Date: '.$row['delivery_date'].' </p>
+                            </div>';
+                        }    
+                        ?>
+                        
                     </div>
                 </div>
             </div>
@@ -58,32 +76,35 @@ include '../includes/header.php';
                     <h1>Ordered Items</h1>
                 </div>
                 <div class="content-body">
-                    <!-- item information table -->
-                    <table class="product-information-table">
-                        <thead>
-                            <tr>
-                                <th>Status</th>
-                                <th>Image</th>
-                                <th>Product</th>
-                                <th>More Information</th>
-                                <th>Quantity</th>
-                                <th>Duration</th>
-                                <th>Amount</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td></td>
-                                <td>030303</td>
-                                <td>Tool</td>
-                                <td>03/15/21</td>
-                                <td>03/25/21</td>
-                                <td>10 Aed</td>
-                                <td>10 Days</td>
-                            <tr>
-                        </tbody>
-                    </table>
-                    <!-- end of table -->
+                    <?php
+                    $user_id = $_SESSION['user_id'];
+
+                    $sql = "SELECT * FROM cart INNER JOIN cart_products ON cart.id = cart_products.cart_id";
+                    $stmt = $con->prepare($sql);
+                    $stmt->execute();
+                    $result = $stmt->get_result();
+                    
+                    while ($row = $result->fetch_assoc()) {
+                        echo '
+                                    <div class="listed-cards row">
+                                        <div class="left-content col-md-4">
+                                            <img src="" alt="">
+                                        </div>
+
+                                        <div class="right-content col-md-8">
+                                            <div class="right-header">
+                                                <h2>' . $row['product_title'] . '</h2>
+                                            </div>
+
+                                            <div class="right-body">
+                                                <p>' . $row['quantity'] . ' Qty</p>
+                                                <p>' . $row['price'] . ' AED/Day</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                            ';
+                    }
+                    ?>
                 </div>
             </div>
         </div>

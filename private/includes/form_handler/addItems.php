@@ -37,16 +37,8 @@ if (isset($_POST['addItem'])) {
 
     $user = $_SESSION['email'];
 
-    //Get User ID
-    $e_check = $con->prepare("SELECT user_id FROM users WHERE email=?");
-    $e_check->bind_param("s", $user);
-    $e_check->execute();
-
-    $result = $e_check->get_result();
-    $userId = $result->fetch_assoc();
-
     $product_query = $con->prepare("INSERT INTO product VALUES ('', ?, ?, ?, ?, ?, ?, ?, ?, 'Available', '', ?, ?)");
-    $product_query->bind_param("sssssdiiii", $title, $itemName, $itemDescription, $itemAge, $itemField, $itemPrice, $category, $itemCondition, $userId, $itemDuration);
+    $product_query->bind_param("sssssdiiii", $title, $itemName, $itemDescription, $itemAge, $itemField, $itemPrice, $category, $itemCondition, $_SESSION['user-id'], $itemDuration);
     $product_query->execute();
 
     // File upload configuration 
