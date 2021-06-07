@@ -7,10 +7,6 @@
  * Time: 4:32 pm
  */
 include '../includes/header.php';
-
-
-
-
 ?>
 
 <!-- review-checkout-page -->
@@ -25,12 +21,24 @@ include '../includes/header.php';
                     </div>
                     <form action="confirm-order.php" class="content-body row" id="placeOrder" method="POST">
                         <div class="content col-md-3">
-                            <h1>Shipping Address</h1>
-                            <p>John Doe</p>
-                            <p>King Faisal, Buhaira</p>
-                            <p>Decken Bldg, Flat 305</p>
-                            <p>Dubai, Jumeirah Lake Tower</p>
-                            <p>055-3232-3232</p>
+                            <?php
+                            $user_query = $con->prepare("SELECT * FROM users WHERE user_id=?");
+                            $user_query->bind_param("i", $_SESSION['user_id']);
+                            $user_query->execute();
+
+                            $user_result = $user_query->get_result();
+                            $user_row = $user_result->fetch_assoc();
+
+                            ?>
+                            <p><?php echo '' . $user_row['firstName'] . ' ' . $user_row['lastName'] . ''; ?></p>
+                            <p><?php if ($user_row['address'] == '') {
+                                    echo '
+                                    <input type="text" name="addAddress">
+                                    <button type="submit" name="insertAddress">Insert Address</button>';
+                                } else {
+                                    echo '' . $user_row['address'] . '';
+                                } ?></p>
+                            <p><?php echo '' . $user_row['contact'] . '' ?></p>
                         </div>
                         <div class="content col-md-3">
                             <h1>Payment Method</h1>
@@ -71,10 +79,18 @@ include '../includes/header.php';
 
                             $productInCartRes = $stmt->get_result();
                             while ($row = $productInCartRes->fetch_assoc()) {
+
+                                $imageQuery = $con->prepare("SELECT * FROM product_image WHERE product_id=?");
+                                $imageQuery->bind_param("i", $row['product_id']);
+                                $imageQuery->execute();
+
+                                $imageResult = $imageQuery->get_result();
+                                $imageRow = $imageResult->fetch_assoc();
+
                                 echo '
                                     <div class="listed-cards row">
                                         <div class="left-content col-md-4">
-                                            <img src="" alt="">
+                                            <img src="../images/' . $imageRow['source'] . '" alt="' . $imageRow['source'] . '"  />
                                         </div>
 
                                         <div class="right-content col-md-8">
@@ -83,12 +99,13 @@ include '../includes/header.php';
                                             </div>
 
                                             <div class="right-body">
-                                                <p>' . $row['quantity'] . ' Qty</p>
-                                                <p>' . $row['price'] . ' AED/Day</p>
+                                                <p>' . $row['duration'] . ' Qty</p>
+                                                <p>' . $row['price'] . ' AED</p>
+                                                <p>Total of ' . $row['price'] * $row['duration'] . ' AED</p>
                                             </div>
                                         </div>
                                     </div>
-                            ';
+                                ';
                             }
                             ?>
                         </div>
@@ -100,9 +117,9 @@ include '../includes/header.php';
                 <div class="right-content-row">
                     <div class="summary-content">
                         <p>Number of items</p>
-                        <p>Amount</p>
-                        <p>Deliver fee</p>
-                        <p>Total</p>
+                        <p>Amount: </p>
+                        <p>Deliver fee: </p>
+                        <p>Total: </p>
                     </div>
                     <div class="summary-footer">
                         <button class="btn" onclick="document.getElementById('placeOrder').submit()">Place Order</button>

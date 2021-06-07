@@ -55,7 +55,7 @@ if (isset($_POST['product_id'])) {
         $stmt->get_result();
     } else {
         // Inserts a product in cart_products if there is no existing same product being added. if there is, add quantity + 1.
-        $sql = "INSERT INTO cart_products (product_id, cart_id, quantity) VALUES( ? , ? , '1')";
+        $sql = "INSERT INTO cart_products (product_id, cart_id) VALUES( ? , ?)";
         $stmt = $con->prepare($sql);
         $stmt->bind_param("ii", $product_id, $cart_id);
         $stmt->execute();
@@ -66,24 +66,6 @@ if (isset($_POST['product_id'])) {
 <!-- Cart page -->
 <div class="add-cart-page">
     <div class="container-lg">
-
-        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                        <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
-                    </div>
-                    <div class="modal-body">...</div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-mdb-dismiss="modal">
-                            Close
-                        </button>
-                        <button type="button" class="btn btn-primary">Save changes</button>
-                    </div>
-                </div>
-            </div>
-        </div>
 
         <div class="row">
             <div class="col-md-9">
@@ -108,11 +90,23 @@ if (isset($_POST['product_id'])) {
                     $imageResult = $imageQuery->get_result();
                     $imageRow = $imageResult->fetch_assoc();
 
+                    if (isset($_POST['inputDuration'])) {
+
+                        $duration = $_POST['itemDuration'];
+
+                        $update_query = $con->prepare("UPDATE cart_products SET duration=? WHERE product_id=? AND cart_id=?");
+                        $update_query->bind_param("iii", $duration, $productInCartRows['product_id'], $productInCartRows['cart_id']);
+                        $update_query->execute();
+
+                        header("refresh: 1;");
+                    }
+
                     echo '
                     <!-- Cart list body container-->
                     <div class="cart-list">
                         <!-- Cart item -->
                         <div class="cart-item row">
+<<<<<<< HEAD
                             <div class="left-content col-md-4">
                                  <img src="../images/' . $imageRow['source'] . '" alt="' . $imageRow['source'] . '"  />
                             </div>
@@ -127,6 +121,31 @@ if (isset($_POST['product_id'])) {
                                     <p>' . $productInCartRows['price'] . ' AED/Day</p>
                                 </div>
                             </div>
+=======
+                                <div class="left-content col-md-4">
+                                    <img src="../images/' . $imageRow['source'] . '" alt="' . $imageRow['source'] . '"  />
+                                </div>
+        
+                                <div class="right-content col-md-8">
+                                    <div class="right-header">
+                                        <h2>' . $productInCartRows['product_title'] . '</h2>
+                                    </div>
+
+                                    <div class="right-body">
+                                        <a href="../pages/view-items.php?prod_id=' . $productInCartRows['product_id'] . '" target="_blank">
+                                            <p>' . $productInCartRows['price'] . ' AED/Day</p>
+
+                                        </a>
+                                        <form method="post">
+                                            <div class="row">
+                                            <label for="brand">Leasing Duraiton</label>
+                                            <input class="add-input-styling" type="number" id="itemDuration" name="itemDuration" min="1" max="30" value="' . $productInCartRows['duration'] . '">
+                                            </div>
+                                               <button type="submit" name="inputDuration">Submit</button>
+                                        </form>
+                                    </div>
+                                </div>
+>>>>>>> e2936db59e8134b9781c0acd9d71c1ee34a9bb77
                         </div>
                     </div>';
                 }
@@ -139,16 +158,26 @@ if (isset($_POST['product_id'])) {
                     <h1>Summary</h1>
 
                     <p>Subtotal</p>
-                    <p>Aed/Day</p>
+                    <?php
+                    $sql = "SELECT * FROM cart_products cp INNER JOIN product p ON cp.product_id = p.product_id INNER JOIN cart c ON c.cart_id = cp.cart_id WHERE c.is_active = 1 AND c.user_id = ?";
+                    $stmt = $con->prepare($sql);
+                    $stmt->bind_param("i", $user_id);
+                    $stmt->execute();
+
+                    $productInCartRes = $stmt->get_result();
+                    while ($productInCartRows = $productInCartRes->fetch_assoc()) {
+
+                        $sum = $productInCartRows['price'] * $productInCartRows['duration'];
+                        echo '<p>'.$sum.' AED</p>';
+                    }
+                    ?>
+                    
                 </div>
                 <div class="summary-footer">
                     <a href="../pages/review-checkout.php"><button class="btn">Lease All Item</button></a>
 
                 </div>
             </div>
-
-
-
 
         </div>
     </div>
