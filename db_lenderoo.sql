@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jun 07, 2021 at 10:40 AM
+-- Generation Time: Jun 07, 2021 at 05:20 PM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.10
 
@@ -46,6 +46,13 @@ CREATE TABLE `cart` (
   `is_active` bit(1) DEFAULT b'1'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `cart`
+--
+
+INSERT INTO `cart` (`cart_id`, `user_id`, `is_active`) VALUES
+(1, 2, b'1');
+
 -- --------------------------------------------------------
 
 --
@@ -58,6 +65,13 @@ CREATE TABLE `cart_products` (
   `quantity` int(11) DEFAULT NULL,
   `cart_id` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `cart_products`
+--
+
+INSERT INTO `cart_products` (`id`, `product_id`, `quantity`, `cart_id`) VALUES
+(1, 1, 1, 1);
 
 -- --------------------------------------------------------
 
@@ -189,8 +203,8 @@ CREATE TABLE `product` (
 --
 
 INSERT INTO `product` (`product_id`, `product_title`, `product_name`, `description`, `age`, `technicalDesc`, `price`, `category_id`, `condition_id`, `status`, `click_counter`, `lender_id`, `max_lend_duration`) VALUES
-(1, 'Selling 6 person tent', 'Coleman cabin tent', 'The best tent', '0-1 month', 'Weight: 13kg,Capacity: 6 person', 10.5, 1, 3, 'Available', 1, 1, 15);
-
+(1, 'Selling 6 person tent', 'Coleman cabin tent', 'The best tent', '0-1 month', 'Weight: 13kg,Capacity: 6 person', 10.5, 1, 3, 'Available', 12, 1, 15),
+(2, 'Renting outdoor grill for a reasonable price', 'Imperial home non-stick grill pan', 'Nonstick pan that uses a state of the art materials. highly durable and can be easily cleaned.', 'Brand New', 'Weight: 5kg,', 15, 9, 3, 'Available', 1, 1, 30);
 
 -- --------------------------------------------------------
 
@@ -234,7 +248,8 @@ INSERT INTO `product_image` (`image_id`, `source`, `product_id`) VALUES
 (1, 'corinne-kutz-f1fV_4Q1dYE-unsplash.jpg', 1),
 (2, 'brooke-lark-nLBcOY8t9tc-unsplash.jpg', 1),
 (3, 'brooke-lark-DKOVgaayXXY-unsplash.jpg', 1),
-(4, 'brooke-lark-HlNcigvUi4Q-unsplash.jpg', 1);
+(4, 'brooke-lark-HlNcigvUi4Q-unsplash.jpg', 1),
+(5, '71ydrdh37al-sl1500--500x500.jpg', 2);
 
 -- --------------------------------------------------------
 
@@ -289,7 +304,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`user_id`, `firstName`, `lastName`, `email`, `password`, `contact`, `address`, `lender`, `status`, `created_at`) VALUES
-(1, 'Nanno', 'Amarin', 'nanno@gmail.com', '9a1336773808610d69e1dd86113f771f', '0561234567', '', 1, 0, '2021-06-07 12:12:06');
+(1, 'Nanno', 'Amarin', 'nanno@gmail.com', '9a1336773808610d69e1dd86113f771f', '0561234567', '', 1, 0, '2021-06-07 12:12:06'),
+(2, 'Raven', 'Lucin', 'ravlucin@gmail.com', '6eea9b7ef19179a06954edd0f6c05ceb', '055-342342', '', 1, 0, '2021-06-07 12:43:32');
 
 -- --------------------------------------------------------
 
@@ -432,13 +448,13 @@ ALTER TABLE `broken_cart`
 -- AUTO_INCREMENT for table `cart`
 --
 ALTER TABLE `cart`
-  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `cart_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `cart_products`
 --
 ALTER TABLE `cart_products`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT for table `category`
@@ -480,7 +496,7 @@ ALTER TABLE `password_token`
 -- AUTO_INCREMENT for table `product`
 --
 ALTER TABLE `product`
-  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `product_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `product_condition`
@@ -492,7 +508,7 @@ ALTER TABLE `product_condition`
 -- AUTO_INCREMENT for table `product_image`
 --
 ALTER TABLE `product_image`
-  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `image_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `rate`
@@ -510,7 +526,7 @@ ALTER TABLE `review`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT for table `user_rented_products`
