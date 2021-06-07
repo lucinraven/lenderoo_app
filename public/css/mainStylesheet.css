@@ -311,18 +311,29 @@ body {
   width: 100%;
 }
 
-.account-tabs .tab-view-pages .tab-content .tab-body .notification-item {
-  height: 100px;
+.account-tabs .tab-view-pages .tab-content .tab-body .fav-item {
+  height: 150px;
   width: 100%;
   margin: 0 auto;
   border-bottom: solid;
-  border-width: thin;
+  border-width: 1px;
   border-color: #d1d1d1;
 }
 
-.account-tabs .tab-view-pages .tab-content .tab-body .notification-item:hover {
-  cursor: pointer;
-  opacity: 0.9;
+.account-tabs .tab-view-pages .tab-content .tab-body .fav-item .btn {
+  margin: 0;
+  padding: 5px 3px;
+  width: 100%;
+  background: #EFA45D;
+  font-size: 14px;
+  font-weight: bold;
+  font-family: "Poppins", sans-serif;
+  color: #f1f1f1f1;
+}
+
+.account-tabs .tab-view-pages .tab-content .tab-body .fav-item .btn:hover {
+  background: #eeb075;
+  color: red;
 }
 
 .account-tabs .tab-view-pages .tab-content .tab-body .left-content, .account-tabs .tab-view-pages .tab-content .tab-body .view-order-page .order-details .col-md-8 .content-body .right-content, .view-order-page .order-details .col-md-8 .content-body .account-tabs .tab-view-pages .tab-content .tab-body .right-content, .account-tabs .tab-view-pages .tab-content .tab-body .view-outgoing-page .order-details .col-md-8 .content-body .right-content, .view-outgoing-page .order-details .col-md-8 .content-body .account-tabs .tab-view-pages .tab-content .tab-body .right-content {

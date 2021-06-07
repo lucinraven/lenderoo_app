@@ -86,7 +86,7 @@ $result = $query->get_result();
                                 </div>
                                 
                                 <form action="" method="POST" class="delete-btn col-md-1">
-                                    <button class="btn btn-primary" type="submit" name="remove-bookmark"><i class="bi bi-trash-fill"></i></button>
+                                    <button class="btn btn-primary" type="submit" name="remove-bookmark">Remove</button>
                                 </form>';
                             }
 

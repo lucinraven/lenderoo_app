@@ -106,22 +106,6 @@ if (isset($_POST['product_id'])) {
                     <div class="cart-list">
                         <!-- Cart item -->
                         <div class="cart-item row">
-<<<<<<< HEAD
-                            <div class="left-content col-md-4">
-                                 <img src="../images/' . $imageRow['source'] . '" alt="' . $imageRow['source'] . '"  />
-                            </div>
-        
-                            <div class="right-content col-md-8">
-                                <div class="right-header">
-                                    <h2>' . $productInCartRows['product_title'] . '</h2>
-                                </div>
-
-                                <div class="right-body">
-                                    <p>' . $productInCartRows['quantity'] . ' Qty</p>
-                                    <p>' . $productInCartRows['price'] . ' AED/Day</p>
-                                </div>
-                            </div>
-=======
                                 <div class="left-content col-md-4">
                                     <img src="../images/' . $imageRow['source'] . '" alt="' . $imageRow['source'] . '"  />
                                 </div>
@@ -145,7 +129,6 @@ if (isset($_POST['product_id'])) {
                                         </form>
                                     </div>
                                 </div>
->>>>>>> e2936db59e8134b9781c0acd9d71c1ee34a9bb77
                         </div>
                     </div>';
                 }
