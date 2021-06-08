@@ -89,11 +89,11 @@ include '../includes/header.php';
 
                                 echo '
                                     <div class="listed-cards row">
-                                        <div class="left-content col-md-4">
+                                        <div class="left-content col-md-3">
                                             <img src="../images/' . $imageRow['source'] . '" alt="' . $imageRow['source'] . '"  />
                                         </div>
 
-                                        <div class="right-content col-md-8">
+                                        <div class="right-content col-md-9">
                                             <div class="right-header">
                                                 <h2>' . $row['product_title'] . '</h2>
                                             </div>
